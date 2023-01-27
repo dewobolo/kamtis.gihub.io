@@ -51,9 +51,9 @@ class Pelanggaran_siswa extends CI_Controller{
             $output .= '
             <tr>
             <td>'.$row->nama_siswa.'</td>
-            <td>'.$row->nis.'</td>
+            <td>'.$row->no_induk.'</td>
             <td>'.$row->nama_kelas.'</td>
-            <td><a href="'.base_url().'pelanggaran_siswa/input_pelanggaran/'.$row->id_siswa.'" class="btn btn-danger btn-sm">proses</a></td>
+            <td><a href="'.base_url().'pelanggaran_siswa/input_pelanggaran/'.$row->id_siswa.'" class="btn btn-danger btn-sm">PROSES</a></td>
             </tr>
             ';
         }
@@ -77,6 +77,7 @@ class Pelanggaran_siswa extends CI_Controller{
         $this->load->view('super_admin/navbar');
         $this->load->view('super_admin/pelanggaran_siswa/input_pelanggaran');
         $this->load->view('super_admin/footer');
+        
     }
 
     function cari_pelanggaran(){
@@ -108,7 +109,7 @@ class Pelanggaran_siswa extends CI_Controller{
             <td>'.$row->nama_pelanggaran.'</td>
             <td>'.$row->nama_jenis_pelanggaran.'</td>
             <td>'.$row->point_pelanggaran.'</td>
-            <td><a href="'.base_url().'pelanggaran_siswa/input_pelanggaran_siswa/'.$id_siswa.'/'.$row->id_pelanggaran.'/'.$id_kelas.'/'.$row->point_pelanggaran.'" class="btn btn-danger btn-sm">proses</a></td>
+            <td><a href="'.base_url().'pelanggaran_siswa/input_pelanggaran_siswa/'.$id_siswa.'/'.$row->id_pelanggaran.'/'.$id_kelas.'/'.$row->point_pelanggaran.'" class="btn btn-danger btn-sm">PROSES</a></td>
             </tr>
             ';
         }
@@ -133,7 +134,8 @@ class Pelanggaran_siswa extends CI_Controller{
             'id_pelanggaran'=>$id_pelanggaran_siswa,  
             'id_siswa'=>$id_siswa,
             'id_kelas'=>$id_kelas,
-            'id_admin'=>$this->session->userdata('id_akun'),
+            'id_pelapor'=>$this->session->userdata('id_akun'),
+            'level_pelapor'=>'gds',
             'tanggal_pelanggaran'=>date('Y-m-d H:i:s'),
             'point'=>$point,
         );
@@ -147,13 +149,13 @@ class Pelanggaran_siswa extends CI_Controller{
             $this->session->set_userdata('pesan','sd');
             redirect("pelanggaran_siswa/input_pelanggaran/$id_siswa");
         }
-    
     }
     
     public function hasil_input(){
         $data['judul_halaman']='Pelanggaran Siswa';
         $id_siswa=$this->uri->segment('3');
-        $data['siswa']=$this->m_point_pelanggaran->join_siswa_pelanggaran_custom($id_siswa)->result();
+        $data['siswa']=$this->m_point_pelanggaran->select_group('siswa,kelas,pelanggaran_siswa',"sum(pelanggaran_siswa.point) as total_point,siswa.nama_siswa,siswa.id_kelas,kelas.nama_kelas,siswa.no_induk","siswa.id_siswa=pelanggaran_siswa.id_siswa and siswa.id_kelas=kelas.id_kelas and pelanggaran_siswa.id_siswa='$id_siswa'",'siswa.id_siswa','asc','siswa.id_siswa','asc')->result();
+        // $data['siswa']=$this->m_point_pelanggaran->join_siswa_pelanggaran_custom($id_siswa)->result();
         $data['pelanggaran_siswa']=$this->m_point_pelanggaran->select('pelanggaran_siswa,pelanggaran','*',"pelanggaran_siswa.id_pelanggaran=pelanggaran.id_pelanggaran and pelanggaran_siswa.id_siswa='$id_siswa'",'pelanggaran_siswa.id_pelanggaran_siswa','desc')->result();
         $data['ketentuan_point']=$this->m_point_pelanggaran->select('ketentuan_point','*',"",'id_ketentuan_point','desc')->result();
         $data['gds']=$this->m_point_pelanggaran->select('admin','*',"",'id_admin','desc')->result();

@@ -23,15 +23,15 @@
                             <?php
                             if($this->session->userdata('pesan')==true){
                                 if($this->session->userdata('pesan')=='t'){
-                                    $pesan="data berhasil ditambahkan";
+                                    $pesan="Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='e'){
-                                    $pesan="data berhasil diedit";
+                                    $pesan="Data Berhasil Diedit";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='h'){
-                                    $pesan="data berhasil dihapus";
+                                    $pesan="Data Berhasil Dihapus";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }
@@ -64,8 +64,8 @@
                                             <td><?php echo $k->nama_kelas; ?></td>
                                             <td><?php echo $k->nama_guru; ?></td>
                                             <td>
-                                            <a href="<?php echo base_url();?>kelas/hapus/<?php echo $k->id_kelas; ?>" class="btn btn-xs btn-danger">hapus</a>
-                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $k->id_kelas;  ?>">edit</button>
+                                            <a href="<?php echo base_url();?>kelas/hapus/<?php echo $k->id_kelas; ?>" class="btn btn-xs btn-danger">Hapus</a>
+                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $k->id_kelas;  ?>">Edit</button>
                                             </td>
                                         </tr>
                                         <?php $no++; } ?>
@@ -78,7 +78,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 
         <!-- modal tambah -->

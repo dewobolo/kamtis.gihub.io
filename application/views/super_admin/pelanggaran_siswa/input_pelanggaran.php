@@ -17,24 +17,24 @@
                 <div class="row ">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="white-box">
-                            <h3 class="box-title">Form Input  Data Pelanggaran Siswa</h3>
+                            <h3 class="box-title">Data Siswa</h3>
                             <?php
                             if($this->session->userdata('pesan')==true){
                                 if($this->session->userdata('pesan')=='t'){
-                                    $pesan="data berhasil ditambahkan";
+                                    $pesan="Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='e'){
-                                    $pesan="data berhasil diedit";
+                                    $pesan="Data Berhasil Diedit";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='h'){
-                                    $pesan="data berhasil dihapus";
+                                    $pesan="Data Berhasil Dihapus";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='sd'){
-                                    $pesan="pelanggaran sudah terdaftar pada tanggal sekarang";
-                                    $warna="alert-success";
+                                    $pesan="Pelanggaran Sudah Terdaftar pada Tanggal Sekarang";
+                                    $warna="alert-warning";
                                     $this->session->set_userdata('pesan','');
                                 }
                             ?>
@@ -52,16 +52,16 @@
                                         foreach($siswa as $s){
                                             $id_kelas=$s->id_kelas;
                                         ?>
-                                        Nama Siswa : <?php echo $s->nama_siswa; ?><br>
-                                        No Induk Siswa : <?php echo $s->no_induk; ?><br>
-                                        Kelas Siswa : <?php echo $s->nama_kelas; ?><br>
+                                        Nama Siswa : <b><?php echo $s->nama_siswa; ?></b><br>
+                                        No Induk Siswa : <b><?php echo $s->no_induk; ?></b><br>
+                                        Kelas Siswa : <b><?php echo $s->nama_kelas; ?></b><br>
 
                                         <?php } ?>
                                     </p>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Masukkan Kata Kunci Pelanggaran Siswa :</label>
-                                    <input type="text" class="form-control" name="search_text" id="search_text" required>
+                                    <input autofocus type="text" class="form-control" name="search_text" id="search_text" required>
                                 </div>
                                 <!-- <button type="submit" class="btn btn-danger">Cari</button> -->
                             
@@ -72,7 +72,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 
 

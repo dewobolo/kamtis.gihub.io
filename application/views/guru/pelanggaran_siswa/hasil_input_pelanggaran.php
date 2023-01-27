@@ -85,7 +85,7 @@
                                         <tr>
                                             <td><?php echo $no; ?></td>
                                             <td><?php echo $ps->nama_pelanggaran;?></td>
-                                            <td><?php echo date('d F Y',strtotime($ps->tanggal_pelanggaran)); ?> <?php echo date('H:i:s',strtotime($ps->waktu_pelanggaran)); ?></td>
+                                            <td><?php echo date('d F Y',strtotime($ps->tanggal_pelanggaran)); ?> <?php echo date('H:i:s',strtotime($ps->tanggal_pelanggaran)); ?></td>
                                             <td>
                                             <?php 
                                                 if($ps->level_pelapor=='guru'){

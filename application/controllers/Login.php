@@ -43,10 +43,10 @@ class Login extends CI_Controller{
                             );
             $this->session->set_userdata($data_session);
             $this->session->set_userdata('pesan_aktifitas','b');
-            redirect('dashboard/index');
+            redirect('pelanggaran_siswa/index');
         }else{
             $this->session->set_userdata('pesan_aktifitas','t');
-            redirect('dashboard/index');
+            redirect('pelanggaran_siswa/index');
         }
     }
     public function logout(){

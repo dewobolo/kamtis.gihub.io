@@ -19,25 +19,25 @@
                         <div class="white-box">
                             <h3 class="box-title dataTable">Data Guru</h3>
                             <button data-toggle="modal" data-target="#myModal" class="btn btn-sm btn-danger">Tambah</button>
-                            <button data-toggle="modal" data-target="#import" class="btn btn-sm btn-danger">Import data</button>
+                            <button data-toggle="modal" data-target="#import" class="btn btn-sm btn-danger">Import Data</button>
                             <a href="<?php echo base_url();?>guru/download_file" class="btn btn-sm btn-danger">Download Format Import data</a>
                             <?php
                             if($this->session->userdata('pesan')==true){
                                 if($this->session->userdata('pesan')=='t'){
-                                    $pesan="data berhasil ditambahkan";
+                                    $pesan="Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='e'){
-                                    $pesan="data berhasil diedit";
+                                    $pesan="Data Berhasil Diedit";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='h'){
-                                    $pesan="data berhasil dihapus";
+                                    $pesan="Data Berhasil Dihapus";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='b'){
                                     $jum_upload=$this->session->userdata('jum_data');
-                                    $pesan=$jum_upload." data berhasil ditambahkan";
+                                    $pesan=$jum_upload." Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                     $this->session->set_userdata('jum_data','');
@@ -59,7 +59,6 @@
                                             <th>Nama Guru</th>
                                             <th>Mata Pelajaran</th>
                                             <th>Username</th>
-                                            <th>NIP</th>
                                             <th>Opsi</th>
                                         </tr>
                                     </thead>
@@ -73,10 +72,9 @@
                                             <td><?php echo $g->nama_guru; ?></td>
                                             <td><?php echo $g->mata_pelajaran; ?></td>
                                             <td><?php echo $g->username; ?></td>
-                                            <td><?php echo $g->nip; ?></td>
                                             <td>
-                                            <a href="<?php echo base_url();?>guru/hapus/<?php echo $g->id_guru; ?>" class="btn btn-xs btn-danger">hapus</a>
-                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $g->id_guru;  ?>">edit</button>
+                                            <a href="<?php echo base_url();?>guru/hapus/<?php echo $g->id_guru; ?>" class="btn btn-xs btn-danger">Hapus</a>
+                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $g->id_guru;  ?>">Edit</button>
                                             </td>
                                         </tr>
                                         <?php $no++; } ?>
@@ -89,7 +87,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 
         <!-- modal tambah -->

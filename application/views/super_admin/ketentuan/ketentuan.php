@@ -23,15 +23,15 @@
                             <?php
                             if($this->session->userdata('pesan')==true){
                                 if($this->session->userdata('pesan')=='t'){
-                                    $pesan="data berhasil ditambahkan";
+                                    $pesan="Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='e'){
-                                    $pesan="data berhasil diedit";
+                                    $pesan="Data Berhasil Diedit";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='h'){
-                                    $pesan="data berhasil dihapus";
+                                    $pesan="Data Berhasil Dihapus";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }
@@ -62,12 +62,12 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $k->nama_ketentuan; ?></td>
+                                            <td><?php echo ucfirst($k->nama_ketentuan); ?></td>
                                             <td><?php echo $k->point_pelanggaran_rendah; ?></td>
                                             <td><?php echo $k->point_pelanggaran_tinggi; ?></td>
                                             <td>
-                                            <a href="<?php echo base_url();?>ketentuan/hapus/<?php echo $k->id_ketentuan_point; ?>" class="btn btn-xs btn-danger">hapus</a>
-                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $k->id_ketentuan_point; ?>">edit</button>
+                                            <a href="<?php echo base_url();?>ketentuan/hapus/<?php echo $k->id_ketentuan_point; ?>" class="btn btn-xs btn-danger">Hapus</a>
+                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $k->id_ketentuan_point; ?>">Edit</button>
                                             </td>
                                         </tr>
                                         <?php $no++; } ?>
@@ -80,7 +80,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 
         <!-- modal tambah -->

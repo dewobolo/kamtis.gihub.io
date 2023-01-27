@@ -21,15 +21,15 @@
                             <?php
                             if($this->session->userdata('pesan')==true){
                                 if($this->session->userdata('pesan')=='t'){
-                                    $pesan="data berhasil ditambahkan";
+                                    $pesan="Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='e'){
-                                    $pesan="data berhasil diedit";
+                                    $pesan="Data Berhasil Diedit";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='h'){
-                                    $pesan="data berhasil dihapus";
+                                    $pesan="Data Berhasil Dihapus";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }
@@ -55,11 +55,11 @@
                                                 }
                                             }
                                         ?>
-                                        Nama Siswa : <?php echo $s->nama_siswa; ?><br>
-                                        No Induk Siswa : <?php echo $s->no_induk; ?><br>
-                                        Kelas Siswa : <?php echo $s->nama_kelas; ?><br>
-                                        Total Point Pelanggaran : <?php echo $s->jumlah_point; ?><br>
-                                        Keputusan Pelanggaran : diberikan <?php echo $ketentuan; ?>
+                                        Nama Siswa : <b><?php echo $s->nama_siswa; ?></b><br>
+                                        No Induk Siswa : <b><?php echo $s->no_induk; ?></b><br>
+                                        Kelas Siswa : <b><?php echo $s->nama_kelas; ?></b><br>
+                                        Total Point Pelanggaran : <b><?php echo $s->total_point; ?></b><br>
+                                        Keputusan Pelanggaran : diberikan <b><?php echo $ketentuan; ?></b>
                                         <?php } ?>
                                     </p>
                                 </div>
@@ -81,7 +81,7 @@
                                         <tr>
                                             <td><?php echo $no; ?></td>
                                             <td><?php echo $ps->nama_pelanggaran;?></td>
-                                            <td><?php echo date('d F Y',strtotime($ps->tanggal_pelanggaran)); ?></td>
+                                            <td><?php echo date('d F Y',strtotime($ps->tanggal_pelanggaran)); ?> (<?php echo date('H:i:s',strtotime($ps->tanggal_pelanggaran)); ?> WIB)</td>
                                             <td>
                                             <?php 
                                                 if($ps->level_pelapor=='guru'){
@@ -94,17 +94,17 @@
                                                 }elseif($ps->level_pelapor=='gds'){
                                                     foreach($gds as $gd){
                                                         if($gd->id_admin==$ps->id_pelapor){
-                                                            echo $g->nama_admin;
+                                                            echo $gd->nama_admin;
                                                             break;
                                                         }
                                                     }
                                                 }
                                             ?>
                                             </td>
-                                            <td><?php echo $ps->level_pelapor; ?></td>
+                                            <td><?php if($ps->level_pelapor == "gds") { echo 'BK'; } else echo "Guru"; ?></td>
                                             <td><?php echo $ps->point; ?></td>
                                             <td>
-                                                <a href="<?php echo base_url();?>pelanggaran_siswa/hapus_pelanggaran/<?php echo $this->uri->segment('3');?>/<?php echo $ps->id_pelanggaran_siswa; ?>" class="btn btn-xs btn-danger">hapus</a>
+                                                <a href="<?php echo base_url();?>pelanggaran_siswa/hapus_pelanggaran/<?php echo $this->uri->segment('3');?>/<?php echo $ps->id_pelanggaran_siswa; ?>" class="btn btn-xs btn-danger">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php $no++; } ?>
@@ -116,6 +116,6 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 

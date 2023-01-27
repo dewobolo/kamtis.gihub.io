@@ -34,7 +34,7 @@
                 <div class="col-md-4 col-md-offset-4" style="margin-top:80px; ">
                     <div class="white-box" style="border-top:3px solid #9C27B0; box-shadow: 1px 0px 4px 1px #00000087;">
                         <div class="text-center">
-                            <img src="<?php echo base_url();?>assets/smkn1.png" style="width:150px;">
+                            <img src="<?php echo base_url();?>assets/logo.png" style="width:150px;">
                         </div>
                         <h3 class="box-title" style="font-size:14px; text-align:center; margin-bottom:0px;">SELAMAT DATANG DI LOGIN GURU</h3>
                         <h4 style="font-size:12px; text-align:center; margin:0px; margin-bottom:20px;">APLIKASI REKAM POIN PELANGGARAN SISWA </h4>

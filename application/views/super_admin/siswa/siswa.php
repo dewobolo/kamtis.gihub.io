@@ -22,7 +22,7 @@
                                 <div class="form-group">
                                     <label for="email">Nama Kelas:</label>
                                     <select class="selectpicker form-control" data-show-subtext="true" data-live-search="true" name="kelas" required>
-                                        <option>-- pilih kelas --</option>
+                                        <option>-- Pilih Kelas --</option>
                                         <?php foreach($kelas as $k){ ?>
                                         <option  value="<?php echo $k->id_kelas; ?>" ><?php echo $k->nama_kelas; ?></option>
                                         <?php }?>
@@ -39,24 +39,24 @@
                         <div class="white-box">
                             <h3 class="box-title dataTable">Data Siswa</h3>
                             <button data-toggle="modal" data-target="#myModal" class="btn btn-sm btn-danger">Tambah</button>
-                            <button data-toggle="modal" data-target="#import" class="btn btn-sm btn-danger">Import data</button>
+                            <button data-toggle="modal" data-target="#import" class="btn btn-sm btn-danger">Import Data</button>
                             <a href="<?php echo base_url();?>siswa/download_file" class="btn btn-sm btn-danger">Download Format Import data</a>
                             <?php
                             if($this->session->userdata('pesan')==true){
                                 if($this->session->userdata('pesan')=='t'){
-                                    $pesan="data berhasil ditambahkan";
+                                    $pesan="Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='e'){
-                                    $pesan="data berhasil diedit";
+                                    $pesan="Data Berhasil Diedit";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='h'){
-                                    $pesan="data berhasil dihapus";
+                                    $pesan="Data Berhasil Dihapus";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='b'){
-                                    $pesan=$this->session->userdata('jum_data')." siswa kelas ".$this->session->userdata('nama_kelas')." berhasil diupload ";
+                                    $pesan=$this->session->userdata('jum_data')." Siswa Kelas ".$this->session->userdata('nama_kelas')." Berhasil Diupload ";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                     $this->session->set_userdata('jum_data','');
@@ -94,11 +94,11 @@
                                             <td><?php echo $k->nama_siswa; ?></td>
                                             <td><?php echo $k->no_induk; ?></td>
                                             <td><?php echo $k->nama_kelas; ?></td>
-                                            <td><?php echo $k->jenis_kelamin; ?></td>
+                                            <td><?php if($k->jenis_kelamin == "L") { echo "Laki-laki"; } else echo "Perempuan"; ?></td>
                                             <td><?php echo date('d F Y',strtotime($k->tanggal_input)); ?></td>
                                             <td>
-                                            <a href="<?php echo base_url();?>siswa/hapus/<?php echo $k->id_siswa; ?>" class="btn btn-xs btn-danger">hapus</a>
-                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $k->id_siswa;  ?>">edit</button>
+                                            <a href="<?php echo base_url();?>siswa/hapus/<?php echo $k->id_siswa; ?>" class="btn btn-xs btn-danger">Hapus</a>
+                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $k->id_siswa;  ?>">Edit</button>
                                             </td>
                                         </tr>
                                         <?php $no++; } ?>
@@ -111,7 +111,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 
         <!-- modal tambah -->

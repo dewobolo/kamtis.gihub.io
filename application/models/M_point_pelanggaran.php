@@ -129,7 +129,7 @@ class M_point_pelanggaran extends CI_Model{
             return $this->db->get();
         }else{
             $this->db->JOIN("jenis_pelanggaran","pelanggaran.id_jenis_pelanggaran=jenis_pelanggaran.id_jenis_pelanggaran","left");
-            $this->db->order_by('pelanggaran.id_pelanggaran', 'DESC');
+            $this->db->order_by('pelanggaran.point_pelanggaran', 'ASC');
             return $this->db->get();
         }
         

@@ -16,10 +16,10 @@
                 <!-- /row -->
                 <div class="row">
                 <div  class="col-sm-12" style="padding-bottom:20px;">
-                <a href="<?php echo base_url();?>laporan/index" class="btn btn-danger">10 siswa point tertinggi</a>
-                <a href="<?php echo base_url();?>laporan/siswa" class="btn btn-success">laporan rekap siswa</a>
-                <a href="<?php echo base_url();?>laporan/grafik" class="btn btn-warning">grafik pelanggaran</a>
-                <a href="<?php echo base_url();?>laporan/pelanggaran?p=semua&taw=<?php echo date('Y-m-d');?>&tak=<?php echo date('Y-m-d');?>" class="btn btn-info">laporan pelanggaran</a>
+                <a href="<?php echo base_url();?>laporan/index" class="btn btn-danger">10 Siswa Point Tertinggi</a>
+                <a href="<?php echo base_url();?>laporan/siswa" class="btn btn-success">Laporan Rekap Siswa</a>
+                <a href="<?php echo base_url();?>laporan/grafik" class="btn btn-warning">Grafik Pelanggaran</a>
+                <a href="<?php echo base_url();?>laporan/pelanggaran?p=semua&taw=<?php echo date('Y-m-d');?>&tak=<?php echo date('Y-m-d');?>" class="btn btn-info">Laporan Pelanggaran</a>
                 </div>
                     <div class="col-sm-12 data-tables">
                         <div class="white-box">
@@ -100,6 +100,6 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 

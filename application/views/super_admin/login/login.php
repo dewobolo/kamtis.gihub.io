@@ -61,6 +61,10 @@
                                         <button type="submit" class="btn btn-primary">Login</button>
                                     </div>
                             </form>
+                            
+                        </div>
+                        <div style="text-align: center;">
+                            ©<?= date("Y") ?> All Rights Reserved. <br>Created by <b>TIM IT GRISAWANGI</b> Privacy and Terms
                         </div>
                     </div>
                 </div>

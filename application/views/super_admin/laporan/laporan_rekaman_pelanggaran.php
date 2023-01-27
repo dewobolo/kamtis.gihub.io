@@ -16,10 +16,10 @@
                 <!-- /row -->
                 <div class="row">
                 <div  class="col-sm-12" style="padding-bottom:20px;">
-                <a href="<?php echo base_url();?>laporan/index" class="btn btn-danger">10 siswa point tertinggi</a>
-                <a href="<?php echo base_url();?>laporan/siswa" class="btn btn-success">laporan rekap siswa</a>
-                <a href="<?php echo base_url();?>laporan/grafik" class="btn btn-warning">grafik pelanggaran</a>
-                <a href="<?php echo base_url();?>laporan/pelanggaran?p=semua&taw=<?php echo date('Y-m-d');?>&tak=<?php echo date('Y-m-d');?>" class="btn btn-info">laporan pelanggaran</a>
+                <a href="<?php echo base_url();?>laporan/index" class="btn btn-danger">10 Siswa Point Tertinggi</a>
+                <a href="<?php echo base_url();?>laporan/siswa" class="btn btn-success">Laporan Rekap Siswa</a>
+                <a href="<?php echo base_url();?>laporan/grafik" class="btn btn-warning">Grafik Pelanggaran</a>
+                <a href="<?php echo base_url();?>laporan/pelanggaran?p=semua&taw=<?php echo date('Y-m-d');?>&tak=<?php echo date('Y-m-d');?>" class="btn btn-info">Laporan Pelanggaran</a>
                 </div>
                     <div class="col-sm-12 data-tables">
                         <div class="white-box">
@@ -53,7 +53,7 @@
                             <div class="text-center">Tertanggal  " <?php echo $keterangan_tanggal; ?>"</div>
                             <div class="box-white">
                                 </div>
-                                <button data-toggle="modal" data-target="#modal_cari" class="btn btn-primary">cari laporan</button>
+                                <button data-toggle="modal" data-target="#modal_cari" class="btn btn-primary">Cari Laporan</button>
                                 <div>
                                 </div>
                                     <div class="table-responsive" style="padding-top:20px;">
@@ -82,7 +82,7 @@
                                                     <td><?php echo $p->nama_siswa; ?></td>
                                                     <td><?php echo $p->no_induk; ?></td>
                                                     <td><?php echo $p->nama_kelas; ?></td>
-                                                    <td><?php echo $p->tanggal_pelanggaran; ?></td>
+                                                    <td><?php echo date('d F Y',strtotime($p->tanggal_pelanggaran)); ?> (<?php echo date('H:i:s',strtotime($p->tanggal_pelanggaran)); ?> WIB)</td>
                                                     <td><?php echo $p->nama_pelanggaran; ?></td>
                                                     <td>
                                                     <?php 
@@ -96,14 +96,14 @@
                                                         }elseif($p->level_pelapor=='gds'){
                                                             foreach($gds as $gd){
                                                                 if($gd->id_admin==$p->id_pelapor){
-                                                                    echo $g->nama_admin;
+                                                                    echo $gd->nama_admin;
                                                                     break;
                                                                 }
                                                             }
                                                         }
                                                     ?>
                                                     </td>
-                                                    <td><?php echo $p->level_pelapor; ?></td>
+                                                    <td><?php if($p->level_pelapor == "gds") { echo 'BK'; } else echo "Guru"; ?></td>
                                                     <td><?php echo $p->point; ?></td>
                                                 </tr>
                                                 <?php $no++; } ?>
@@ -118,7 +118,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 
 

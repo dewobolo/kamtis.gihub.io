@@ -4,14 +4,14 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
-                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigasi</span></h3>
+                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Menu</span></h3>
                 </div>
                 <ul class="nav" id="side-menu">
-                    <li style="padding: 70px 0 0;">
+                    <!-- <li style="padding: 70px 0 0;">
                         <a href="<?php echo base_url();?>dashboard/" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i>Dashboard</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <li style="padding: 70px 0 0;">
                         <a href="<?php echo base_url();?>Siswa/index" class="waves-effect"><i class="fa  fa-graduation-cap fa-fw"
                                 aria-hidden="true"></i>Siswa</a>
                     </li>
@@ -35,10 +35,10 @@
                         <a href="<?php echo base_url();?>Ketentuan/index" class="waves-effect"><i class="fa fa-legal fa-fw"
                                 aria-hidden="true"></i>Ketentuan</a>
                     </li>
-                    <!-- <li>
+                    <li>
                         <a href="<?php echo base_url();?>pelanggaran_siswa/index" class="waves-effect"><i class="fa fa-edit fa-fw"
                                 aria-hidden="true"></i> Pelanggaran Siswa</a>
-                    </li> -->
+                    </li>
                     <li>
                         <a href="<?php echo base_url();?>pelanggaran_siswa/data_siswa" class="waves-effect"><i class="fa fa-tags fa-fw"
                                 aria-hidden="true"></i>Data Pelanggaran Siswa</a>
@@ -51,10 +51,10 @@
                         <a href="<?php echo base_url();?>admin/index" class="waves-effect"><i class="fa fa-user fa-fw"
                                 aria-hidden="true"></i>Admin</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="<?php echo base_url();?>tentang_kami/index" class="waves-effect"><i class="fa fa-file-text fa-fw"
                                 aria-hidden="true"></i>Tentang Kami</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="center p-20">
                     <a href="<?php echo base_url();?>login/logout"

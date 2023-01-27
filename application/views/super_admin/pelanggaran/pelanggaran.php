@@ -23,15 +23,15 @@
                             <?php
                             if($this->session->userdata('pesan')==true){
                                 if($this->session->userdata('pesan')=='t'){
-                                    $pesan="data berhasil ditambahkan";
+                                    $pesan="Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='e'){
-                                    $pesan="data berhasil diedit";
+                                    $pesan="Data Berhasil Diedit";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='h'){
-                                    $pesan="data berhasil dihapus";
+                                    $pesan="Data Berhasil Dihapus";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }
@@ -66,8 +66,8 @@
                                             <td><?php echo $p->nama_jenis_pelanggaran; ?></td>
                                             <td><?php echo $p->point_pelanggaran; ?></td>
                                             <td>
-                                            <a href="<?php echo base_url();?>pelanggaran/hapus/<?php echo $p->id_pelanggaran; ?>" class="btn btn-xs btn-danger">hapus</a>
-                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $p->id_pelanggaran;   ?>">edit</button>
+                                            <a href="<?php echo base_url();?>pelanggaran/hapus/<?php echo $p->id_pelanggaran; ?>" class="btn btn-xs btn-danger">Hapus</a>
+                                            <button class="btn btn-xs btn-warning view_detail" relid="<?php echo $p->id_pelanggaran;   ?>">Edit</button>
                                             </td>
                                         </tr>
                                         <?php $no++; } ?>
@@ -80,7 +80,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 
         <!-- modal tambah -->

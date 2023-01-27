@@ -22,7 +22,7 @@
                                 <div class="form-group">
                                     <label for="email">Nama Kelas:</label>
                                     <select class="selectpicker form-control" data-show-subtext="true" data-live-search="true" name="kelas" required>
-                                        <option>-- pilih kelas --</option>
+                                        <option>-- Pilih Kelas --</option>
                                         <?php foreach($kelas as $k){ ?>
                                         <option  value="<?php echo $k->id_kelas; ?>" ><?php echo $k->nama_kelas; ?></option>
                                         <?php }?>
@@ -42,15 +42,15 @@
                             <?php
                             if($this->session->userdata('pesan')==true){
                                 if($this->session->userdata('pesan')=='t'){
-                                    $pesan="data berhasil ditambahkan";
+                                    $pesan="Data Berhasil Ditambahkan";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='e'){
-                                    $pesan="data berhasil diedit";
+                                    $pesan="Data Berhasil Diedit";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }elseif($this->session->userdata('pesan')=='h'){
-                                    $pesan="data berhasil dihapus";
+                                    $pesan="Data Berhasil Dihapus";
                                     $warna="alert-success";
                                     $this->session->set_userdata('pesan','');
                                 }
@@ -92,7 +92,7 @@
                                             <td><?php echo $k->nama_kelas; ?></td>
                                             <td><?php echo $jumlah_point; ?></td>
                                             <td>
-                                            <a href="<?php echo base_url();?>pelanggaran_siswa/hasil_input/<?php echo $k->id_siswa; ?>" class="btn btn-xs btn-danger">lihat</a>
+                                            <a href="<?php echo base_url();?>pelanggaran_siswa/hasil_input/<?php echo $k->id_siswa; ?>" class="btn btn-xs btn-danger">Lihat</a>
                                             
                                             </td>
                                         </tr>
@@ -106,6 +106,6 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2019 &copy; SMKN 1 BANYUWANGI IT DEVELOPMENT </footer>
+            <footer class="footer text-center"> <?= date('Y') ?> &copy; TIM IT SMK PGRI 1 GIRI</footer>
         </div>
 
