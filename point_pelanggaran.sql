@@ -1,184 +1,1429 @@
-﻿# Host: localhost  (Version: 5.5.5-10.4.27-MariaDB)
-# Date: 2023-01-27 12:24:03
-# Generator: MySQL-Front 5.3  (Build 4.102)
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jan 28, 2023 at 05:26 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
-/*!40101 SET NAMES utf8 */;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-#
-# Structure for table "admin"
-#
 
-DROP TABLE IF EXISTS `admin`;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `point_pelanggaran`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
 CREATE TABLE `admin` (
-  `id_admin` int(111) NOT NULL AUTO_INCREMENT,
+  `id_admin` int(111) NOT NULL,
   `nama_admin` varchar(111) NOT NULL,
   `username` varchar(111) NOT NULL,
   `password` varchar(111) NOT NULL,
   `level_akun` varchar(111) NOT NULL,
-  `status_akun` varchar(111) NOT NULL,
-  PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `status_akun` varchar(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "admin"
-#
+--
+-- Dumping data for table `admin`
+--
 
-INSERT INTO `admin` VALUES (1,'Ridho Kurniawan, M.Kom','ridho','uye','guru bk','aktif');
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`, `level_akun`, `status_akun`) VALUES
+(1, 'Ridho Kurniawan, M.Kom', 'ridho', 'uye', 'guru bk', 'aktif'),
+(4, 'Rio Cundris Kurniawan, S.T', 'rio', 'rck', 'guru bk', 'aktif'),
+(5, 'Shinta Tyas Prihartini, S.Tp, S.Pd	', 'shinta', 'smkgrisawangi@', 'guru bk', 'aktif'),
+(6, 'Dra. Ninik Dwi Artuti	', 'ninik', 'smkgrisawangi@', 'guru bk', 'aktif'),
+(7, 'Tentri Purbawanti, S.Pd', 'tentri', 'smkgrisawangi@', 'guru bk', 'aktif'),
+(8, 'Titin Nur Akbari, S.Pd', 'titin', 'smkgrisawangi@', 'gds', 'aktif'),
+(9, 'Syamsu Abdul Hamid, Ss', 'syamsu', 'smkgrisawangi@', 'gds', 'aktif');
 
-#
-# Structure for table "guru"
-#
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `guru`;
+--
+-- Table structure for table `guru`
+--
+
 CREATE TABLE `guru` (
-  `id_guru` int(111) NOT NULL AUTO_INCREMENT,
+  `id_guru` int(111) NOT NULL,
   `nama_guru` varchar(111) NOT NULL,
   `nip` int(111) NOT NULL,
   `mata_pelajaran` varchar(111) NOT NULL,
   `username` varchar(111) NOT NULL,
   `password` varchar(111) NOT NULL,
-  `status_akun` varchar(111) NOT NULL,
-  PRIMARY KEY (`id_guru`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `status_akun` varchar(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "guru"
-#
+--
+-- Dumping data for table `guru`
+--
 
-INSERT INTO `guru` VALUES (5,'Dra. Lilik Sudjiharlina',0,'Bimbingan dan Konseling ','u12345','u12345','aktif'),(6,'Dra. Tri Atmiji ',0,'Bimbingan dan Konseling ','u12346','u12346','aktif'),(7,'Drs. Priyo Budi Jatmiko ',0,'Bimbingan dan Konseling ','u12347','u12347','aktif'),(8,'Mega Silviana, S.Pd. ',0,'Bimbingan dan Konseling ','u12348','u12348','aktif'),(9,'Sri Ilmiyati Zakiyah, S.Ag',0,'Pendidikan Agama dan Budi Pekerti','u12349','u12349','aktif'),(10,'Slamet Hariyadi, S.Ag. M.Pd.I',0,'Pendidikan Agama dan Budi Pekerti','u12350','u12350','aktif'),(11,'Haris Budi Utomo, S.Ag',0,'Pendidikan Agama dan Budi Pekerti','u12351','u12351','aktif'),(12,'Muhamad Syafril, S.Ag.',0,'Pendidikan Agama dan Budi Pekerti','u12352','u12352','aktif'),(13,'Siti Istiqomah, S.Pd.I',0,'Pendidikan Agama dan Budi Pekerti','u12353','u12353','aktif'),(14,'Dra. Any Diah Herinawati , M.Pd',0,'Pendidikan Pancasila dan Kewarganegaraan','u12354','u12354','aktif'),(15,'Didik Sudarmo, S.Pd',0,'Pendidikan Pancasila dan Kewarganegaraan','u12355','u12355','aktif'),(16,'Dra. Isti\'ah',0,'Pendidikan Pancasila dan Kewarganegaraan','u12356','u12356','aktif'),(17,'Dra. Ida Suryaningrum',0,'Bahasa Indonesia','u12357','u12357','aktif'),(18,'Suliha, M.Pd.',0,'Bahasa Indonesia','u12358','u12358','aktif'),(19,'Lilik Ernawati, S.S.',0,'Bahasa Indonesia','u12359','u12359','aktif'),(20,'Didik  Supriyadi , S.S, M.Pd.',0,'Bahasa Indonesia','u12360','u12360','aktif'),(21,'Dra. Dally Indah Kabul',0,'Bahasa Indonesia','u12361','u12361','aktif'),(22,'Winda Primasanti, S.Pd.',0,'Bahasa Indonesia','u12362','u12362','aktif'),(23,'Drs. Ganet Supendi, M.Si.',0,'Matematika','u12363','u12363','aktif'),(24,'Drs. M. Muhlisin',0,'Matematika','u12364','u12364','aktif'),(25,'Drs. Hasan Asyari',0,'Matematika','u12365','u12365','aktif'),(26,'Puty Candra D, M.Pd.',0,'Matematika','u12366','u12366','aktif'),(27,'Endang Wijiati, S.Pd, M.Pd',0,'Matematika','u12367','u12367','aktif'),(28,'Drs. Suwei Susiyanto',0,'Matematika','u12368','u12368','aktif'),(29,'Zakiyatunnida, S.Pd',0,'Matematika','u12369','u12369','aktif'),(30,'Umi Rahayu, S.Pd.',0,'Matematika','u12370','u12370','aktif'),(31,'Drs. Pramuji Edy Prabawanto ',0,'Matematika','u12371','u12371','aktif'),(32,'Drs. Kartamun',0,'Sejarah Indonesia','u12372','u12372','aktif'),(33,'Drs. Heri Sukamto',0,'Sejarah Indonesia','u12373','u12373','aktif'),(34,'Lutvita Fariana, S.E.',0,'Sejarah Indonesia','u12374','u12374','aktif'),(35,'Satriyo Joko S, S.E.,M.Pd.',0,'Bahasa Inggris','u12375','u12375','aktif'),(36,'Moh. Saleh Mahdi, M.Pd.',0,'Bahasa Inggris','u12376','u12376','aktif'),(37,'Tri Sukesi Sulistyowati, M.Pd.',0,'Bahasa Inggris','u12377','u12377','aktif'),(38,'Eko Widdy Astuti, M.Pd.',0,'Bahasa Inggris','u12378','u12378','aktif'),(39,'Polin Febiana , M.Pd.',0,'Bahasa Inggris','u12379','u12379','aktif'),(40,'Ani Eka Nur H, S.Pd.',0,'Bahasa Inggris','u12380','u12380','aktif'),(41,'Yudi Wahyu Prabasangka, M.Pd.',0,'Seni Budaya','u12381','u12381','aktif'),(42,'Drs. Edy Purdianto, M.Pd.',0,'Seni Budaya','u12382','u12382','aktif'),(43,'Murniati S.Pd',0,'Seni Budaya','u12383','u12383','aktif'),(44,'Umi  Yuliatiningsih, S.Pd',0,'Seni Budaya','u12384','u12384','aktif'),(45,'Drs. Joko Triyadni Adi P',0,'Pendidikan Jasmani, Olah Raga & Kes.','u12385','u12385','aktif'),(46,'Drs. Sugiarto, M.Pd.',0,'Pendidikan Jasmani, Olah Raga & Kes.','u12386','u12386','aktif'),(47,'Drs. H. Hanif Irianto',0,'Pendidikan Jasmani, Olah Raga & Kes.','u12387','u12387','aktif'),(48,'Evi Setyaningsih, S.Pd.T',0,'Muatan Lokal (Bahasa Jawa)','u12388','u12388','aktif'),(49,'Drs. Edy Purdianto, M.Pd.',0,'Muatan Lokal (Bahasa Jawa)','u12389','u12389','aktif'),(50,'Umi  Yuliatiningsih, S.Pd',0,'IPA / IPA Terapan ','u12390','u12390','aktif'),(51,'Drs. Edy Purdianto, M.Pd.',0,'Fisika','u12391','u12391','aktif'),(52,'Murniati S.Pd',0,'Kimia','u12392','u12392','aktif'),(53,'Drs. Ismurdianto',0,'Simulasi dan Komunikasi Digital ','u12393','u12393','aktif'),(54,'Katmirah, S.Pd',0,'Simulasi dan Komunikasi Digital ','u12394','u12394','aktif'),(55,'Drs. Wahyudin, M.M',0,'Simulasi dan Komunikasi Digital ','u12395','u12395','aktif'),(56,'Melanoke Pramanik, S.Kom',0,'Prod. Rekayasa Perangkat Lunak + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12396','u12396','aktif'),(57,'Retno Ires Devina Y, S.ST',0,'Prod. Rekayasa Perangkat Lunak + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12397','u12397','aktif'),(58,'M. Sukman Hadi, S.Kom',0,'Prod. Rekayasa Perangkat Lunak','u12398','u12398','aktif'),(59,'Achriyatul Setyorini, S.ST.',0,'Prod. Rekayasa Perangkat Lunak + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12399','u12399','aktif'),(60,'Noval Harwin Rozin, S.Kom',0,'Prod. Rekayasa Perangkat Lunak + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12400','u12400','aktif'),(61,'M. Arief inur Rozie, M.Pd.',0,'Prod. Teknik Komputer dan Jaringan','u12401','u12401','aktif'),(62,'Haykal, S.Pd.',0,'Prod. Teknik Komputer dan Jaringan','u12402','u12402','aktif'),(63,'Slamet Siswanto U, M.Kom.',0,'Prod. Teknik Komputer dan Jaringan','u12403','u12403','aktif'),(64,'Dwi Handayani, S.Kom',0,'Prod. Teknik Komputer dan Jaringan','u12404','u12404','aktif'),(65,'Puris Kumalasari Almanar, S.Pd',0,'Prod. Teknik Komputer dan Jaringan + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12405','u12405','aktif'),(66,'Yusron Ali Wafa, S.Kom',0,'Prod. Teknik Komputer dan Jaringan + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12406','u12406','aktif'),(67,'Ferdi Barlianto, S.T.',0,'Prod. Multimedia','u12407','u12407','aktif'),(68,'Drs. Wahyudin, M.M',0,'Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12408','u12408','aktif'),(69,'Jaenuri, S.Kom',0,'Prod. Multimedia + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12409','u12409','aktif'),(70,'Saugi Yamani, S.Kom',0,'Prod. Multimedia + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12410','u12410','aktif'),(71,'Erni Sukmawati, S.Kom',0,'Prod. Multimedia','u12411','u12411','aktif'),(72,'Nuansa Rizky Kharosa, S.Kom',0,'Prod. Multimedia','u12412','u12412','aktif'),(73,'Drs. Sunyoto',0,'Prod. Bisnis Daring dan Pemasaran','u12413','u12413','aktif'),(74,'Andi Seha, S.Pd',0,'Prod. Bisnis Daring dan Pemasaran','u12414','u12414','aktif'),(75,'Sehani Asriminingsih, M.Pd',0,'Prod. Bisnis Daring dan Pemasaran','u12415','u12415','aktif'),(76,'Any Puji Astuti, S.Pd',0,'Prod. Bisnis Daring dan Pemasaran + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12416','u12416','aktif'),(77,'Dra. Tutik Sumarni (Pensiun bulan September 2019)',0,'Prod. Bisnis Daring dan Pemasaran','u12417','u12417','aktif'),(78,'Dra. Ida Mia Khrismiana',0,'Prod. Otomatisasi dan Tata Kelola Perkantoran','u12418','u12418','aktif'),(79,'Erlina Yunarwati, S.Pd',0,'Prod. Otomatisasi dan Tata Kelola Perkantoran','u12419','u12419','aktif'),(80,'Ida Kristina, S.Pd',0,'Prod. Otomatisasi dan Tata Kelola Perkantoran','u12420','u12420','aktif'),(81,'Erni Wahyuni, S.Pd',0,'Prod. Otomatisasi dan Tata Kelola Perkantoran','u12421','u12421','aktif'),(82,'Elia Rosa, S.Pd.',0,'Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12422','u12422','aktif'),(83,'Drs. Anang Hari Wahyudi',0,'Prod. Akuntansi dan Keuangan Lembaga','u12423','u12423','aktif'),(84,'Dra. Hartati Retno W, M.M',0,'Prod. Akuntansi dan Keuangan Lembaga + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12424','u12424','aktif'),(85,'Heri Nurhadi, S.E, M.M',0,'Prod. Akuntansi dan Keuangan Lembaga','u12425','u12425','aktif'),(86,'Dra. Zulfah',0,'Prod. Akuntansi dan Keuangan Lembaga + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12426','u12426','aktif'),(87,'Dwi Warsi Mimien K, S.Pd, M.M',0,'Prod. Akuntansi dan Keuangan Lembaga + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12427','u12427','aktif'),(88,'Karsiyahwati, S.E, ',0,'Prod. Akuntansi dan Keuangan Lembaga + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12428','u12428','aktif'),(89,'Hadi Pranowo, S.E',0,'Prod. Akuntansi dan Keuangan Lembaga','u12429','u12429','aktif'),(90,'Maulida Lathifiyana, S.Pd',0,'Prod. Akuntansi dan Keuangan Lembaga','u12430','u12430','aktif'),(91,'Dra. Choridah',0,'Produktif Perhotelan','u12431','u12431','aktif'),(92,'Dra. Silvia Maharani',0,'Produktif Perhotelan','u12432','u12432','aktif'),(93,'Rohimah, S.St.Par',0,'Produktif Perhotelan','u12433','u12433','aktif'),(94,'Masrifah Hidayati, S.Pd.',0,'Produktif Perhotelan','u12434','u12434','aktif'),(95,'Umi Fitriyani, S.Pd.',0,'Produktif Perhotelan + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12435','u12435','aktif'),(96,'Elia Rosa, S.Pd.',0,'Produktif Perhotelan','u12436','u12436','aktif'),(97,'Endang Istorina, S.St. Par.',0,'Produktif Perhotelan','u12437','u12437','aktif'),(98,'Dimas Sanrizki, S.Sn',0,' Prod. Desain Komunikasi Visual','u12438','u12438','aktif'),(99,'Dwi Dedy Susandi,S.Sn',0,' Prod. Desain Komunikasi Visual','u12439','u12439','aktif'),(100,'Mutya Dinda Ardila, S.Kom.',0,' Prod. Desain Komunikasi Visual','u12440','u12440','aktif'),(101,'Erni Sukmawati, S.Kom',0,' Prod. Desain Komunikasi Visual + Produk Kreatif dan Kewirausahaan (K-13 Revisi)','u12441','u12441','aktif'),(102,'Rizki Indah Tantri, S.Pd. ',0,' Prod. Desain Komunikasi Visual','u12442','u12442','aktif'),(103,'Slamet Diharjo, S.Sn',0,'Produk Kreatif dan Kewirausahaan (K-13 Revisi)Produk Kreatif dan Kewirausahaan','u12443','u12443','aktif'),(104,'Ossy Widya K, S.Pd',0,'Produktif Seni Tari','u12444','u12444','aktif'),(105,'Yulia Ainul Warda, S.Pd.',0,'Produktif Seni Tari','u12445','u12445','aktif'),(106,'Laili Khoirun Nisak, S.Pd. ',0,'Produktif Seni Tari','u12446','u12446','aktif');
+INSERT INTO `guru` (`id_guru`, `nama_guru`, `nip`, `mata_pelajaran`, `username`, `password`, `status_akun`) VALUES
+(1, 'Sunarto, S.Pd., S.Kom.', 0, 'Kepala Sekolah', 'smkgrisawangi1', 'smkgrisawangi', 'aktif'),
+(2, 'Abdul Ridwan, S.Kom.', 0, 'Produktif TJKT', 'smkgrisawangi2', 'smkgrisawangi', 'aktif'),
+(3, 'Abhillio Gitaloka Premadasa, M.Sn.', 0, 'Seni Budaya', 'smkgrisawangi3', 'smkgrisawangi', 'aktif'),
+(4, 'Ahmad Fauzi, S.Pd.', 0, 'Pendidikan Agama Islam', 'smkgrisawangi4', 'smkgrisawangi', 'aktif'),
+(5, 'Ahmad Wira Handoko, S.Tr. Par.', 0, 'Produktif Perhotelan', 'smkgrisawangi5', 'smkgrisawangi', 'aktif'),
+(6, 'Andin Martiasari, M.H.', 0, 'PPKN', 'smkgrisawangi6', 'smkgrisawangi', 'aktif'),
+(7, 'Atini Hasanah, S.Pd.', 0, 'Matematika', 'smkgrisawangi7', 'smkgrisawangi', 'aktif'),
+(8, 'Bagus Ainuddin Jarkesi, S.Ak', 0, 'Produktif AKL', 'smkgrisawangi8', 'smkgrisawangi', 'aktif'),
+(9, 'Candra Tya Risty, S.Pd.', 0, 'Produktif MPLB', 'smkgrisawangi9', 'smkgrisawangi', 'aktif'),
+(10, 'Cory Febdela Ulya, S.Tr.Par.', 0, 'Produktif Perhotelan', 'smkgrisawangi10', 'smkgrisawangi', 'aktif'),
+(11, 'Desi Ayu Susilowati Dmc, S.Pd', 0, 'IPAS', 'smkgrisawangi11', 'smkgrisawangi', 'aktif'),
+(12, 'Dini Angga Maharani, S.Pd.', 0, 'Olahraga', 'smkgrisawangi12', 'smkgrisawangi', 'aktif'),
+(13, 'Dra. Ida Mia Khrismiana', 0, 'Produktif MPLB', 'smkgrisawangi13', 'smkgrisawangi', 'aktif'),
+(14, 'Dra. Ninik Dwi Artuti', 0, 'Bimbingan dan Konseling', 'smkgrisawangi14', 'smkgrisawangi', 'aktif'),
+(15, 'Drs. Abdul Kholik, M.Pd Or', 0, 'Olahraga', 'smkgrisawangi15', 'smkgrisawangi', 'aktif'),
+(16, 'Drs. M. Saleh Mahdi, M.Pd', 0, 'Bahasa Inggris', 'smkgrisawangi16', 'smkgrisawangi', 'aktif'),
+(17, 'Dwi Ahmad Andriyanto, S.S.', 0, 'Bahasa Indonesia', 'smkgrisawangi17', 'smkgrisawangi', 'aktif'),
+(18, 'Dyah Pamularsih, S.S.', 0, 'Bahasa Indonesia', 'smkgrisawangi18', 'smkgrisawangi', 'aktif'),
+(19, 'Erni Widayanti, S.S.', 0, 'Bahasa Jawa', 'smkgrisawangi19', 'smkgrisawangi', 'aktif'),
+(20, 'Evi Fifiyanti, S.S.', 0, 'Bahasa Inggris', 'smkgrisawangi20', 'smkgrisawangi', 'aktif'),
+(21, 'Fentrilia Rahayu Wulandari, S.Pd', 0, 'PPKN', 'smkgrisawangi21', 'smkgrisawangi', 'aktif'),
+(22, 'Herocyma, S.Kom', 0, 'Produktif TJKT', 'smkgrisawangi22', 'smkgrisawangi', 'aktif'),
+(23, 'Hj. Lusi Wardiani, S.Pd', 0, 'Produktif PM', 'smkgrisawangi23', 'smkgrisawangi', 'aktif'),
+(24, 'Hj. Sri Rahayu, S.Pd', 0, 'Produktif Kuliner', 'smkgrisawangi24', 'smkgrisawangi', 'aktif'),
+(25, 'Husni Mirkas Dauly, S.E., B.Sc, M.Pd', 0, 'Produktif MPLB', 'smkgrisawangi25', 'smkgrisawangi', 'aktif'),
+(26, 'Inten Tamimi, S.E.', 0, 'Produktif MPLB', 'smkgrisawangi26', 'smkgrisawangi', 'aktif'),
+(27, 'Ipo Bastiyan, M.Pd', 0, 'Bahasa Inggris', 'smkgrisawangi27', 'smkgrisawangi', 'aktif'),
+(28, 'Izzatuna Mutiara  Nabila, S.Pd', 0, 'Produktif AKL', 'smkgrisawangi28', 'smkgrisawangi', 'aktif'),
+(29, 'Lely Dian Aprliani, S.Pd', 0, 'Produktif MPLB', 'smkgrisawangi29', 'smkgrisawangi', 'aktif'),
+(30, 'Lingga Asni Maulina, S.Pd', 0, 'Produktif AKL', 'smkgrisawangi30', 'smkgrisawangi', 'aktif'),
+(31, 'Lusiana, S.Pd', 0, 'Produktif AKL', 'smkgrisawangi31', 'smkgrisawangi', 'aktif'),
+(32, 'Mathasim, S.E., M.M.', 0, 'Produktif AKL', 'smkgrisawangi32', 'smkgrisawangi', 'aktif'),
+(33, 'Max Arens Walalayo, S.Pd', 0, 'Produktif PM', 'smkgrisawangi33', 'smkgrisawangi', 'aktif'),
+(34, 'Novi Dwi Astuti, S.Pd', 0, 'Matematika', 'smkgrisawangi34', 'smkgrisawangi', 'aktif'),
+(35, 'Qurrata AYunin, S.Pd.', 0, 'Pendidikan Agama Islam', 'smkgrisawangi35', 'smkgrisawangi', 'aktif'),
+(36, 'Rahayu Dessy Pratiwi, S.Pd', 0, 'Produktif MPLB', 'smkgrisawangi36', 'smkgrisawangi', 'aktif'),
+(37, 'Ridho Kurniawan, M.Kom', 0, 'Produktif TJKT', 'smkgrisawangi37', 'smkgrisawangi', 'aktif'),
+(38, 'Rina Wahyu Anggriyani, S.Pd', 0, 'Produktif MPLB', 'smkgrisawangi38', 'smkgrisawangi', 'aktif'),
+(39, 'Rinda Choirina Hartati, S.Pd', 0, 'Matematika', 'smkgrisawangi39', 'smkgrisawangi', 'aktif'),
+(40, 'Rio Cundris Kurniawan, St', 0, 'Produktif TJKT', 'smkgrisawangi40', 'smkgrisawangi', 'aktif'),
+(41, 'Rosy Rohma Firdana, S.Pd', 0, 'Matematika', 'smkgrisawangi41', 'smkgrisawangi', 'aktif'),
+(42, 'Satrio Joko S, Se, M.Pd', 0, 'Bahasa Inggris', 'smkgrisawangi42', 'smkgrisawangi', 'aktif'),
+(43, 'Shela Okta Grefina, S.Pd', 0, 'Matematika', 'smkgrisawangi43', 'smkgrisawangi', 'aktif'),
+(44, 'Shinta Tyas Prihartini, S.Tp, S.Pd', 0, 'Bimbingan dan Konseling', 'smkgrisawangi44', 'smkgrisawangi', 'aktif'),
+(45, 'Sukma Elka Permata Anna, S.Pd', 0, 'Matematika', 'smkgrisawangi45', 'smkgrisawangi', 'aktif'),
+(46, 'Sulhak, Spd. Mm', 0, 'Produktif PM', 'smkgrisawangi46', 'smkgrisawangi', 'aktif'),
+(47, 'Sunawan, S.Pd', 0, 'IPAS', 'smkgrisawangi47', 'smkgrisawangi', 'aktif'),
+(48, 'Syamsu Abdul Hamid, Ss', 0, 'Bahasa Jepang', 'smkgrisawangi48', 'smkgrisawangi', 'aktif'),
+(49, 'Taufikur Rohman, S.Pd.I', 0, 'Pendidikan Agama Islam', 'smkgrisawangi49', 'smkgrisawangi', 'aktif'),
+(50, 'Teguh Adhi Kurniawan, S.Kom', 0, 'Produktif TJKT', 'smkgrisawangi50', 'smkgrisawangi', 'aktif'),
+(51, 'Tentri Purbawanti, S.Pd', 0, 'Bimbingan dan Konseling', 'smkgrisawangi51', 'smkgrisawangi', 'aktif'),
+(52, 'Titin Nur Akbari, S.Pd', 0, 'Matematika', 'smkgrisawangi52', 'smkgrisawangi', 'aktif'),
+(53, 'Wahyu Satya Kusuma, S.Pd', 0, 'Produktif MPLB', 'smkgrisawangi53', 'smkgrisawangi', 'aktif'),
+(54, 'Yunita Wulandari, Se', 0, 'Produktif PM', 'smkgrisawangi54', 'smkgrisawangi', 'aktif'),
+(55, 'Debbi Indah Palupi, S.Pd.', 0, 'Produktif Kuliner', 'smkgrisawangi55', 'smkgrisawangi', 'aktif');
 
-#
-# Structure for table "jenis_pelanggaran"
-#
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `jenis_pelanggaran`;
+--
+-- Table structure for table `jenis_pelanggaran`
+--
+
 CREATE TABLE `jenis_pelanggaran` (
-  `id_jenis_pelanggaran` int(111) NOT NULL AUTO_INCREMENT,
-  `nama_jenis_pelanggaran` varchar(111) NOT NULL,
-  PRIMARY KEY (`id_jenis_pelanggaran`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id_jenis_pelanggaran` int(111) NOT NULL,
+  `nama_jenis_pelanggaran` varchar(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "jenis_pelanggaran"
-#
+--
+-- Dumping data for table `jenis_pelanggaran`
+--
 
-INSERT INTO `jenis_pelanggaran` VALUES (1,'SIKAP PERILAKU'),(2,'KERAJINAN'),(3,'KERAPIAN');
+INSERT INTO `jenis_pelanggaran` (`id_jenis_pelanggaran`, `nama_jenis_pelanggaran`) VALUES
+(1, 'SIKAP PERILAKU'),
+(2, 'KERAJINAN'),
+(3, 'KERAPIAN');
 
-#
-# Structure for table "kelas"
-#
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `kelas`;
+--
+-- Table structure for table `kelas`
+--
+
 CREATE TABLE `kelas` (
-  `id_kelas` int(111) NOT NULL AUTO_INCREMENT,
+  `id_kelas` int(111) NOT NULL,
   `nama_kelas` varchar(111) NOT NULL,
-  `id_wali_kelas` int(111) NOT NULL,
-  PRIMARY KEY (`id_kelas`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id_wali_kelas` int(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "kelas"
-#
+--
+-- Dumping data for table `kelas`
+--
 
-INSERT INTO `kelas` VALUES (2,'XII RPL 1',2),(3,'XII RPL 2',2),(4,'XII TKJ 1',2),(6,'XII MM 1',1),(7,'XII MM 2',1),(14,'XII BDPM 1',1),(15,'XII BDPM 2',1),(16,'XII OTKP 1 ',1),(17,'XII OTKP 2 ',1),(18,'XII AK 1',1),(19,'XII AK 2',1),(20,'XII AK 3',1),(21,'XII PH 1 ',1),(22,'XII PH 2',1),(23,'XII PH 3',1),(24,'XII DKV 1 ',2),(25,'XII DKV 2',1),(26,'XII ST 1',1),(27,'XI RPL 1',1),(28,'XI RPL 2',1),(29,'XI TKJ 1',1),(31,'XI TKJ 2',1),(32,'XI MM 1',1),(33,'XI MM 2',1),(34,'XI BDPM 1',1),(35,'XI BDPM 2',1),(36,'XI OTKP 1 ',1),(37,'XI OTKP 2',1),(38,'XI AK 1',1),(39,'XI AK 2',1),(40,'XI AK 3',1),(41,'XI PH 1',1),(42,'XI PH 2',1),(43,'XI PH 3',1),(44,'XI DKV 1',1),(45,'XI DKV 2',1),(46,'XI ST 1',1),(47,'XI ST 2',1),(48,'X RPL 1 ',1),(49,'X RPL 2',1),(50,'X TKJ 1 ',1),(52,'X TKJ 2',1),(54,'X MM 1',1),(55,'X MM 2',1),(56,'X BDPM 1',1),(57,'X BDPM 2',1),(58,'X OTKP 1',1),(59,'X OTKP 2',1),(60,'X AK 1',1),(61,'X AK 2',1),(62,'X AK 3',1),(63,'X PH 1',1),(64,'X PH 2',1),(65,'X PH 3',1),(67,'X DKV 1',1),(68,'X DKV 2',1),(69,'X ST 1',1),(70,'X ST 2',1),(71,'XII TKJ 2',1);
+INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `id_wali_kelas`) VALUES
+(1, 'X MPLB 1', 11),
+(2, 'X MPLB 2', 18),
+(3, 'X MPLB 3', 3),
+(4, 'X AKL', 28),
+(5, 'X PM 1', 17),
+(6, 'X PM 2', 43),
+(7, 'X KULINER 1', 39),
+(8, 'X KULINER 2', 41),
+(9, 'X PERHOTELAN', 5),
+(10, 'X TJKT 1', 48),
+(11, 'X TJKT 2', 22),
+(12, 'XI MP 1', 38),
+(13, 'XI MP 2', 6),
+(14, 'XI AK 1', 14),
+(15, 'XI AK 2', 15),
+(16, 'XI BR 1', 19),
+(17, 'XI BR 2', 35),
+(18, 'XI KULINER 1', 34),
+(19, 'XI KULINER 2', 21),
+(20, 'XI TKJ 1', 12),
+(21, 'XI TKJ 2', 50),
+(22, 'XII OTKP 1', 52),
+(23, 'XII OTKP 2', 53),
+(24, 'XII OTKP 3', 29),
+(25, 'XII AKL 1', 31),
+(26, 'XII AKL 2', 8),
+(27, 'XII BDP 1', 26),
+(28, 'XII BDP 2', 54),
+(29, 'XII TKJ 1', 4),
+(30, 'XII TKJ 2', 7),
+(31, 'XII TB', 49);
 
-#
-# Structure for table "ketentuan_point"
-#
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `ketentuan_point`;
+--
+-- Table structure for table `ketentuan_point`
+--
+
 CREATE TABLE `ketentuan_point` (
-  `id_ketentuan_point` int(111) NOT NULL AUTO_INCREMENT,
+  `id_ketentuan_point` int(111) NOT NULL,
   `nama_ketentuan` text NOT NULL,
   `point_pelanggaran_rendah` int(111) NOT NULL,
-  `point_pelanggaran_tinggi` int(111) NOT NULL,
-  PRIMARY KEY (`id_ketentuan_point`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `point_pelanggaran_tinggi` int(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "ketentuan_point"
-#
+--
+-- Dumping data for table `ketentuan_point`
+--
 
-INSERT INTO `ketentuan_point` VALUES (1,'peringatan ke 1 ( oleh wali kelas )',10,25),(2,'peringatan ke 2 ( wali kelas dan K3 )',26,50),(3,'Panggilan Orang Tua ke 1 ( oleh wali kelas )',51,100),(4,'Panggilan Orang Tua ke 2 (  Wali Kelas dan guru BK )',101,150),(5,'Panggilan Orang Tua ke 3 ( Wali Kelas, Guru, BK dan K3 )',151,200),(6,'Dikembalikan ke orang tua ( Kepala Sekolah )',201,500);
+INSERT INTO `ketentuan_point` (`id_ketentuan_point`, `nama_ketentuan`, `point_pelanggaran_rendah`, `point_pelanggaran_tinggi`) VALUES
+(1, 'Peringatan lisan (Wali Kelas)', 1, 10),
+(2, 'Membersihkan lingkungan sekolah (Wali Kelas)', 11, 20),
+(3, 'Peringatan tertulis dan melaksanakan tugas dari sekolah (Wali Kelas dan BK)', 21, 30),
+(4, 'Peringatan tertulis dan pemanggilan orang tua  (Wali Kelas, BK dan Orang Tua)', 31, 40),
+(5, 'Melaksanakan tugas dari sekolah dan membuat surat pernyataan diatas materai 10.000 serta diketahui orang tua (Wali Kelas, BK dan Orang Tua)', 41, 50),
+(6, 'Membuat surat pernyataan diatas materai 10.000 diketahui orang tua serta skorsing 2 hari kalender (Wali Kelas, BK dan Orang Tua)', 51, 60),
+(7, 'Membuat surat pernyataan diatas materai 10.000 diketahui orang tua serta skorsing 3 hari kalender (Wali Kelas, BK dan Orang Tua)', 61, 70),
+(8, 'Membuat surat pernyataan diatas materai 10.000 diketahui orang tua serta skorsing 4 hari kalender (Wali Kelas, BK dan Orang Tua)', 71, 80),
+(9, 'Membuat surat pernyataan diatas materai 10.000 diketahui orang tua serta skorsing 5 hari kalender (Wali Kelas, BK dan Orang Tua)', 81, 90),
+(10, 'Membuat surat pernyataan diatas materai 10.000 diketahui orang tua serta skorsing 6 hari kalender (Wali Kelas, BK dan Orang Tua)', 91, 100),
+(11, 'Dikembalikan kepada orang tua (Wali Kelas, BK, Orang Tua, K3 dan Waka Kesiswaan)', 101, 110);
 
-#
-# Structure for table "pelanggaran"
-#
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `pelanggaran`;
+--
+-- Table structure for table `pelanggaran`
+--
+
 CREATE TABLE `pelanggaran` (
-  `id_pelanggaran` int(111) NOT NULL AUTO_INCREMENT,
+  `id_pelanggaran` int(111) NOT NULL,
   `nama_pelanggaran` varchar(111) NOT NULL,
   `point_pelanggaran` int(111) NOT NULL,
-  `id_jenis_pelanggaran` int(111) NOT NULL,
-  PRIMARY KEY (`id_pelanggaran`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id_jenis_pelanggaran` int(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "pelanggaran"
-#
+--
+-- Dumping data for table `pelanggaran`
+--
 
-INSERT INTO `pelanggaran` VALUES (4,'Tidak memasukkan baju',10,3),(5,'Rambut tidak sesuai ketentuan ( peserta didik laki - laki ) ',20,3),(6,'Seragam / Kaos olahraga / topi yang dicoret coret',10,3),(7,'Mecat rambut,kuku,aksesoris dan berdandan berlebihan',20,3),(8,'Seragam atribut tidak lengkap',10,3),(9,'Celana atau rok ketat/street',10,3),(10,'Tidak memakai kaos kaki',10,3),(11,'Memakai kaos kaki tidak sesuai ketentuan',10,3),(12,'Tidak memakai ikat pinggang / dasi / hasduk',10,3),(13,'Memakai ikat pinggang / dasi / hasduk tidak sesuai',10,3),(14,'Tidak memakai sepatu sesuai standart',10,3),(15,'Datang terlambat',10,2),(16,'Tidak mengikuti pelajaran tanpa ijin',10,2),(17,'Meninggalkan kelas tanpa ijin',10,2),(18,'Dikantin saat jam pelajaran',10,2),(19,'Tidak mengikuti dan melaksanakan piket 7K',10,2),(20,'Tidur di kelas saat pelajaran berlangsung',10,2),(21,'Tidak mengerjakan tugas dari guru',10,2),(22,'Pulang sebelum waktunya tanpa ijin dari sekolah',20,2),(23,'Tidak masuk sekolah tanpa keterangan',20,2),(24,'Tidak mengikuti upacara',20,2),(25,'Tidak mengikuti kegiatan sekolah ( PHBN / PHBI )',20,2),(26,'Tidak mengikuti kegiatan ekstrakurikuler',20,2),(27,'Tidak membawa buku tata tertib',20,2),(28,'Menghilangkan buku tata tertib',50,2),(29,'Tidak membawa buku pelajaran sesuai jadwal',10,1),(30,'Membuat kegaduhan dikelas atau di sekolah',10,1),(31,'Mencoret coret atau mengkotori dinding, pintu, meja,  kursi, dan pagar',10,1),(32,'Membawa atau bermain kartu remi dan domino ',10,1),(33,'Memparkir sepeda / motor tidak pada tempatnya',10,1),(34,'Bermain bola di koridor dan didalam kelas',10,1),(35,'Menyontek',15,1),(36,'Melindungi teman yang bersalah',15,1),(37,'Mengoprasikan handphone waktu KBM',20,1),(38,'Berpacaran di sekolah',20,1),(39,'Bertindak asusila baik dalam maupun di luar sekolah',20,1),(40,'Merayakan ulang tahun berlebihan',20,1),(41,'Membawa sepeda motor tidak sesuai standart',20,1),(42,'Menyalahgunakan uang SPP atau uang sekolah',25,1),(43,'Membawa atau menyembunyikan petasan',30,1),(44,'Membuat surat ijin palsu',40,1),(45,'Meloncat jendela dan pagar sekolah',40,1),(46,'Merusak sarana dan prasarana sekolah',40,1),(47,'Bertindak tidak sopan / melecehkan kepala sekolah, guru dan karyawan',50,1),(48,'Mengancam / mengintimidasi teman sekolah sekelas / sekolah',75,1),(49,'Mengancam / mengintimidasi teman Kepala sekolah, guru dan karyawan ',100,1),(50,'Membawa / merokok saat mengenakan seragam sekolah',100,1),(51,'Membuat / menyebarkan berita palsu / hoax yang berhubungan dengan sekolah',100,1),(52,'Berjudi dalam bentuk apapun di sekolah',150,1),(53,'Membawa senjata tajam, senjata api, dsb di sekolah',150,1),(54,'Terlibat langsung maupun tudak langsung perkelahian/ tawuran disekolah, luar sekolah atau antar sekolah',150,1),(55,'Mengikuti aliran / perkumpulan/ geng terlarang/ komunitas LGBT dan radikalisme',150,1),(56,'Membawa / menyebarkan gambar, vidio, HP, Laptop berkonten pornografi',150,1),(57,'Membuat vidio / buku pornografi',200,1),(58,'Bertindik / bertato',200,1),(59,'Mencuri di sekolah atau diluar sekolah',200,1),(60,'Memalsukan stempel sekolah, edaran sekolah atau tanda tangan kepala sekolah, guru , dan karyawan',250,1),(61,'Membawa menggunakan ata umengedarkan miras dan narkoba',250,1),(62,'Terlibat tindakan kriminal yang ditangani pihak kepolisian',250,1),(63,'Terbukti hamil atau menghamili',250,1),(64,'Terbukti menikah',250,1);
+INSERT INTO `pelanggaran` (`id_pelanggaran`, `nama_pelanggaran`, `point_pelanggaran`, `id_jenis_pelanggaran`) VALUES
+(1, 'Membuat keributan/kegaduhan dalam kelas pada saat PBM', 6, 1),
+(2, 'Mengubah isi absensi tanpa sepengetahuan guru/pengurus kelas', 6, 1),
+(3, 'Membuat kegaduhan saat upacara', 6, 1),
+(4, 'Mengotori(mencoret-coret) benda milik sekolah, guru/karyawan', 6, 1),
+(5, 'Makan dan minum didalam kelas saat PBM', 6, 1),
+(6, 'Membuang sampah tidak pada tempatnya', 6, 1),
+(7, 'Membawa benda yang tidak ada kaitannya dengan PBM', 6, 1),
+(8, 'Menyalahgunakan uang sekolah untuk kepentingan lain', 10, 1),
+(9, 'Masuk lingkungan sekolah dengan loncat pagar', 20, 1),
+(10, 'Keluar dari lingkungan sekolah dengan loncat pagar', 20, 1),
+(11, 'Merusak/menghilangkan barang milik sekolah, siswa wajib memperbaiki atau mengganti', 20, 1),
+(12, 'Bertengkar/pertentangan dengan teman di lingkungan sekolah', 30, 1),
+(13, 'Mengoperasikan HP ketika PBM', 30, 1),
+(14, 'Membawa rokok di sekolah', 30, 1),
+(15, 'Memiliki, membawa atau memperlihatkan buku porno, majalah atau kaset/video terlarang', 30, 1),
+(16, 'Membawa senjata tajam tanpa izin', 30, 1),
+(17, 'Menghina/berlaku tidak sopan terhadap guru, karyawan dengan berbagai cara', 30, 1),
+(18, 'Mengambil/mencuri barang milik sekolah', 40, 1),
+(19, 'Merokok/menghisap rokok di sekolah', 40, 1),
+(20, 'Memperjual belikan senjata tajam di sekolah', 40, 1),
+(21, 'Melakukan perkelahian di sekolah maupun diluar sekolah', 50, 1),
+(22, 'Melakukan perjudian dan sejenisnya di sekolah maupun luar sekolah', 50, 1),
+(23, 'Melakukan tindakan asusila / pornografi', 50, 1),
+(24, 'Menggunakan senjata tajam untuk mengancam', 50, 1),
+(25, 'Menggunakan senjata tajam untuk melukai', 60, 1),
+(26, 'Membawa obat/minuman terlarang', 80, 1),
+(27, 'Hamil/menghamili/Menikah', 110, 1),
+(28, 'Melakukan tindakan kriminal, baik di sekolah maupun diluar sekolah', 110, 1),
+(29, 'Menggunakan obat/minuman terlarang didalam lingkungan sekolah', 110, 1),
+(30, 'Memperjual belikan obat/minuman terlarang didalam/diluar sekolah', 110, 1),
+(31, 'Melakukan perlawanan secara fisik maupun nonfisik terhadap guru, karyawan', 110, 1),
+(32, 'Terlambat hadir di sekolah', 6, 2),
+(33, 'Tidak mengikuti kegiatan ekstra kulikuler yang dipilih', 6, 2),
+(34, 'Tidak masuk sekolah tanpa izin', 10, 2),
+(35, 'Meninggalkan sekolah tanpa izin', 10, 2),
+(36, 'Tidak mengikuti jam pelajaran tanpa izin', 10, 2),
+(37, 'Tidak mengerjakan tugas PR', 10, 2),
+(38, 'Mengikuti upacara tidak tertib', 10, 2),
+(39, 'Izin keluar saat proses belajar berlangsung dan tidak kembali', 10, 2),
+(40, 'Tidak mengikuti upacara', 15, 2),
+(41, 'Siswa tidak masuk dengan membuat keterangan/surat palsu', 15, 2),
+(42, 'Melanggar UU No. 22/2009 tentang tata tertib lalu lintas di lingkungan sekolah', 25, 2),
+(43, 'Memakai seragam tidak rapi/tidak dimasukkan', 4, 3),
+(44, 'Mengenakan seragam sekolah tanpa atribut(bed,dasi,dll)', 4, 3),
+(45, 'Mengenakan pakaian terlalu ketat', 4, 3),
+(46, 'Tidak memakai kaos kaki', 4, 3),
+(47, 'Tidak memakai sabuk', 4, 3),
+(48, 'Memakai topi yang bukan topi sekolah di lingkungan sekolah', 4, 3),
+(49, 'Mengenakan atribut sekolah lain', 6, 3),
+(50, 'Mengenakan seragam dengan coret-coretan', 6, 3),
+(51, 'Berambut gondrong/panjang bagi siswa putra', 10, 3),
+(52, 'Mengenakan perhiasan yang berlebihan bagi siswa putri', 10, 3),
+(53, 'Tidak memakai seragam ketentuan hari ini', 10, 3),
+(54, 'Bersolek berlebihan bagi siswa putri', 10, 3),
+(55, 'Memakai sepatu tidak sesuai dengan warna ketentuan', 10, 3),
+(56, 'Rambut dicat/diwarnai selain hitam bagi siswa putra putri', 20, 3),
+(57, 'Memakai anting-anting bagi siswa putra', 20, 3),
+(58, 'Bertato', 20, 3);
 
-#
-# Structure for table "pelanggaran_siswa"
-#
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `pelanggaran_siswa`;
+--
+-- Table structure for table `pelanggaran_siswa`
+--
+
 CREATE TABLE `pelanggaran_siswa` (
-  `id_pelanggaran_siswa` int(111) NOT NULL AUTO_INCREMENT,
+  `id_pelanggaran_siswa` int(111) NOT NULL,
   `id_pelanggaran` int(111) NOT NULL,
   `id_siswa` int(111) NOT NULL,
   `id_kelas` int(111) NOT NULL,
   `id_pelapor` int(111) NOT NULL,
   `level_pelapor` varchar(111) NOT NULL,
   `tanggal_pelanggaran` datetime NOT NULL,
-  `point` int(111) NOT NULL,
-  PRIMARY KEY (`id_pelanggaran_siswa`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `point` int(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "pelanggaran_siswa"
-#
+-- --------------------------------------------------------
 
-INSERT INTO `pelanggaran_siswa` VALUES (1,4,687,28,5,'guru','2020-01-06 11:25:29',10),(2,30,36,3,5,'guru','2020-01-14 12:04:08',10),(3,47,172,7,5,'guru','2023-01-27 11:01:10',50),(4,64,172,7,5,'guru','2023-01-27 11:01:21',250);
+--
+-- Table structure for table `siswa`
+--
 
-#
-# Structure for table "siswa"
-#
-
-DROP TABLE IF EXISTS `siswa`;
 CREATE TABLE `siswa` (
-  `id_siswa` int(111) NOT NULL AUTO_INCREMENT,
+  `id_siswa` int(111) NOT NULL,
   `nama_siswa` varchar(111) NOT NULL,
   `no_induk` varchar(111) NOT NULL,
   `alamat` text NOT NULL,
   `jenis_kelamin` varchar(111) NOT NULL,
   `id_kelas` int(111) NOT NULL,
-  `tanggal_input` datetime NOT NULL,
-  PRIMARY KEY (`id_siswa`)
-) ENGINE=InnoDB AUTO_INCREMENT=2071 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `tanggal_input` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "siswa"
-#
+--
+-- Dumping data for table `siswa`
+--
 
-INSERT INTO `siswa` VALUES (1,'ABDULLAH ZIDANE RAMADHANI','16810/001.065','-','L',2,'2020-01-06 07:37:21'),(2,'AFENDIMAS HARIS KIYONO','16811/002.065','-','L',2,'2020-01-06 07:37:21'),(3,'AJENG','16812/003.065','-','P',2,'2020-01-06 07:37:21'),(4,'AJENG WAHYUNINGTYAS','16813/004.065','-','P',2,'2020-01-06 07:37:21'),(5,'ALDI RIZKY GUNAWAN','16814/005.065','-','L',2,'2020-01-06 07:37:21'),(6,'AMILATUS SHOLIHAH','16815/006.065','-','P',2,'2020-01-06 07:37:21'),(7,'ANA LAILI PUTRI','16816/007.065','-','P',2,'2020-01-06 07:37:21'),(8,'ANUGRAH WIBY SUKMONO','16817/008.065','-','L',2,'2020-01-06 07:37:21'),(9,'ARDIAN FIRDAUS','16818/009.065','-','L',2,'2020-01-06 07:37:21'),(10,'ARMANANDA MAULANA','16820/011.065','-','L',2,'2020-01-06 07:37:21'),(11,'BOBBY APRILLIANSYAH MEINDESKA','16821/012.065','-','L',2,'2020-01-06 07:37:21'),(12,'CAHYA GILANG ADIO PUTRA','16822/013.065','-','L',2,'2020-01-06 07:37:21'),(13,'CINDY FRANSISKA','16823/014.065','-','P',2,'2020-01-06 07:37:21'),(14,'DITO MUHAMAD ADE FIKRI','16824/015.065','-','L',2,'2020-01-06 07:37:21'),(15,'DZAKI AHMAD FAJRIANTO','16825/016.065','-','L',2,'2020-01-06 07:37:21'),(16,'ELY AGUSTINA','16826/017.065','-','P',2,'2020-01-06 07:37:21'),(17,'ERIKA NURUL TRIAMANDA','16827/018.065','-','P',2,'2020-01-06 07:37:21'),(18,'EVAN DWI ZHULIEANANTA','16828/019.065','-','L',2,'2020-01-06 07:37:21'),(19,'FANDIGA MAHDA PRAMESTA','16829/020.065','-','L',2,'2020-01-06 07:37:21'),(20,'FAZA IMAN IMRON','16830/021.065','-','L',2,'2020-01-06 07:37:21'),(21,'FAZI ABDULLAH','16831/022.065','-','P',2,'2020-01-06 07:37:21'),(22,'FITRA ANISABELA','16832/023.065','-','P',2,'2020-01-06 07:37:21'),(23,'HSP WATULINTANG ARUMDANIE','16833/024.065','-','P',2,'2020-01-06 07:37:21'),(24,'ILUH VIVI PURNAMI','16834/025.065','-','P',2,'2020-01-06 07:37:21'),(25,'INDRA WIRAWAN','16835/026.065','-','L',2,'2020-01-06 07:37:21'),(26,'IRNAINI QINADA FEBRIANTI','16836/027.065','-','P',2,'2020-01-06 07:37:21'),(27,'KENNI MAHESA','16837/028.065','-','L',2,'2020-01-06 07:37:21'),(28,'KEZIA MEGAWATI','16838/029.065','-','P',2,'2020-01-06 07:37:21'),(29,'LAISA SANTIKA','16839/030.065','-','P',2,'2020-01-06 07:37:21'),(30,'LINA AZIZAH','16840/031.065','-','P',2,'2020-01-06 07:37:21'),(31,'M. ARIF MARDHAVI','16841/032.065','-','L',2,'2020-01-06 07:37:21'),(32,'M. FARHAN FAUJI','16842/033.065','-','L',2,'2020-01-06 07:37:21'),(33,'MARSHELLA NURHAJIZAH CHATRINE KUSRIANA','16843/034.065','-','P',2,'2020-01-06 07:37:21'),(34,'MOCH. SURYA DIVA NURKHOIR','16844/035.065','-','L',2,'2020-01-06 07:37:21'),(35,'MUHAMMAD DIAN SANJAYA','16845/036.065','-','L',2,'2020-01-06 07:37:21'),(36,'MUHAMMAD SIROJUL MUNIR','16846/037.065','-','L',3,'2020-01-06 07:37:55'),(37,'NADIA ULFA NINGRUM','16847/038.065','-','P',3,'2020-01-06 07:37:55'),(38,'NADILA IKA SAFIRA','16848/039.065','-','P',3,'2020-01-06 07:37:55'),(39,'NIAR RIZKI UMAMI','16849/040.065','-','P',3,'2020-01-06 07:37:55'),(40,'NIZAR NURIL MAULANA','16850/041.065','-','L',3,'2020-01-06 07:37:55'),(41,'NOVA RAHMADANI PUTRI','16851/042.065','-','P',3,'2020-01-06 07:37:55'),(42,'NOVITA DAMAYANTI','16852/043.065','-','P',3,'2020-01-06 07:37:55'),(43,'NUR ANNISA','16853/044.065','-','P',3,'2020-01-06 07:37:55'),(44,'NURUL QHOMARIYA','16854/045.065','-','P',3,'2020-01-06 07:37:55'),(45,'OCKTAVIA AYU GUNAWAN','16855/046.065','-','P',3,'2020-01-06 07:37:55'),(46,'OWEN TRI ANGGARA','16856/047.065','-','L',3,'2020-01-06 07:37:55'),(47,'PANCA SEPTIA MAULANA','16857/048.065','-','L',3,'2020-01-06 07:37:55'),(48,'PRAMUDITA EKA PUTRA','16858/049.065','-','L',3,'2020-01-06 07:37:55'),(49,'PUTRI REGINA','16859/050.065','-','P',3,'2020-01-06 07:37:55'),(50,'QONITAH DHIYA ADILAH','16860/051.065','-','P',3,'2020-01-06 07:37:55'),(51,'RAIHAN NAUVAL','16862/053.065','-','L',3,'2020-01-06 07:37:55'),(52,'RICHARD CHARLOS FERNANDO','16863/054.065','-','L',3,'2020-01-06 07:37:55'),(53,'RISQI LINTANG NUSA','16864/055.065','-','L',3,'2020-01-06 07:37:55'),(54,'RIZKI MAULINDA PUTRI','16865/056.065','-','P',3,'2020-01-06 07:37:55'),(55,'RIZKY ALFRIANSYAH PUTRA PRAMANTHA','16866/057.065','-','L',3,'2020-01-06 07:37:55'),(56,'SAFIA NUR BUDIASTRI','16867/058.065','-','P',3,'2020-01-06 07:37:55'),(57,'SEKAR ANANTA PUTRI JESICA','16868/059.065','-','P',3,'2020-01-06 07:37:55'),(58,'SEPTIAN DWI PRASETYO','16869/060.065','-','L',3,'2020-01-06 07:37:55'),(59,'SHELLA FEBRIANA MAHARDIKA','16870/061.065','-','P',3,'2020-01-06 07:37:55'),(60,'SHINTA DEWI ANDINI PUTRI','16871/062.065','-','P',3,'2020-01-06 07:37:55'),(61,'SUCI NURWULAN HIDAYATI','16872/063.065','-','P',3,'2020-01-06 07:37:55'),(62,'SYNDY DWI HERMAWATI','16873/064.065','-','P',3,'2020-01-06 07:37:55'),(63,'TIARA NURIATI','16874/065.065','-','P',3,'2020-01-06 07:37:55'),(64,'WAHYU STYO PRATAMA','16875/066.065','-','L',3,'2020-01-06 07:37:55'),(65,'WARDHA RIYA FARHANNI','16876/067.065','-','P',3,'2020-01-06 07:37:55'),(66,'WENDY MEI IKA NURAIN`NI','16877/068.065','-','P',3,'2020-01-06 07:37:55'),(67,'WIDI MUFIDAH ANANDA','16878/069.065','-','P',3,'2020-01-06 07:37:55'),(68,'WULANDARI','16879/070.065','-','P',3,'2020-01-06 07:37:55'),(69,'YUAN RIFQY AHMAD','16880/071.065','-','L',3,'2020-01-06 07:37:55'),(70,'ABDILAH ARIFIAN','16881/001.066','-','L',4,'2020-01-06 07:38:51'),(71,'ACHMAD ALFITRI MULYAWAN','16882/002.066','-','L',4,'2020-01-06 07:38:51'),(72,'AGUNG SANJAYA SEPTIANSYAH','16883/003.066','-','L',4,'2020-01-06 07:38:51'),(73,'AHMAD FAZA','16884/004.066','-','L',4,'2020-01-06 07:38:51'),(74,'AHMAD FIRDAUS','16885/005.066','-','L',4,'2020-01-06 07:38:51'),(75,'AHMAD REZA KHOIRUR ROSYID','16886/006.066','-','L',4,'2020-01-06 07:38:51'),(76,'ALIEF FATURROHMAN','16887/007.066','-','L',4,'2020-01-06 07:38:51'),(77,'AMANDA PUTRI LESTARI','16888/008.066','-','P',4,'2020-01-06 07:38:51'),(78,'ANDRIYAN','16889/009.066','-','L',4,'2020-01-06 07:38:51'),(79,'ANGGREK TRIAS PUTRI RAGIL','16890/010.066','-','P',4,'2020-01-06 07:38:51'),(80,'ANIQO SYAHRUL ROMADHON','16891/011.066','-','L',4,'2020-01-06 07:38:51'),(81,'AYU ISTIKOMAH','16892/012.066','-','P',4,'2020-01-06 07:38:51'),(82,'AYU SETIA RUMIYATI','16893/013.066','-','P',4,'2020-01-06 07:38:51'),(83,'BAYU FIRDAUS','16894/014.066','-','L',4,'2020-01-06 07:38:51'),(84,'BHAKTI ATH-THAARIQ','16895/015.066','-','L',4,'2020-01-06 07:38:51'),(85,'DANA INTAN PERTIWI','16896/016.066','-','P',4,'2020-01-06 07:38:51'),(86,'DANIS AL RAFI','16897/017.066','-','L',4,'2020-01-06 07:38:51'),(87,'DAVISSYAH RAMADHAN UTOMO','16898/018.066','-','L',4,'2020-01-06 07:38:51'),(88,'DENI PRADANA','16899/019.066','-','L',4,'2020-01-06 07:38:51'),(89,'DERI GUNAWAN','16900/020.066','-','L',4,'2020-01-06 07:38:51'),(90,'DEVY YESIKASARI','16901/021.066','-','P',4,'2020-01-06 07:38:51'),(91,'DEWA AGUNG TEGUH SUBAKTI','16902/022.066','-','L',4,'2020-01-06 07:38:51'),(92,'DEWI NURVALENTINI','16903/023.066','-','P',4,'2020-01-06 07:38:51'),(93,'DHEA ANDINI SEPTIANINGRUM','16904/024.066','-','P',4,'2020-01-06 07:38:51'),(94,'DHEA MARTA MAHARANI','16905/025.066','-','P',4,'2020-01-06 07:38:51'),(95,'EGA IXSWAN LIVANANTA','16906/026.066','-','L',4,'2020-01-06 07:38:51'),(96,'EIZZA AMMAR MAULANA BASHA','16907/027.066','-','L',4,'2020-01-06 07:38:51'),(97,'EKO KURNIAWAN','16908/028.066','-','L',4,'2020-01-06 07:38:51'),(98,'ELLISA AMALIA PRAMUDITHA','16909/029.066','-','P',4,'2020-01-06 07:38:51'),(99,'ELVIRA FAUZIAH','16910/030.066','-','P',4,'2020-01-06 07:38:51'),(100,'ERIXA ELFIYATININGSIH','16911/031.066','-','P',4,'2020-01-06 07:38:51'),(101,'ERNI AGUSTINA','16912/032.066','-','P',4,'2020-01-06 07:38:51'),(102,'FATUR ROHMAN','16913/033.066','-','L',4,'2020-01-06 07:38:51'),(103,'GRENDIS YUGI HATMANTI','16914/034.066','-','P',4,'2020-01-06 07:38:51'),(104,'HELMY ANIZAMSYAH','16915/035.066','-','L',4,'2020-01-06 07:38:51'),(105,'IVENNA LARASATI','16916/036.066','-','P',4,'2020-01-06 07:38:51'),(106,'JUSTITIA MAHARANI KASIHONO','16917/037.066','-','P',71,'2020-01-06 07:47:20'),(107,'M. FIKRON HAMDANI','16918/038.066','-','L',71,'2020-01-06 07:47:20'),(108,'M. RISKI DWI KURNIAWAN','16919/039.066','-','L',71,'2020-01-06 07:47:20'),(109,'MOCH. DICKY FIRMANSYAH','16921/041.066','-','L',71,'2020-01-06 07:47:20'),(110,'MOCH.RHOSYID','16922/042.066','-','L',71,'2020-01-06 07:47:20'),(111,'MOHAMAD DIYAS ADIWIJAYA','16923/043.066','-','L',71,'2020-01-06 07:47:20'),(112,'MOHAMMAD DYVANI WAHYU WILDANA','16924/044.066','-','L',71,'2020-01-06 07:47:20'),(113,'MUHAMMAD IRFAN','16927/047.066','-','L',71,'2020-01-06 07:47:20'),(114,'NELI AGUSTIN','16928/048.066','-','P',71,'2020-01-06 07:47:20'),(115,'NEVE ARSITA AYUNI','16929/049.066','-','P',71,'2020-01-06 07:47:20'),(116,'NIKMATUL MASYKUROH','16930/050.066','-','P',71,'2020-01-06 07:47:20'),(117,'NOFITA PERMATA SARI','16931/051.066','-','P',71,'2020-01-06 07:47:20'),(118,'NOVI KHARISMA PRATIWI','16932/052.066','-','P',71,'2020-01-06 07:47:20'),(119,'OVINDA DWI KIRANASARI','16933/053.066','-','P',71,'2020-01-06 07:47:20'),(120,'PUTRI AYU SHAFIRA','16934/054.066','-','P',71,'2020-01-06 07:47:20'),(121,'PUTRI NOVITASARI','16935/055.066','-','P',71,'2020-01-06 07:47:20'),(122,'RAMADHON PRASETYO','16936/056.066','-','L',71,'2020-01-06 07:47:20'),(123,'RENI GILI PUTRI','16937/057.066','-','P',71,'2020-01-06 07:47:20'),(124,'RESTI ROHMAWATI','16938/058.066','-','P',71,'2020-01-06 07:47:20'),(125,'RIDHO WAHYU PRASETYO','16939/059.066','-','L',71,'2020-01-06 07:47:20'),(126,'RISKA MAULIDA KURNIA SARI','16940/060.066','-','P',71,'2020-01-06 07:47:20'),(127,'RITA WAHYUNI','16941/061.066','-','P',71,'2020-01-06 07:47:20'),(128,'RIZKIYAWATI','16943/063.066','-','P',71,'2020-01-06 07:47:20'),(129,'SUGENG PRIMA','16944/064.066','-','L',71,'2020-01-06 07:47:20'),(130,'TAUFIQ HIDAYAT','16945/065.066','-','L',71,'2020-01-06 07:47:20'),(131,'THITA RAHAYU NINGSIH','16946/066.066','-','P',71,'2020-01-06 07:47:20'),(132,'TIARA NISRINA PUTRI','16947/067.066','-','P',71,'2020-01-06 07:47:20'),(133,'UFIYA WARDANI','16948/068.066','-','P',71,'2020-01-06 07:47:20'),(134,'WIWIKA ANANDA ARDANI','16950/070.066','-','P',71,'2020-01-06 07:47:20'),(135,'YOVIE DARMA PUTRA HIDAYAT','16951/071.066','-','L',71,'2020-01-06 07:47:20'),(136,'YUSUF AHSANUL KHALIQIN','16952/072.066','-','L',71,'2020-01-06 07:47:20'),(137,'ACHMAD HADIYAL ANAM','16953/001.067','-','L',6,'2020-01-06 07:47:49'),(138,'ACHMAD RIKZA EFFENDI','16954/002.067','-','L',6,'2020-01-06 07:47:49'),(139,'ADELIA DESI AMITHA','16955/003.067','-','P',6,'2020-01-06 07:47:49'),(140,'ADINDA ISTIKA MAULIA','16956/004.067','-','P',6,'2020-01-06 07:47:49'),(141,'AGIL RAMADHAN','16957/005.067','-','L',6,'2020-01-06 07:47:49'),(142,'AGUS SETIAWAN','16958/006.067','-','L',6,'2020-01-06 07:47:49'),(143,'AHMAD NGUBAIDILLAH','16959/007.067','-','L',6,'2020-01-06 07:47:49'),(144,'AKHMAD FAUZI','16961/009.067','-','L',6,'2020-01-06 07:47:49'),(145,'ALIFIA LUTVI KAROMAH','16962/010.067','-','P',6,'2020-01-06 07:47:49'),(146,'ALIKA DWI LESTARI','16963/011.067','-','P',6,'2020-01-06 07:47:49'),(147,'ANGGA YANUAR WIDIYANTO','16964/012.067','-','L',6,'2020-01-06 07:47:49'),(148,'ARDI MAULANA','16965/013.067','-','L',6,'2020-01-06 07:47:49'),(149,'ARIFA ROHMA MAULIDA','16966/014.067','-','P',6,'2020-01-06 07:47:49'),(150,'ARUM MAILANY KARUNIA PUTRI','16967/015.067','-','P',6,'2020-01-06 07:47:49'),(151,'ASHAABUL KAHFI LY ABY','16968/016.067','-','L',6,'2020-01-06 07:47:49'),(152,'AYU DEWI PUJI LESTARI','16969/017.067','-','P',6,'2020-01-06 07:47:49'),(153,'AZIZATUN MAULIDIA','16970/018.067','-','P',6,'2020-01-06 07:47:49'),(154,'BALGIS VERIAL','16971/019.067','-','P',6,'2020-01-06 07:47:49'),(155,'CHAVANIA ROBBY VALYSTIN','16972/020.067','-','P',6,'2020-01-06 07:47:49'),(156,'CITRA REZA PERDANA','16973/021.067','-','P',6,'2020-01-06 07:47:49'),(157,'DANI ADITYA SAPUTRA','16974/022.067','-','L',6,'2020-01-06 07:47:49'),(158,'DIMAS EKA SAPUTRA','16975/023.067','-','L',6,'2020-01-06 07:47:49'),(159,'DIVA MAYSAROH','16976/024.067','-','P',6,'2020-01-06 07:47:49'),(160,'FADIA WAHYUNING TYAS','16977/025.067','-','P',6,'2020-01-06 07:47:49'),(161,'FANY SALSA FAZILA','16978/026.067','-','P',6,'2020-01-06 07:47:49'),(162,'FATHIA NUR ADIFA PUTRI','16979/027.067','-','P',6,'2020-01-06 07:47:49'),(163,'FIORENTYNA OCTAVIANI','16980/028.067','-','P',6,'2020-01-06 07:47:49'),(164,'FIRA RIZKIA SUNDARI','16981/029.067','-','P',6,'2020-01-06 07:47:49'),(165,'FRENNI SHALSABILLAH RAMADHANI','16982/030.067','-','P',6,'2020-01-06 07:47:49'),(166,'HENRY WILDAN KHAIRUL M.','16983/031.067','-','L',6,'2020-01-06 07:47:49'),(167,'HERU LUKIS SETIYAWAN','16984/032.067','-','L',6,'2020-01-06 07:47:49'),(168,'ILHAM SYAFUTRA','16985/033.067','-','L',6,'2020-01-06 07:47:49'),(169,'HENRY WILDAN KHAIRUL M.','16983/031.067','-','L',6,'2020-01-06 07:47:49'),(170,'HERU LUKIS SETIYAWAN','16984/032.067','-','L',6,'2020-01-06 07:47:49'),(171,'ILHAM SYAFUTRA','16985/033.067','-','L',6,'2020-01-06 07:47:49'),(172,'KHARISMA AKMALIYAH','16986/034.067','-','P',7,'2020-01-06 07:48:11'),(173,'KHARISMA ANA ROHMAWATI','16987/035.067','-','P',7,'2020-01-06 07:48:11'),(174,'KHARISMA PUTRI AZAHRO','16988/036.067','-','P',7,'2020-01-06 07:48:11'),(175,'LAILA SALMA CARISSA','16989/037.067','-','P',7,'2020-01-06 07:48:11'),(176,'LAKSMI PRATITI','16990/038.067','-','P',7,'2020-01-06 07:48:11'),(177,'LEVINA MAULINIA URBACH','16991/039.067','-','P',7,'2020-01-06 07:48:11'),(178,'M. RIZQI NUR FADILLAH','16992/040.067','-','L',7,'2020-01-06 07:48:11'),(179,'M. SHOFIULLAH AINUN NAIM','16993/041.067','-','L',7,'2020-01-06 07:48:11'),(180,'MAZIDAH WARDA LAUDIA FEBRILIAN','16994/042.067','-','P',7,'2020-01-06 07:48:11'),(181,'MILA AGUSTINA','16995/043.067','-','P',7,'2020-01-06 07:48:11'),(182,'MIRA MUKROMIN IRAWANTI','16996/044.067','-','P',7,'2020-01-06 07:48:11'),(183,'MOHAMAD GALANG NURDIANSYAH','16997/045.067','-','L',7,'2020-01-06 07:48:11'),(184,'MOHAMMAD SOFYAN EFENDI','16998/046.067','-','L',7,'2020-01-06 07:48:11'),(185,'MUHAMAD ARDIN','16999/047.067','-','L',7,'2020-01-06 07:48:11'),(186,'MUHAMMAD RAHUL FIRDAUS','17000/048.067','-','L',7,'2020-01-06 07:48:11'),(187,'MUHAMMAD SAIFUDIN','17002/050.067','-','L',7,'2020-01-06 07:48:11'),(188,'NADHIRA ZELFI AURA SALSABILA','17003/051.067','-','P',7,'2020-01-06 07:48:11'),(189,'NANA SOFYANA','17004/052.067','-','P',7,'2020-01-06 07:48:11'),(190,'PUTRI MEGA TARISA','17005/053.067','-','P',7,'2020-01-06 07:48:11'),(191,'RINI MAULIDA','17006/054.067','-','P',7,'2020-01-06 07:48:11'),(192,'RISQI APRILLIA NINGSIH','17007/055.067','-','P',7,'2020-01-06 07:48:11'),(193,'SEKAR RIA KURNIAWATI','17008/056.067','-','P',7,'2020-01-06 07:48:11'),(194,'SHERLY PUTRI SANTIANA','17010/058.067','-','P',7,'2020-01-06 07:48:11'),(195,'SOFIA AGATHA WIBOWO','17012/060.067','-','P',7,'2020-01-06 07:48:11'),(196,'SRI RAHAYU','17013/061.067','-','P',7,'2020-01-06 07:48:11'),(197,'TANTRI TARWIYATI','17014/062.067','-','P',7,'2020-01-06 07:48:11'),(198,'THOMAS PARADITO','17015/063.067','-','L',7,'2020-01-06 07:48:11'),(199,'TITI DAMAYANTI ZHAKIR','17016/064.067','-','P',7,'2020-01-06 07:48:11'),(200,'TRI AYU NOVITASARI','17017/065.067','-','P',7,'2020-01-06 07:48:11'),(201,'VIKA AMANDA LESTARI','17018/066.067','-','P',7,'2020-01-06 07:48:11'),(202,'WULAN SAFITRI','17019/067.067','-','P',7,'2020-01-06 07:48:11'),(203,'YAYANG PUTRI PRATIWI','17020/068.067','-','P',7,'2020-01-06 07:48:11'),(204,'YONA CROSI PRATAMA','17021/069.067','-','L',7,'2020-01-06 07:48:11'),(205,'ADDINA AZZAHRA','17022/001.108','-','P',14,'2020-01-06 07:49:01'),(206,'AGNESA APRILIA','17023/002.108','-','P',14,'2020-01-06 07:49:01'),(207,'AJENG NOVITA HADI','17024/003.108','-','P',14,'2020-01-06 07:49:01'),(208,'ALUNG REKA APRILIA','17025/004.108','-','P',14,'2020-01-06 07:49:01'),(209,'AMELIA DEVI','17026/005.108','-','P',14,'2020-01-06 07:49:01'),(210,'ANI TRI WULANDARI','17027/006.108','-','P',14,'2020-01-06 07:49:01'),(211,'ARDANIA UTAMI','17028/007.108','-','P',14,'2020-01-06 07:49:01'),(212,'ARIF JALALUDIN','17029/008.108','-','L',14,'2020-01-06 07:49:01'),(213,'AYU MITA ANTARI','17030/009.108','-','P',14,'2020-01-06 07:49:01'),(214,'DAFLIATUL ULA','17031/010.108','-','P',14,'2020-01-06 07:49:01'),(215,'DEVI RISKIYAH RAHMI','17032/011.108','-','P',14,'2020-01-06 07:49:01'),(216,'DIAN PUSPITA SARI','17033/012.108','-','P',14,'2020-01-06 07:49:01'),(217,'DWI CICI SUSANTI','17034/013.108','-','P',14,'2020-01-06 07:49:01'),(218,'DWI MAHARANI','17035/014.108','-','P',14,'2020-01-06 07:49:01'),(219,'EKA NANDA AGUSTIN','17036/015.108','-','P',14,'2020-01-06 07:49:01'),(220,'EKA SAFITRI','17037/016.108','-','P',14,'2020-01-06 07:49:01'),(221,'FRANSISKA ANANDA FERAWATI','17038/017.108','-','P',14,'2020-01-06 07:49:01'),(222,'GITA APRILIA','17039/018.108','-','P',14,'2020-01-06 07:49:01'),(223,'HERFIAN DANI SASMITO','17040/019.108','-','L',14,'2020-01-06 07:49:01'),(224,'HUSNUL HOTIMAH','17041/020.108','-','P',14,'2020-01-06 07:49:01'),(225,'ILMIATUS SAKDIYAH','17042/021.108','-','P',14,'2020-01-06 07:49:01'),(226,'INDAH HADIRONA CAHYANI','17043/022.108','-','P',14,'2020-01-06 07:49:01'),(227,'INDAH LUSI WARDANI','17044/023.108','-','P',14,'2020-01-06 07:49:01'),(228,'INDAH NOVITA SARI','17045/024.108','-','P',14,'2020-01-06 07:49:01'),(229,'ISTIKOMARIYAH','17046/025.108','-','P',14,'2020-01-06 07:49:01'),(230,'KARIMATUS WAIDA UMROH','17047/026.108','-','P',14,'2020-01-06 07:49:01'),(231,'KHUROTA AYUN','17049/028.108','-','P',14,'2020-01-06 07:49:01'),(232,'LAILI FITRIYANI','17050/029.108','-','P',14,'2020-01-06 07:49:01'),(233,'LATIFAH NURDIYANI','17051/030.108','-','P',14,'2020-01-06 07:49:01'),(234,'LINA NUR INDAH PURNAMANINGSIH','17052/031.108','-','P',14,'2020-01-06 07:49:01'),(235,'LULUK LUPITASARI','17053/032.108','-','P',14,'2020-01-06 07:49:01'),(236,'MILA AGUSTIN','17054/033.108','-','P',14,'2020-01-06 07:49:01'),(237,'MIRA DAMAYANTI','17055/034.108','-','P',14,'2020-01-06 07:49:01'),(238,'MITA DWI ANGGRAINI','17056/035.108','-','P',14,'2020-01-06 07:49:01'),(239,'MUHAMMAD ARJUNA RANGGA MUSTIKA','17057/036.108','-','L',15,'2020-01-06 07:49:38'),(240,'NADHILA BERLIANA CLAUDIA','17058/037.108','-','P',15,'2020-01-06 07:49:38'),(241,'NI PUTU NANDINI SEMARA AMURWABUMI','17059/038.108','-','P',15,'2020-01-06 07:49:38'),(242,'NUR CHINDY KRISDANYANSYAH','17060/039.108','-','P',15,'2020-01-06 07:49:38'),(243,'NURIL QONAIN','17061/040.108','-','P',15,'2020-01-06 07:49:38'),(244,'NURUL ABDOLIA','17062/041.108','-','P',15,'2020-01-06 07:49:38'),(245,'NURUL HANDAYANI','17063/042.108','-','P',15,'2020-01-06 07:49:38'),(246,'OKTAVIANA DIAH CHRISFANY','17064/043.108','-','P',15,'2020-01-06 07:49:38'),(247,'PUTRI AIDA NURMATUL ULUM','17065/044.108','-','P',15,'2020-01-06 07:49:38'),(248,'PUTRI AYU BELLA WINANTI','17066/045.108','-','P',15,'2020-01-06 07:49:38'),(249,'PUTRI INDAH SARI','17067/046.108','-','P',15,'2020-01-06 07:49:38'),(250,'PUTRI RETNO JUMILA','17068/047.108','-','P',15,'2020-01-06 07:49:38'),(251,'RACHELIA SEVRINA LESTARI','17069/048.108','-','P',15,'2020-01-06 07:49:38'),(252,'RISA BALGIS RAMADHANI','17070/049.108','-','P',15,'2020-01-06 07:49:38'),(253,'RISKA NURAINI','17071/050.108','-','P',15,'2020-01-06 07:49:38'),(254,'RIZQI MAULANA','17072/051.108','-','L',15,'2020-01-06 07:49:38'),(255,'SAFITRI ANGGUN SARI SALSABILA','17073/052.108','-','P',15,'2020-01-06 07:49:38'),(256,'SANTI FITRIA','17074/053.108','-','P',15,'2020-01-06 07:49:38'),(257,'SARI MAULIDAH','17075/054.108','-','P',15,'2020-01-06 07:49:38'),(258,'SELLY ER PUTRI','17076/055.108','-','P',15,'2020-01-06 07:49:38'),(259,'SHINTA ANDARI PUTRI','17077/056.108','-','P',15,'2020-01-06 07:49:38'),(260,'SHINTA BELIA WIDIASARI','17078/057.108','-','P',15,'2020-01-06 07:49:38'),(261,'SINDI APRILIANI','17079/058.108','-','P',15,'2020-01-06 07:49:38'),(262,'SITI KOINA','17080/059.108','-','P',15,'2020-01-06 07:49:38'),(263,'SITI SULFIYANA','17081/060.108','-','P',15,'2020-01-06 07:49:38'),(264,'TIARA ANGGRAINI','17082/061.108','-','P',15,'2020-01-06 07:49:38'),(265,'TIARA LAILATUZZAHRO','17083/062.108','-','P',15,'2020-01-06 07:49:38'),(266,'TIARA MULTIKA DEWI','17084/063.108','-','P',15,'2020-01-06 07:49:38'),(267,'TINA APRILIA','17085/064.108','-','P',15,'2020-01-06 07:49:38'),(268,'TRI BAYU SOFYAN','17086/065.108','-','L',15,'2020-01-06 07:49:38'),(269,'TRI WIDIANINGSIH','17087/066.108','-','P',15,'2020-01-06 07:49:38'),(270,'TRIWAHYU UTAMI','17088/067.108','-','P',15,'2020-01-06 07:49:38'),(271,'USWATUN HASANAH','17089/068.108','-','P',15,'2020-01-06 07:49:38'),(272,'WIDIA NOVITA SARI','17090/069.108','-','P',15,'2020-01-06 07:49:38'),(273,'YOLANDA PUTRI','17091/070.108','-','P',15,'2020-01-06 07:49:38'),(274,'ZIRBY LAISARA','17092/071.108','-','P',15,'2020-01-06 07:49:38'),(275,'AINUN FITRIANI','17093/001.109','-','P',16,'2020-01-06 07:51:41'),(276,'AKNES SISKA PERMATASARI','17094/002.109','-','P',16,'2020-01-06 07:51:41'),(277,'ALI MUHTAROM','17095/003.109','-','L',16,'2020-01-06 07:51:41'),(278,'ALVINA ARTI FERNANDA','17096/004.109','-','P',16,'2020-01-06 07:51:41'),(279,'ALVINA YULIA RISKY','17097/005.109','-','P',16,'2020-01-06 07:51:41'),(280,'AMANDA CIPTA FEBRILIA','17098/006.109','-','P',16,'2020-01-06 07:51:41'),(281,'ANDINI ANIEKE PUTRI','17099/007.109','-','P',16,'2020-01-06 07:51:41'),(282,'ANDINI SAFITRI','17100/008.109','-','P',16,'2020-01-06 07:51:41'),(283,'ANGELINA ADE PRATIWI','17101/009.109','-','P',16,'2020-01-06 07:51:41'),(284,'ANI BUDIASIH','17102/010.109','-','P',16,'2020-01-06 07:51:41'),(285,'ANI MARDIYAH','17103/011.109','-','P',16,'2020-01-06 07:51:41'),(286,'ANISA LIA AMOYEL','17104/012.109','-','P',16,'2020-01-06 07:51:41'),(287,'ANISTIA AGUSTIN','17105/013.109','-','P',16,'2020-01-06 07:51:41'),(288,'AYU SETYA TRIANA','17106/014.109','-','P',16,'2020-01-06 07:51:41'),(289,'BELLA PUTRI ANDARI','17107/015.109','-','P',16,'2020-01-06 07:51:41'),(290,'CLARISSA BRENDA DANISA','17108/016.109','-','P',16,'2020-01-06 07:51:41'),(291,'CORLA YUDHIA PUTRI','17109/017.109','-','P',16,'2020-01-06 07:51:41'),(292,'DHEACHANKA ANZAITENYA MAXILAHI','17110/018.109','-','P',16,'2020-01-06 07:51:41'),(293,'DIANITA RIZQI HILALYA','17111/019.109','-','P',16,'2020-01-06 07:51:41'),(294,'DITA AGESTINA','17112/020.109','-','P',16,'2020-01-06 07:51:41'),(295,'DWI AYU AUDIANSYAH','17113/021.109','-','P',16,'2020-01-06 07:51:41'),(296,'DWI PUSPITA SARI','17114/022.109','-','P',16,'2020-01-06 07:51:41'),(297,'DWINDA RIZKIA ROSYIDATUL UMAM','17115/023.109','-','P',16,'2020-01-06 07:51:41'),(298,'EKA RAHAYU PRANINGTYAS','17116/024.109','-','P',16,'2020-01-06 07:51:41'),(299,'ELOK FAIQOTUL HIMMAH','17117/025.109','-','P',16,'2020-01-06 07:51:41'),(300,'ELVINA ZHUMAYANTI','17118/026.109','-','P',16,'2020-01-06 07:51:41'),(301,'ERICA SASMITANINGRUM','17119/027.109','-','P',16,'2020-01-06 07:51:41'),(302,'FERITA WAHYU TRIANA','17120/028.109','-','P',16,'2020-01-06 07:51:41'),(303,'FETI WULANDARI','17121/029.109','-','P',16,'2020-01-06 07:51:41'),(304,'FIGI AYU LESTARI','17122/030.109','-','P',16,'2020-01-06 07:51:41'),(305,'IDA LUKMA WATI','17123/031.109','-','P',16,'2020-01-06 07:51:41'),(306,'IKA AULIA PARISTAWATI','17124/032.109','-','P',16,'2020-01-06 07:51:41'),(307,'IKLIMATUS SOLEHA','17125/033.109','-','P',16,'2020-01-06 07:51:41'),(308,'INDAH YUNIARTI','17126/034.109','-','P',16,'2020-01-06 07:51:41'),(309,'JEANY FITRIA RAMADHAN','17127/035.109','-','P',16,'2020-01-06 07:51:41'),(310,'LAELATUL KHASANAH','17128/036.109','-','P',16,'2020-01-06 07:51:41'),(311,'MASWIYA INDRIANTI','17129/037.109','-','P',17,'2020-01-06 07:51:53'),(312,'MEGA AYU PUSPITA SARI','17130/038.109','-','P',17,'2020-01-06 07:51:53'),(313,'MEILINA MAULIDA','17131/039.109','-','P',17,'2020-01-06 07:51:53'),(314,'NADYLA WIJAYANTI','17132/040.109','-','P',17,'2020-01-06 07:51:53'),(315,'NALURITA DESTI SAVIRA','17133/041.109','-','P',17,'2020-01-06 07:51:53'),(316,'NANDA ZAITUN NACHLA','17134/042.109','-','P',17,'2020-01-06 07:51:53'),(317,'NEVI MARISKA','17135/043.109','-','P',17,'2020-01-06 07:51:53'),(318,'NIKEN AYU SINTYANINGSIH','17136/044.109','-','P',17,'2020-01-06 07:51:53'),(319,'NINDI AGUSTINA','17137/045.109','-','P',17,'2020-01-06 07:51:53'),(320,'NOVITA GIVANI','17138/046.109','-','P',17,'2020-01-06 07:51:53'),(321,'NUR IMAMA AZLIMI SARI','17139/047.109','-','P',17,'2020-01-06 07:51:53'),(322,'NUR RIZKI AFIFAH','17140/048.109','-','P',17,'2020-01-06 07:51:53'),(323,'NURIL MAULIDA','17141/049.109','-','P',17,'2020-01-06 07:51:53'),(324,'OLIVIA PRIMASTUTI','17142/050.109','-','P',17,'2020-01-06 07:51:53'),(325,'PEBRIA AMARTANIA','17143/051.109','-','P',17,'2020-01-06 07:51:53'),(326,'PUTRI ANA LESTARI','17144/052.109','-','P',17,'2020-01-06 07:51:53'),(327,'PUTRI APRILIA AL FADILA','17145/053.109','-','P',17,'2020-01-06 07:51:53'),(328,'QORI DEWI TRISNAWATI','17146/054.109','-','P',17,'2020-01-06 07:51:53'),(329,'RAUDHATUL JANNAH','17147/055.109','-','P',17,'2020-01-06 07:51:53'),(330,'RAUDLATUL INAYAH','17148/056.109','-','P',17,'2020-01-06 07:51:53'),(331,'RAYLITHA EKA FEBIYANTI','17149/057.109','-','P',17,'2020-01-06 07:51:53'),(332,'RIO ARI WIDODO','17150/058.109','-','L',17,'2020-01-06 07:51:53'),(333,'RITA NUR SAPUTRI','17151/059.109','-','P',17,'2020-01-06 07:51:53'),(334,'RIZKY WAHYU SAPUTRI','17152/060.109','-','P',17,'2020-01-06 07:51:53'),(335,'ROSITA PUSPITA SARI','17153/061.109','-','P',17,'2020-01-06 07:51:53'),(336,'SHINTA MILA HADI','17154/062.109','-','P',17,'2020-01-06 07:51:53'),(337,'SILVI YANTI','17155/063.109','-','P',17,'2020-01-06 07:51:53'),(338,'SINDI NURHASANA','17156/064.109','-','P',17,'2020-01-06 07:51:53'),(339,'SITI FATIMAH','17157/065.109','-','P',17,'2020-01-06 07:51:53'),(340,'SITI ILMIYAH','17158/066.109','-','P',17,'2020-01-06 07:51:53'),(341,'SITI NASIROH','17159/067.109','-','P',17,'2020-01-06 07:51:53'),(342,'SITI NURIYAH','17160/068.109','-','P',17,'2020-01-06 07:51:53'),(343,'TANAYA TRY FIRDAUZI','17161/069.109','-','P',17,'2020-01-06 07:51:53'),(344,'TRI SUSANTI','17162/070.109','-','P',17,'2020-01-06 07:51:53'),(345,'WULAN MAULIDA','17163/071.109','-','P',17,'2020-01-06 07:51:53'),(346,'YATIMATUS SYARIFA','17164/072.109','-','P',17,'2020-01-06 07:51:53'),(347,'HENDRY PRASASTIYO','16462/378.101','-','L',18,'2020-01-06 07:52:15'),(348,'LEO COPPA ANTONIO','16471/387.101','-','L',18,'2020-01-06 07:52:15'),(349,'HEPRI PURYADI','16463/379.101','-','L',18,'2020-01-06 07:52:15'),(350,'ADHELIA FEBRIANA PUTRI','17165/001.110','-','P',18,'2020-01-06 07:52:15'),(351,'ADILA SYABAN AGYANDA','17166/002.110','-','L',18,'2020-01-06 07:52:15'),(352,'AGNES LAILA MAR`ATUL SEFTINA','17167/003.110','-','P',18,'2020-01-06 07:52:15'),(353,'ALVITA HESTI NUR AINI','17168/004.110','-','P',18,'2020-01-06 07:52:15'),(354,'AMIRA FARAHDILLA','17169/005.110','-','P',18,'2020-01-06 07:52:15'),(355,'ANASTACIA BINTANG BERLIANA','17170/006.110','-','P',18,'2020-01-06 07:52:15'),(356,'ANGELI JAN`NAH','17171/007.110','-','P',18,'2020-01-06 07:52:15'),(357,'ANISA FITRI','17172/008.110','-','P',18,'2020-01-06 07:52:15'),(358,'ANISA MAHARANI','17173/009.110','-','P',18,'2020-01-06 07:52:15'),(359,'ANISAH EKA FEBRIANI','17174/010.110','-','P',18,'2020-01-06 07:52:15'),(360,'ANNISA ALECIA CAROLINA','17175/011.110','-','P',18,'2020-01-06 07:52:15'),(361,'APRILIA SUKMAWATI','17176/012.110','-','P',18,'2020-01-06 07:52:15'),(362,'ARESHA DEVA ANDRIANA','17177/013.110','-','P',18,'2020-01-06 07:52:15'),(363,'ASRI TIYAS ASIH','17178/014.110','-','P',18,'2020-01-06 07:52:15'),(364,'BETTY LAVIA LOVITA','17179/015.110','-','P',18,'2020-01-06 07:52:15'),(365,'BINTANG SURYA PERDANA PUTRA','17180/016.110','-','L',18,'2020-01-06 07:52:15'),(366,'BINTANG WAHYU HAKIM','17181/017.110','-','L',18,'2020-01-06 07:52:15'),(367,'CHELSE DIPOTA YUANITA','17182/018.110','-','P',18,'2020-01-06 07:52:15'),(368,'DEA APRILLA HAKAMI','17183/019.110','-','P',18,'2020-01-06 07:52:15'),(369,'DERLIANTY ANDINI TRI ROHMANIAR','17184/020.110','-','P',18,'2020-01-06 07:52:15'),(370,'DEVITA AGNES ANDRIALITA','17185/021.110','-','P',18,'2020-01-06 07:52:15'),(371,'DEVITA APRILIYANTI','17186/022.110','-','P',18,'2020-01-06 07:52:15'),(372,'DEWI NUR IMAMA','17187/023.110','-','P',18,'2020-01-06 07:52:15'),(373,'DIAH AYU SEKAR ARINI','17188/024.110','-','P',18,'2020-01-06 07:52:15'),(374,'DIAH KRISTIN SAFITRI','17189/025.110','-','P',18,'2020-01-06 07:52:15'),(375,'DIANA','17190/026.110','-','P',18,'2020-01-06 07:52:15'),(376,'DINDA OKTAVIA BERLIANA PUTRI','17191/027.110','-','P',18,'2020-01-06 07:52:15'),(377,'DURROTUL KHOLISAH','17192/028.110','-','P',18,'2020-01-06 07:52:15'),(378,'DWI ANANDA PUTRI','17193/029.110','-','P',18,'2020-01-06 07:52:15'),(379,'DWI SETYOWATI','17194/030.110','-','P',18,'2020-01-06 07:52:15'),(380,'DWI WAHYUNI OKTAVIA','17195/031.110','-','P',18,'2020-01-06 07:52:15'),(381,'DYAH PRAMESTI TYAS UTAMI','17196/032.110','-','P',18,'2020-01-06 07:52:15'),(382,'ELZA ANANDA PUTRI','17197/033.110','-','P',18,'2020-01-06 07:52:15'),(383,'EMI FIRDAUSIYAH','17198/034.110','','P',18,'2020-01-06 07:52:15'),(384,'ENRISYA VIERI WIDIANATA','17199/035.110','','P',18,'2020-01-06 07:52:15'),(385,'ERLA MARSYA RADIVA','17200/036.110','-','P',19,'2020-01-06 07:52:37'),(386,'FANI EMILIA','17201/037.110','-','P',19,'2020-01-06 07:52:37'),(387,'FIO SINDI APRILIA','17202/038.110','-','P',19,'2020-01-06 07:52:37'),(388,'FIRDAUSI RAMADANTI','17203/039.110','-','P',19,'2020-01-06 07:52:37'),(389,'HAVTI ATVIA HARFI','17204/040.110','-','P',19,'2020-01-06 07:52:37'),(390,'HERLINA OKTAVIANDA ARUM','17205/041.110','-','P',19,'2020-01-06 07:52:37'),(391,'IKA AYU LESTARI','17206/042.110','-','P',19,'2020-01-06 07:52:37'),(392,'IMELDA PUTRI FEBRIANTI','17207/043.110','-','P',19,'2020-01-06 07:52:37'),(393,'INAYATUR RIZQIYAH','17208/044.110','-','P',19,'2020-01-06 07:52:37'),(394,'INDAH AYU FITRIANI','17209/045.110','-','P',19,'2020-01-06 07:52:37'),(395,'INDANA ZULFA','17210/046.110','-','P',19,'2020-01-06 07:52:37'),(396,'INDRI APRELIA LESTARI','17211/047.110','-','P',19,'2020-01-06 07:52:37'),(397,'IRA NURFAFITRI ANISA','17212/048.110','-','P',19,'2020-01-06 07:52:37'),(398,'IRDAYANI','17213/049.110','-','P',19,'2020-01-06 07:52:37'),(399,'IRMA HARIROH','17214/050.110','-','P',19,'2020-01-06 07:52:37'),(400,'ISTIPARI','17215/051.110','-','P',19,'2020-01-06 07:52:37'),(401,'KODRATIYAH PUTRI SHOLEHA','17216/052.110','-','P',19,'2020-01-06 07:52:37'),(402,'LAILIA AFKARINA','17217/053.110','-','P',19,'2020-01-06 07:52:37'),(403,'LIAN MAYDHITARANIA','17218/054.110','-','P',19,'2020-01-06 07:52:37'),(404,'LUPITA FEBRIANTI','17219/055.110','-','P',19,'2020-01-06 07:52:37'),(405,'LUSIANA OKTAVIANI','17220/056.110','-','P',19,'2020-01-06 07:52:37'),(406,'M. HAFIDZ BAHTIAR BINTANG SYAH PUTRA','17221/057.110','-','L',19,'2020-01-06 07:52:37'),(407,'MARIA YOLANDA','17222/058.110','-','P',19,'2020-01-06 07:52:37'),(408,'MARISA DYAH AYUNINGTYAS','17223/059.110','-','P',19,'2020-01-06 07:52:37'),(409,'MASYITA NUR AZIZAH','17224/060.110','-','P',19,'2020-01-06 07:52:37'),(410,'MIRA ROSI LESTARI','17225/061.110','-','P',19,'2020-01-06 07:52:37'),(411,'MOH WAFIQ ROYYAN JAUHARI','17226/062.110','-','L',19,'2020-01-06 07:52:37'),(412,'MOH YUSRIL HERMANSYAH','17227/063.110','-','L',19,'2020-01-06 07:52:37'),(413,'MUHAMMAD RIFQI DZULFAHMI','17228/064.110','-','L',19,'2020-01-06 07:52:37'),(414,'NABILLA NUR FAJRINA','17229/065.110','-','P',19,'2020-01-06 07:52:37'),(415,'NADIA NUR AKMALIA','17230/066.110','-','P',19,'2020-01-06 07:52:37'),(416,'NANDA OKTA GUSTIAN','17231/067.110','-','P',19,'2020-01-06 07:52:37'),(417,'NI PUTU ALECHIA ACUSTA','17232/068.110','-','P',19,'2020-01-06 07:52:37'),(418,'NILATUL ILMI','17233/069.110','-','P',19,'2020-01-06 07:52:37'),(419,'NOVI CLAUDIA RAHAYU','17234/070.110','-','P',19,'2020-01-06 07:52:37'),(420,'NOVITA DWI LESTARI','17235/071.110','-','P',19,'2020-01-06 07:52:37'),(421,'NOVIYANA LAILI FITRI','17236/072.110','-','P',20,'2020-01-06 07:52:59'),(422,'NURMALA DEWI INDRIYANI','17237/073.110','-','P',20,'2020-01-06 07:52:59'),(423,'NURUL `AINI','17238/074.110','-','P',20,'2020-01-06 07:52:59'),(424,'NURUL LAILI AINIYAH','17239/075.110','-','P',20,'2020-01-06 07:52:59'),(425,'PRENGKI WAHYU SAMPURNO','17240/076.110','-','L',20,'2020-01-06 07:52:59'),(426,'PUTRI IFTITAH KHOIRUNIYAH','17241/077.110','-','P',20,'2020-01-06 07:52:59'),(427,'PUTRI LESTARI','17242/078.110','-','P',20,'2020-01-06 07:52:59'),(428,'RENANDA PUTRI NABILA','17243/079.110','-','P',20,'2020-01-06 07:52:59'),(429,'RISMA NUR AINI','17244/080.110','-','P',20,'2020-01-06 07:52:59'),(430,'RIZQI PERMATA SARI','17245/081.110','-','P',20,'2020-01-06 07:52:59'),(431,'RONNA DURROTUL HIKMAH','17246/082.110','-','P',20,'2020-01-06 07:52:59'),(432,'RUDI HERMAWAN','17247/083.110','-','L',20,'2020-01-06 07:52:59'),(433,'SAFANISA ALIFIA','17248/084.110','-','P',20,'2020-01-06 07:52:59'),(434,'SAFIA WULANDARI','17249/085.110','-','P',20,'2020-01-06 07:52:59'),(435,'SANIYAH APRIL LAILIYA','17250/086.110','-','P',20,'2020-01-06 07:52:59'),(436,'SANTI SULIASTIRA','17251/087.110','-','P',20,'2020-01-06 07:52:59'),(437,'SEBRINA NUR SISWANTI','17252/088.110','-','P',20,'2020-01-06 07:52:59'),(438,'SELFI SUKMAWATI','17253/089.110','-','P',20,'2020-01-06 07:52:59'),(439,'SELLY YULIARTI KRISTIAN','17254/090.110','-','P',20,'2020-01-06 07:52:59'),(440,'SENI MAULINA','17255/091.110','-','P',20,'2020-01-06 07:52:59'),(441,'SEPTIALITA EKA PUTRI','17256/092.110','-','P',20,'2020-01-06 07:52:59'),(442,'SHINTA RAMADANI PUTRI SANIYA','17257/093.110','-','P',20,'2020-01-06 07:52:59'),(443,'SHINTIA JULI RAHMAWATI','17258/094.110','-','P',20,'2020-01-06 07:52:59'),(444,'SILVYA FITRI HANDAYANI','17259/095.110','-','P',20,'2020-01-06 07:52:59'),(445,'SINTA LISTIANA PUTRI','17260/096.110','-','P',20,'2020-01-06 07:52:59'),(446,'SRIWANDA EKA HARIATININGSIH','17261/097.110','-','P',20,'2020-01-06 07:52:59'),(447,'SULISTYOWATI','17262/098.110','-','P',20,'2020-01-06 07:52:59'),(448,'TESSA MERDIANA','17263/099.110','-','P',20,'2020-01-06 07:52:59'),(449,'TIARA MAULIDAH','17264/100.110','-','P',20,'2020-01-06 07:52:59'),(450,'TIARA NOVITASARI','17265/101.110','-','P',20,'2020-01-06 07:52:59'),(451,'TIWI RAHAYU','17266/102.110','-','P',20,'2020-01-06 07:52:59'),(452,'TRI WAHYU ILMIAH','17267/103.110','-','P',20,'2020-01-06 07:52:59'),(453,'UMI RISMAYANI MAGFIROH','17268/104.110','-','P',20,'2020-01-06 07:52:59'),(454,'WHIHELMINA AGUSTINA WIJAYA','17269/105.110','-','P',20,'2020-01-06 07:52:59'),(455,'WIDYATUS SHOLEHAH','17270/106.110','-','P',20,'2020-01-06 07:52:59'),(456,'YOGA HADI PRASETYA','17271/107.110','-','L',20,'2020-01-06 07:52:59'),(457,'TIARA APRILIA','16695/318.106','-','P',21,'2020-01-06 07:53:24'),(458,'ADELLA ALIFAH WULANDARI','17272/001.114','-','P',21,'2020-01-06 07:53:24'),(459,'ADEVA VALENCIA MAULIDA AWALI','17273/002.114','-','P',21,'2020-01-06 07:53:24'),(460,'ADHISTI VIRGINANDITA HAYUNINGTYAS','17274/003.114','-','P',21,'2020-01-06 07:53:24'),(461,'ADITYA BINTANG FIRMANSYAH','17275/004.114','-','L',21,'2020-01-06 07:53:24'),(462,'AGUSTIN MARETA DEWI','17276/005.114','-','P',21,'2020-01-06 07:53:24'),(463,'AHMAD NAWANG PURNAMA','17277/006.114','-','L',21,'2020-01-06 07:53:24'),(464,'AIKO KIYOSHI GERALDINE REVIELLIA QADR','17278/007.114','-','P',21,'2020-01-06 07:53:24'),(465,'ALFIAH TUR ROHMAH','17279/008.114','-','P',21,'2020-01-06 07:53:24'),(466,'ALIFA YASMIN','17280/009.114','-','P',21,'2020-01-06 07:53:24'),(467,'ALMAIDA SABILLAH NURBAITIN','17281/010.114','-','P',21,'2020-01-06 07:53:24'),(468,'ANANDA PUTRI KARISMA','17282/011.114','-','P',21,'2020-01-06 07:53:24'),(469,'ANGGA APRILLIYANTO','17283/012.114','-','L',21,'2020-01-06 07:53:24'),(470,'AUDY BINTANG PRATAMA','17285/014.114','-','L',21,'2020-01-06 07:53:24'),(471,'AULIA NUR RAHMA','17286/015.114','-','P',21,'2020-01-06 07:53:24'),(472,'AYU LESTARI','17287/016.114','-','P',21,'2020-01-06 07:53:24'),(473,'BAHARI LUHUR GRAHITA','17288/017.114','-','L',21,'2020-01-06 07:53:24'),(474,'BINTARI ANDARISTA MAHARANI','17289/018.114','-','P',21,'2020-01-06 07:53:24'),(475,'BUNGA MERRY EFIOLA','17290/019.114','-','P',21,'2020-01-06 07:53:24'),(476,'CHEALSY PRITA SANCHALITA','17291/020.114','-','P',21,'2020-01-06 07:53:24'),(477,'CHICA AYU NIRMALASARI','17292/021.114','-','P',21,'2020-01-06 07:53:24'),(478,'CHINTIA WAHYU NUR SHOLEHA','17293/022.114','-','P',21,'2020-01-06 07:53:24'),(479,'CHIQUITA ADELLA','17294/023.114','-','P',21,'2020-01-06 07:53:24'),(480,'DELLA AYU RIZQI','17295/024.114','-','P',21,'2020-01-06 07:53:24'),(481,'DEWI PERMATASARI','17297/026.114','-','P',21,'2020-01-06 07:53:24'),(482,'DEWI PUSPASARI','17298/027.114','-','P',21,'2020-01-06 07:53:24'),(483,'DIAN ANGGRAENI','17299/028.114','-','P',21,'2020-01-06 07:53:24'),(484,'DIMAS FIRMANSYAH','17300/029.114','-','L',21,'2020-01-06 07:53:24'),(485,'FADHIL RAMADHAN','17303/032.114','-','L',21,'2020-01-06 07:53:24'),(486,'FADYA KARINA ANJANI','17304/033.114','-','P',21,'2020-01-06 07:53:24'),(487,'FAUSTINE CINDY PRATIZA DEWI','17305/034.114','-','P',21,'2020-01-06 07:53:24'),(488,'INDAH SULISTIANI','18176/107.114','-','P',21,'2020-01-06 07:53:24'),(489,'FEBBY AGISTA PUTRI','17306/035.114','-','P',22,'2020-01-06 07:53:40'),(490,'FEBRIASSARI','17307/036.114','-','P',22,'2020-01-06 07:53:40'),(491,'FINKY BELA EKA PUTRI','17308/037.114','-','P',22,'2020-01-06 07:53:40'),(492,'FIRDA SETYANINGTYAS','17309/038.114','-','P',22,'2020-01-06 07:53:40'),(493,'FITRI LUFITA SARI','17310/039.114','-','P',22,'2020-01-06 07:53:40'),(494,'FITRIA DAMAYANTI','17311/040.114','-','P',22,'2020-01-06 07:53:40'),(495,'GALUH PUTRI PRATIWI','17312/041.114','-','P',22,'2020-01-06 07:53:40'),(496,'GALUH WULANDARI','17313/042.114','-','P',22,'2020-01-06 07:53:40'),(497,'HANNY APRILIA','17314/043.114','-','P',22,'2020-01-06 07:53:40'),(498,'HILMANIA AULIA NURINDAH','17315/044.114','-','P',22,'2020-01-06 07:53:40'),(499,'IMANUELLA SHELLEN MICHELLANDITA','17316/045.114','-','P',22,'2020-01-06 07:53:40'),(500,'INDAH NOVITASARI','17317/046.114','-','P',22,'2020-01-06 07:53:40'),(501,'INDAH PERIHATINI','17318/047.114','-','P',22,'2020-01-06 07:53:40'),(502,'IRMA NUR AZIZA','17319/048.114','-','P',22,'2020-01-06 07:53:40'),(503,'JENNY ADELIA PRASTA','17320/049.114','-','P',22,'2020-01-06 07:53:40'),(504,'JESISCA JASMINE LUCHIA DHARMAWAN','17321/050.114','-','P',22,'2020-01-06 07:53:40'),(505,'JIHAN YUANSYAH PUTRI','17322/051.114','-','P',22,'2020-01-06 07:53:40'),(506,'KHARISMA MAHARANI','17323/052.114','-','P',22,'2020-01-06 07:53:40'),(507,'KHARISMA SELAWATI','17324/053.114','-','P',22,'2020-01-06 07:53:40'),(508,'KRISTINA ANGGI PITALOKA','17325/054.114','-','P',22,'2020-01-06 07:53:40'),(509,'LAILATUL HASANAH','17326/055.114','-','P',22,'2020-01-06 07:53:40'),(510,'LESLY PANGESTUTIK','17327/056.114','-','P',22,'2020-01-06 07:53:40'),(511,'M. FASLUKY ROBIATUL HAQ','17328/057.114','-','L',22,'2020-01-06 07:53:40'),(512,'M. KEVIN IQBAL MAULANA','17329/058.114','-','L',22,'2020-01-06 07:53:40'),(513,'MAHIRA KURNIAWATI','17330/059.114','-','P',22,'2020-01-06 07:53:40'),(514,'MOH. FEBRIYANTO','17331/060.114','-','L',22,'2020-01-06 07:53:40'),(515,'MUHAMMAD RAFLI RAMADHANI','17332/061.114','-','L',22,'2020-01-06 07:53:40'),(516,'NADIA PUTRI SETYA NINGRUM','17333/062.114','-','P',22,'2020-01-06 07:53:40'),(517,'NADINDA ZALZA NABILLA','17334/063.114','-','P',22,'2020-01-06 07:53:40'),(518,'NATASHA LYANTI HANDOYO','17335/064.114','-','P',22,'2020-01-06 07:53:40'),(519,'NATASYA NUR ANNISHA','17336/065.114','-','P',22,'2020-01-06 07:53:40'),(520,'NONIK ERFIYANI','17337/066.114','-','P',22,'2020-01-06 07:53:40'),(521,'NURUL SABRIANI','17338/067.114','','P',22,'2020-01-06 07:53:40'),(522,'OKY BAYU KURNIAWAN','17339/068.114','','L',22,'2020-01-06 07:53:40'),(523,'OKY SANTIA NOPES','17340/069.114','','P',22,'2020-01-06 07:53:40'),(524,'PUTRI ARINANDA','17342/071.114','-','P',23,'2020-01-06 07:53:58'),(525,'PUTRI MEDITA SARI','17343/072.114','-','P',23,'2020-01-06 07:53:58'),(526,'RAMADHANI MALIK','17344/073.114','-','L',23,'2020-01-06 07:53:58'),(527,'RANI OKTA ROHMAWATI','17345/074.114','-','P',23,'2020-01-06 07:53:58'),(528,'RIGE DHEA NOVITA SARI','17346/075.114','-','P',23,'2020-01-06 07:53:58'),(529,'RIKA INDAYANI','17347/076.114','-','P',23,'2020-01-06 07:53:58'),(530,'RIKA MAULIDA','17348/077.114','-','P',23,'2020-01-06 07:53:58'),(531,'RISA OKTAVIANA','17349/078.114','-','P',23,'2020-01-06 07:53:58'),(532,'RIYO PRAYOGI','17350/079.114','-','L',23,'2020-01-06 07:53:58'),(533,'RIZKA NUR SAFITRI','17351/080.114','-','P',23,'2020-01-06 07:53:58'),(534,'RIZKY ADI KURNIAWAN','17352/081.114','-','L',23,'2020-01-06 07:53:58'),(535,'SABELLA AFRISCA MAULIANA','17353/082.114','-','P',23,'2020-01-06 07:53:58'),(536,'SANDY ARYA WINATA','17354/083.114','-','L',23,'2020-01-06 07:53:58'),(537,'SASMITA','17355/084.114','-','P',23,'2020-01-06 07:53:58'),(538,'SINTA NURYANTI','17357/086.114','-','P',23,'2020-01-06 07:53:58'),(539,'SITI NURHIDAYAH','17358/087.114','-','P',23,'2020-01-06 07:53:58'),(540,'SITI RABAWATI NUR RIFA','17359/088.114','-','P',23,'2020-01-06 07:53:58'),(541,'SLAMET ADI SANTOSO','17360/089.114','-','L',23,'2020-01-06 07:53:58'),(542,'SOLEHATUN MAHRIPAH RIYANTI PRANSISKA','17361/090.114','-','P',23,'2020-01-06 07:53:58'),(543,'SULASTRI','17362/091.114','-','P',23,'2020-01-06 07:53:58'),(544,'SURYO ADI NUGROHO','17363/092.114','-','L',23,'2020-01-06 07:53:58'),(545,'SUSIANAH','17364/093.114','-','P',23,'2020-01-06 07:53:58'),(546,'TASQIA ZUMARNIS','17365/094.114','-','P',23,'2020-01-06 07:53:58'),(547,'TIRTA NANDITA','17366/095.114','-','P',23,'2020-01-06 07:53:58'),(548,'VINA DWI HANDAYANI','17367/096.114','-','P',23,'2020-01-06 07:53:58'),(549,'VIOSEPHIRA PUTRI ARWENDA','17368/097.114','-','P',23,'2020-01-06 07:53:58'),(550,'WAHYU SUHENDRA','17369/098.114','-','L',23,'2020-01-06 07:53:58'),(551,'WIWIT ANATUL WAROQOH','17370/099.114','-','P',23,'2020-01-06 07:53:58'),(552,'YESANDIA ZHUNIA CHRISTINE','17371/100.114','-','P',23,'2020-01-06 07:53:58'),(553,'YONA MIGI ARSELA','17372/101.114','-','P',23,'2020-01-06 07:53:58'),(554,'YOSI LILIK KUMALASARI','17373/102.114','-','P',23,'2020-01-06 07:53:58'),(555,'YOVITA OLIVIA','17374/103.114','-','P',23,'2020-01-06 07:53:58'),(556,'YUANISTYA PUTRI','17375/104.114','','P',23,'2020-01-06 07:53:58'),(557,'YUNIA MAULIDIA','17376/105.114','','P',23,'2020-01-06 07:53:58'),(558,'AGUS PRASETYA','16710/076.114','-','L',24,'2020-01-06 07:54:17'),(559,'ADISTYA','17378/001.123','-','P',24,'2020-01-06 07:54:17'),(560,'AHMAD KUSAIRI','17379/002.123','-','L',24,'2020-01-06 07:54:17'),(561,'AJENG MAULIDYA PRAMESTHY','17380/003.123','-','P',24,'2020-01-06 07:54:17'),(562,'ALZAENA MAY PUTRI','17381/004.123','-','P',24,'2020-01-06 07:54:17'),(563,'ANDRI SETYO UTOMO','17382/005.123','-','L',24,'2020-01-06 07:54:17'),(564,'ANISA RAHMAWATI','17383/006.123','-','P',24,'2020-01-06 07:54:17'),(565,'ANJAS SAPUTRA','17384/007.123','-','L',24,'2020-01-06 07:54:17'),(566,'ARHINSYAH RAMADHAN','17385/008.123','-','L',24,'2020-01-06 07:54:17'),(567,'ARJUN MULYA SAHPUTRA','17386/009.123','-','L',24,'2020-01-06 07:54:17'),(568,'ARUM H. FEBRIANA','17387/010.123','-','P',24,'2020-01-06 07:54:17'),(569,'AYU LESTARI','17388/011.123','-','P',24,'2020-01-06 07:54:17'),(570,'CAMELIA ANGGRAINI YULIANTO P.','17389/012.123','-','P',24,'2020-01-06 07:54:17'),(571,'CANTIKA CITRA AMANDA','17390/013.123','-','P',24,'2020-01-06 07:54:17'),(572,'CINTAMI GITA SAPUTRI','17391/014.123','-','P',24,'2020-01-06 07:54:17'),(573,'COSSA SEPTA DEDUCAST','17392/015.123','-','L',24,'2020-01-06 07:54:17'),(574,'DINDA PRAMESWARI','17394/017.123','-','P',24,'2020-01-06 07:54:17'),(575,'EKA RETNOWATI','17395/018.123','-','P',24,'2020-01-06 07:54:17'),(576,'ERLANDO DWINGKY ASYAN OKTAVALDY','17396/019.123','-','L',24,'2020-01-06 07:54:17'),(577,'FAKHRI AUFA ALVIYANTO','17397/020.123','-','L',24,'2020-01-06 07:54:17'),(578,'FARIS GHYATS DYA`FADHLULLAHMUZAKA','17398/021.123','-','L',24,'2020-01-06 07:54:17'),(579,'FIRNANDA SAPUTRA','17400/023.123','-','L',24,'2020-01-06 07:54:17'),(580,'HARSITA','17401/024.123','-','P',24,'2020-01-06 07:54:17'),(581,'I GUSTI DZULQARNAIN RAHMATULLOH','17402/025.123','-','L',24,'2020-01-06 07:54:17'),(582,'IKA SARI KURNIAWATI','17403/026.123','-','P',24,'2020-01-06 07:54:17'),(583,'ITA NUR WAKHIDAH','17404/027.123','-','P',24,'2020-01-06 07:54:17'),(584,'KARINA MAHARANI','17405/028.123','-','P',24,'2020-01-06 07:54:17'),(585,'KOPDWIYANTO PUTRA ADI GUSNADI','17406/029.123','-','L',24,'2020-01-06 07:54:17'),(586,'LINGGA TAMARA GUSIFA','17408/031.123','-','P',24,'2020-01-06 07:54:17'),(587,'MAHA PUTRI KHOLIFAH','17409/032.123','-','P',24,'2020-01-06 07:54:17'),(588,'MARIYANI','17410/033.123','-','P',24,'2020-01-06 07:54:17'),(589,'MARTA TIARA SYAHPUTRI','17411/034.123','-','P',24,'2020-01-06 07:54:17'),(590,'MIA WAHYU LESTARI','17412/035.123','','P',24,'2020-01-06 07:54:17'),(591,'MOCH. IKROBI','17413/036.123','','L',24,'2020-01-06 07:54:17'),(592,'MUH. RAMADHAN HANIF OKTAVIANO','17414/037.123','-','L',25,'2020-01-06 07:54:34'),(593,'MUHAMMAD HAQQUL MUBIN','17415/038.123','-','L',25,'2020-01-06 07:54:34'),(594,'NABILLA REFAGOSTINO','17416/039.123','-','L',25,'2020-01-06 07:54:34'),(595,'NADA CAHYA BARIQLI','17417/040.123','-','P',25,'2020-01-06 07:54:34'),(596,'NENI ROSIDA','17418/041.123','-','P',25,'2020-01-06 07:54:34'),(597,'NINDHEA RAHMA AULIA','17419/042.123','-','P',25,'2020-01-06 07:54:34'),(598,'NOVA TRI MULYA AGUSTINA','17420/043.123','-','P',25,'2020-01-06 07:54:34'),(599,'NUR ARIEF PERMANA','17421/044.123','-','L',25,'2020-01-06 07:54:34'),(600,'NUR EFFENDIY','17422/045.123','-','L',25,'2020-01-06 07:54:34'),(601,'OLANDHIKA DWI NOVIANGGA','17423/046.123','-','L',25,'2020-01-06 07:54:34'),(602,'PRAYOGO HENDRAYANI','17425/048.123','-','L',25,'2020-01-06 07:54:34'),(603,'RANI AMELIA','17426/049.123','-','P',25,'2020-01-06 07:54:34'),(604,'RAYHAN IBRAHIM','17427/050.123','-','L',25,'2020-01-06 07:54:34'),(605,'RENDI ARFANI','17428/051.123','-','L',25,'2020-01-06 07:54:34'),(606,'REZA SATRIANANDA','17429/052.123','-','L',25,'2020-01-06 07:54:34'),(607,'RINDI PUSFITA SARI','17430/053.123','-','P',25,'2020-01-06 07:54:34'),(608,'RISKY YUSUF ISKANDAR','17431/054.123','-','L',25,'2020-01-06 07:54:34'),(609,'RIYAN HIDAYATULLOH','17432/055.123','-','L',25,'2020-01-06 07:54:34'),(610,'RIZKA FITRIYANINGSIH','17433/056.123','-','P',25,'2020-01-06 07:54:34'),(611,'ROHIMATUL MUKAROMAH','17434/057.123','-','P',25,'2020-01-06 07:54:34'),(612,'RULLY DATI SAFITRI','17435/058.123','-','P',25,'2020-01-06 07:54:34'),(613,'SABRINA RESTU AMALIA','17436/059.123','-','P',25,'2020-01-06 07:54:34'),(614,'SAHRULLOH MAULANA','17437/060.123','-','L',25,'2020-01-06 07:54:34'),(615,'SAIFUL HAMZA HAS','17438/061.123','-','L',25,'2020-01-06 07:54:34'),(616,'SANDRA GINAWANGI NASUTION','17439/062.123','-','P',25,'2020-01-06 07:54:34'),(617,'SHELA YUNIAR','17440/063.123','-','P',25,'2020-01-06 07:54:34'),(618,'SHIFA AINUR ROHMAH','17441/064.123','-','P',25,'2020-01-06 07:54:34'),(619,'SHOFIA HANA ARHINZA','17442/065.123','-','P',25,'2020-01-06 07:54:34'),(620,'SULIS','17443/066.123','-','P',25,'2020-01-06 07:54:34'),(621,'SUNAN WIRA ANGGRIAWAN','17444/067.123','-','L',25,'2020-01-06 07:54:34'),(622,'TANISA LOLA SARI','17445/068.123','-','P',25,'2020-01-06 07:54:34'),(623,'USWATUN ASANAH','17446/069.123','-','P',25,'2020-01-06 07:54:34'),(624,'VITA EKA LESTARI','17447/070.123','','P',25,'2020-01-06 07:54:34'),(625,'YUNITA','17448/071.123','','P',25,'2020-01-06 07:54:34'),(626,'ABDUR ROSID','17449/001.133','-','L',26,'2020-01-06 07:55:32'),(627,'AYU CAHYANI','17452/004.133','-','P',26,'2020-01-06 07:55:32'),(628,'CANTIKA PERMATASARI','17453/005.133','-','P',26,'2020-01-06 07:55:32'),(629,'EKA BELA LESTARI','17455/007.133','-','P',26,'2020-01-06 07:55:32'),(630,'EL SHINTA FEBRIANI','17456/008.133','-','P',26,'2020-01-06 07:55:32'),(631,'ELLA CAHAYU MUSTIKA','17457/009.133','-','P',26,'2020-01-06 07:55:32'),(632,'ERNA WATI','17458/010.133','-','P',26,'2020-01-06 07:55:32'),(633,'GUSVENY RAHMAWATI','17460/012.133','-','P',26,'2020-01-06 07:55:32'),(634,'HERNI LESTARI','17461/013.133','-','P',26,'2020-01-06 07:55:32'),(635,'ICA NUR IFTITA','17462/014.133','-','P',26,'2020-01-06 07:55:32'),(636,'INEZ SALSA KHOFI RAHMAWATI','17463/015.133','-','P',26,'2020-01-06 07:55:32'),(637,'LAZULFA INDI USMADA','17464/016.133','-','P',26,'2020-01-06 07:55:32'),(638,'MARELLA DELIA FIRDAUS','17466/018.133','-','P',26,'2020-01-06 07:55:32'),(639,'MEISYAH AYU ANDITA','17467/019.133','-','P',26,'2020-01-06 07:55:32'),(640,'MIRTA FEBBY DAMAYANTI','17468/020.133','-','P',26,'2020-01-06 07:55:32'),(641,'MOHAMAD ALI IMRON','17469/021.133','-','L',26,'2020-01-06 07:55:32'),(642,'MUTIARA CAHYA AYUNINGT YAS','17470/022.133','-','P',26,'2020-01-06 07:55:32'),(643,'PUTRI WULANDARI','17471/023.133','-','P',26,'2020-01-06 07:55:32'),(644,'RAUDOTUL PUTRI INTAN PERTIWI','17472/024.133','-','P',26,'2020-01-06 07:55:32'),(645,'REGGINA RISMAYANI','17473/025.133','-','P',26,'2020-01-06 07:55:32'),(646,'RESTI MEI YANTI','17474/026.133','-','P',26,'2020-01-06 07:55:32'),(647,'RIDO TRIO SAPUTRA','17475/027.133','-','L',26,'2020-01-06 07:55:32'),(648,'ROSI NUR AINI','17476/028.133','-','P',26,'2020-01-06 07:55:32'),(649,'SHERLY LUTFITA ADY','17477/029.133','-','P',26,'2020-01-06 07:55:32'),(650,'SINTA AYU LESTARI','17478/030.133','-','P',26,'2020-01-06 07:55:32'),(651,'SITI AISYAH','17479/031.133','-','P',26,'2020-01-06 07:55:32'),(652,'SITI FADIAH RAHMA','17480/032.133','-','P',26,'2020-01-06 07:55:32'),(653,'SITI NUR ALFIYAH','17481/033.133','-','P',26,'2020-01-06 07:55:32'),(654,'TANIA SYAFITRI DWI PURNAMA','17482/034.133','-','P',26,'2020-01-06 07:55:32'),(655,'ZULFA SAFITRI','17483/035.133','-','P',26,'2020-01-06 07:55:32'),(656,'ARIQ DARMANSYAH FIKRIAWAN','16819/010.065','-','P',27,'2020-01-06 07:56:33'),(657,'ADE OKTAVIANO ARRAHMAN','17485/072.065','-','L',27,'2020-01-06 07:56:33'),(658,'AGIL FIRGIAWAN PRISTIANTO','17486/073.065','-','L',27,'2020-01-06 07:56:33'),(659,'ALFIAN NUR ROHMAN','17487/074.065','-','L',27,'2020-01-06 07:56:33'),(660,'ANANDA DIVA P.','17488/075.065','-','L',27,'2020-01-06 07:56:33'),(661,'ANANDA FEBI ANGGITA','17489/076.065','-','P',27,'2020-01-06 07:56:33'),(662,'ANASTASYA EKA NURUL AINI','17490/077.065','-','P',27,'2020-01-06 07:56:33'),(663,'ANZELIKA WAHYUDITA SARI','17491/078.065','-','P',27,'2020-01-06 07:56:33'),(664,'BIMA GATRA TEGAR AMUKTI','17493/080.065','-','L',27,'2020-01-06 07:56:33'),(665,'BINTANG GENUREN ALIGAYO','17494/081.065','-','L',27,'2020-01-06 07:56:33'),(666,'DAFA IFALDI','17495/082.065','-','L',27,'2020-01-06 07:56:33'),(667,'DELLA REVITA','17496/083.065','-','P',27,'2020-01-06 07:56:33'),(668,'DESNITA RAHMAWATI','17497/084.065','-','P',27,'2020-01-06 07:56:33'),(669,'DESTRIA ZALZABILA SAFITRI','17498/085.065','-','P',27,'2020-01-06 07:56:33'),(670,'DHANIAR FEBRIN WAHYUDI','17499/086.065','-','L',27,'2020-01-06 07:56:33'),(671,'DYMAS YOVIE SYAHPUTRA','17501/088.065','-','L',27,'2020-01-06 07:56:33'),(672,'FAJRIN MUZDALIFA NUR','17502/089.065','-','P',27,'2020-01-06 07:56:33'),(673,'FARCHAN ARDIYAN','17503/090.065','-','L',27,'2020-01-06 07:56:33'),(674,'FATYA ANANDA NUR AZIZAH','17504/091.065','-','P',27,'2020-01-06 07:56:33'),(675,'FIRMAN JUSTISIO LESTARI','17505/092.065','-','L',27,'2020-01-06 07:56:33'),(676,'GITA NANDA SAFITRI','17506/093.065','-','P',27,'2020-01-06 07:56:33'),(677,'HENDRAWAN EFENDY','17507/094.065','-','L',27,'2020-01-06 07:56:33'),(678,'INDAH DWI ROSANTI','17508/095.065','-','P',27,'2020-01-06 07:56:33'),(679,'IVAN RAMADHAN TRI SANTOSO','17509/096.065','-','L',27,'2020-01-06 07:56:33'),(680,'IZZA IHSAN FATHONY','17510/097.065','-','L',27,'2020-01-06 07:56:33'),(681,'KALWABED RIZKI','17511/098.065','-','L',27,'2020-01-06 07:56:33'),(682,'LELY MARISKA','17513/100.065','-','P',27,'2020-01-06 07:56:33'),(683,'LUTFIATUS SOLEHA','17514/101.065','-','P',27,'2020-01-06 07:56:33'),(684,'M. FITRAH ARDI BILLAH SAPUTRA','17515/102.065','-','L',27,'2020-01-06 07:56:33'),(685,'MIFTAHUL JANNAH','17517/104.065','-','P',27,'2020-01-06 07:56:33'),(686,'','','','',27,'2020-01-06 07:56:33'),(687,'RAGIL AMRULLAH','16861/052.065','-','L',28,'2020-01-06 07:56:56'),(688,'MITA AMELIA','17518/105.065','-','P',28,'2020-01-06 07:56:56'),(689,'MOH. RICO ARIF RIYANTO','17519/106.065','-','L',28,'2020-01-06 07:56:56'),(690,'MUHAMAD YUSUF NUR AKASAH','17520/107.065','-','L',28,'2020-01-06 07:56:56'),(691,'MUHAMMAD AMRU ALHAFIZH','17521/108.065','-','L',28,'2020-01-06 07:56:56'),(692,'MUHAMMAD JANUAR PRAYOGI','17522/109.065','-','L',28,'2020-01-06 07:56:56'),(693,'MUHAMMAD PRAYUDA','17523/110.065','-','L',28,'2020-01-06 07:56:56'),(694,'MUHAMMAD RAIHAN AR RASYID','17524/111.065','-','L',28,'2020-01-06 07:56:56'),(695,'MYRILLA WAHYUDI PUTRI','17525/112.065','-','P',28,'2020-01-06 07:56:56'),(696,'NABILLA MARGARETTA','17526/113.065','-','P',28,'2020-01-06 07:56:56'),(697,'NADHIA TIFANI','17527/114.065','-','P',28,'2020-01-06 07:56:56'),(698,'NAS`ATAL ULA','17528/115.065','-','P',28,'2020-01-06 07:56:56'),(699,'NAZARU DWI SISKA','17529/116.065','-','P',28,'2020-01-06 07:56:56'),(700,'NITA NURHALIMA','17530/117.065','-','P',28,'2020-01-06 07:56:56'),(701,'NOVIANI FITRI','17531/118.065','-','P',28,'2020-01-06 07:56:56'),(702,'OMI GUSTY RIFANI','17532/119.065','-','L',28,'2020-01-06 07:56:56'),(703,'ONGKY REYZA SAPUTRA','17533/120.065','-','L',28,'2020-01-06 07:56:56'),(704,'PUTRI LUVITA DEWI','17534/121.065','-','P',28,'2020-01-06 07:56:56'),(705,'QUROTHUL NADIVA','17535/122.065','-','P',28,'2020-01-06 07:56:56'),(706,'RADITE TRI NANDA','17536/123.065','-','L',28,'2020-01-06 07:56:56'),(707,'RISALATUL UMAMI','17537/124.065','-','P',28,'2020-01-06 07:56:56'),(708,'RIZQI ZULVIA AZIZAH','17538/125.065','-','P',28,'2020-01-06 07:56:56'),(709,'SARAH DYONITA','17539/126.065','-','P',28,'2020-01-06 07:56:56'),(710,'SCHEVA FITRAH PRATAMA HARIS','17540/127.065','-','L',28,'2020-01-06 07:56:56'),(711,'SITI MONALISA','17541/128.065','-','P',28,'2020-01-06 07:56:56'),(712,'SOFIA MIFTAHUL AINI','17542/129.065','-','P',28,'2020-01-06 07:56:56'),(713,'SURYA ADI WIBOWO','17543/130.065','-','L',28,'2020-01-06 07:56:56'),(714,'TONDE DANAS','17545/132.065','-','L',28,'2020-01-06 07:56:56'),(715,'VERRIZAL RIZKY REINALDI','17546/133.065','-','P',28,'2020-01-06 07:56:56'),(716,'VIRA NASYA FEBRIANTI','17547/134.065','-','L',28,'2020-01-06 07:56:56'),(717,'YOHANES SETIAWAN','17548/135.065','-','L',28,'2020-01-06 07:56:56'),(718,'YOHANES SHALOM NANJAYA','17549/136.065','-','L',28,'2020-01-06 07:56:56'),(719,'ZIDNY HAMAMY EFDERIZA','17550/137.065','-','L',28,'2020-01-06 07:56:56'),(720,'','','','',28,'2020-01-06 07:56:56'),(721,'MUHAMMAD DANU PRAWIRA','16926/046.066','-','L',29,'2020-01-06 07:57:18'),(722,'RIZKI PUTRI CAHYA ARDIANTI','16942/062.066','-','P',29,'2020-01-06 07:57:18'),(723,'ABDUR ROHMAN','17551/073.066','-','L',29,'2020-01-06 07:57:18'),(724,'ABEL TASYA ADELIA AGATHA','17552/074.066','-','P',29,'2020-01-06 07:57:18'),(725,'ADELA MARTA DWI PUSPITA','17553/075.066','-','P',29,'2020-01-06 07:57:18'),(726,'ADIETIYA SASKIADIS','17554/076.066','-','L',29,'2020-01-06 07:57:18'),(727,'ALDI LUKMAN HAKIM','17556/078.066','-','L',29,'2020-01-06 07:57:18'),(728,'AMELIA INTAN PRASASTI','17557/079.066','-','P',29,'2020-01-06 07:57:18'),(729,'ANANDA DWI ARDIANSYAH','17558/080.066','-','L',29,'2020-01-06 07:57:18'),(730,'ANISA AYU MUSTIKA','17559/081.066','-','P',29,'2020-01-06 07:57:18'),(731,'AWALIA ELOK NINGTIAS','17560/082.066','-','P',29,'2020-01-06 07:57:18'),(732,'BAGUS ARIF SETIAWAN','17561/083.066','-','L',29,'2020-01-06 07:57:18'),(733,'BIMO DWI LAKSONO','17562/084.066','-','L',29,'2020-01-06 07:57:18'),(734,'DARMAWAN AGUNG PRASETYO','17563/085.066','-','L',29,'2020-01-06 07:57:18'),(735,'DEWI ALFINA EKA PUTRI','17564/086.066','-','P',29,'2020-01-06 07:57:18'),(736,'DIAN SETIAWAN','17565/087.066','-','L',29,'2020-01-06 07:57:18'),(737,'DICKY MULIA FIQRI','17566/088.066','-','L',29,'2020-01-06 07:57:18'),(738,'DINANTI SHELA MAHASIWI','17567/089.066','-','P',29,'2020-01-06 07:57:18'),(739,'DINDA YUNITA PRATIWI','17568/090.066','-','P',29,'2020-01-06 07:57:18'),(740,'FIKRI SETYAWAN','17569/091.066','-','L',29,'2020-01-06 07:57:18'),(741,'FIQI FATHUR ALI ZAMAN','17570/092.066','-','L',29,'2020-01-06 07:57:18'),(742,'FIRDA KURNIA','17571/093.066','-','P',29,'2020-01-06 07:57:18'),(743,'FITRIA NUR AZIZAH KUSUMA WARDHANI','17572/094.066','-','P',29,'2020-01-06 07:57:18'),(744,'FRANANDA YUSUF VICCYNOVRI','17573/095.066','-','L',29,'2020-01-06 07:57:18'),(745,'GILANG ARYA PRAMUDITYA','17574/096.066','-','L',29,'2020-01-06 07:57:18'),(746,'HAKIM LAMBANG P','17575/097.066','-','L',29,'2020-01-06 07:57:18'),(747,'HERLINA RAMAWATI','17576/098.066','-','P',29,'2020-01-06 07:57:18'),(748,'ILHAM ABIYYU NAWWAF','17577/099.066','-','L',29,'2020-01-06 07:57:18'),(749,'ILHAN MANSIZ','17578/100.066','-','L',29,'2020-01-06 07:57:18'),(750,'INDRA SAPUTRA','17579/101.066','-','L',29,'2020-01-06 07:57:18'),(751,'INTAN AYU SUKMANA','17580/102.066','-','P',29,'2020-01-06 07:57:18'),(752,'IQLIMA SALWA NUGROHO','17581/103.066','-','P',29,'2020-01-06 07:57:18'),(753,'JUNEAU AKBAR CAHYONO','17582/104.066','-','L',29,'2020-01-06 07:57:18'),(754,'KIKY ANGGA PRATAMA','17583/105.066','-','L',29,'2020-01-06 07:57:18'),(755,'LAILY FARIDA HARNUM','17584/106.066','-','P',29,'2020-01-06 07:57:18'),(756,'','','','',29,'2020-01-06 07:57:18'),(757,'LUH FAIZA ANNISA PUTRI','17585/107.066','-','P',31,'2020-01-06 07:57:37'),(758,'LUTFI DIMASQY','17586/108.066','-','L',31,'2020-01-06 07:57:37'),(759,'M. GILANG HIMAWAN','17587/109.066','-','L',31,'2020-01-06 07:57:37'),(760,'MARTHA SYAFIRA ULINNUHA','17588/110.066','-','P',31,'2020-01-06 07:57:37'),(761,'MEI DIAMITA','17589/111.066','-','P',31,'2020-01-06 07:57:37'),(762,'MOCH. FAHMI IQBAL','17590/112.066','-','L',31,'2020-01-06 07:57:37'),(763,'MOCH. RAMZI DAFFA PUTRA','17591/113.066','-','L',31,'2020-01-06 07:57:37'),(764,'MOH FARRIJ WAJDI','17592/114.066','-','L',31,'2020-01-06 07:57:37'),(765,'MOHAMAD ABI ANANDA','17593/115.066','-','L',31,'2020-01-06 07:57:37'),(766,'MOHAMMAD LUTFI KURNIAWAN','17594/116.066','-','L',31,'2020-01-06 07:57:37'),(767,'MUHAMAD ZULFIKAR PAGAR ALAM','17595/117.066','-','L',31,'2020-01-06 07:57:37'),(768,'MUHAMMAD ARMAN MAULANA','17596/118.066','-','L',31,'2020-01-06 07:57:37'),(769,'MUHAMMAD LUTFI','17597/119.066','-','L',31,'2020-01-06 07:57:37'),(770,'MUHAMMAD PIYARR SIFA ULINUHA','17598/120.066','-','L',31,'2020-01-06 07:57:37'),(771,'NOVIANTI ELISABETH TONUNG BELA','17599/121.066','-','P',31,'2020-01-06 07:57:37'),(772,'NOVITA PUTRI LESTARI','17600/122.066','-','P',31,'2020-01-06 07:57:37'),(773,'NUR AZIZAH','17601/123.066','-','P',31,'2020-01-06 07:57:37'),(774,'NUR IMAMA','17602/124.066','-','P',31,'2020-01-06 07:57:37'),(775,'NUR IMAMAH','17603/125.066','-','P',31,'2020-01-06 07:57:37'),(776,'RAFAEL IVAN SETIYANTORO','17604/126.066','-','L',31,'2020-01-06 07:57:37'),(777,'RIA SURYANI','17605/127.066','-','P',31,'2020-01-06 07:57:37'),(778,'RIKA SUMITA WIMANDA SARI','17606/128.066','-','P',31,'2020-01-06 07:57:37'),(779,'RIMA PUTRI HIKMAWATI','17607/129.066','-','P',31,'2020-01-06 07:57:37'),(780,'RIZKI RAHMA DEWI','17608/130.066','-','P',31,'2020-01-06 07:57:37'),(781,'RIZKY MAULANA','17609/131.066','-','L',31,'2020-01-06 07:57:37'),(782,'RIZKY MYLANI AULIA','17610/132.066','-','P',31,'2020-01-06 07:57:37'),(783,'ROMEL MAULANA','17611/133.066','-','L',31,'2020-01-06 07:57:37'),(784,'ROMI DARMAWAN','17612/134.066','-','L',31,'2020-01-06 07:57:37'),(785,'RYAN AJENG SUKMA DEWI TITAH PRATAMA','17613/135.066','-','P',31,'2020-01-06 07:57:37'),(786,'SABINA NURI AYU','17614/136.066','-','P',31,'2020-01-06 07:57:37'),(787,'SEPTIAN RAHMAD MAULANA','17615/137.066','-','L',31,'2020-01-06 07:57:37'),(788,'SHAFA KUSUMAWATI','17616/138.066','-','P',31,'2020-01-06 07:57:37'),(789,'SISKA JANUARITA SARI','17617/139.066','-','P',31,'2020-01-06 07:57:37'),(790,'SITI WULANDARI','17618/140.066','-','P',31,'2020-01-06 07:57:37'),(791,'WIDYA PUJA PRATIWI','17619/141.066','-','P',31,'2020-01-06 07:57:37'),(792,'YUNANTA DWI KRISTANTO','17620/142.066','-','L',31,'2020-01-06 07:57:37'),(793,'','','','',31,'2020-01-06 07:57:37'),(794,'MUHAMMAD RIZQI FAHMI FIRDAUS','17001/049.067','-','L',32,'2020-01-06 07:57:53'),(795,'AFRA SYABRINA','17621/070.067','-','P',32,'2020-01-06 07:57:53'),(796,'AHMAD FAJAR RIZALUDDIN','17622/071.067','-','L',32,'2020-01-06 07:57:53'),(797,'ALUSYOS YOSEPH GUNAWAN WICAKSONO','17623/072.067','-','L',32,'2020-01-06 07:57:53'),(798,'AMANDA YOGA PRATAMA','17624/073.067','-','L',32,'2020-01-06 07:57:53'),(799,'ANGGI MAULIYA','17625/074.067','-','P',32,'2020-01-06 07:57:53'),(800,'ANISA SILVIANA AMANDA PUTRI','17626/075.067','-','P',32,'2020-01-06 07:57:53'),(801,'BINASTI WAHYUNING JANUARISTI','17627/076.067','-','P',32,'2020-01-06 07:57:53'),(802,'CAESAR ACHMAD BADAR MAULANA IBRAHIM','17628/077.067','-','L',32,'2020-01-06 07:57:53'),(803,'CALISTA AINUN MAHARANI','17629/078.067','-','P',32,'2020-01-06 07:57:53'),(804,'DELLA FITRI RAHMADANIA','17630/079.067','-','P',32,'2020-01-06 07:57:53'),(805,'DINDA NUR AINI','17631/080.067','-','P',32,'2020-01-06 07:57:53'),(806,'DIRGANTARA TEGAR YUSMIA ALTAROSI','17632/081.067','-','L',32,'2020-01-06 07:57:53'),(807,'DIVA ARTHA MEUTIA','17633/082.067','-','P',32,'2020-01-06 07:57:53'),(808,'DWI AYU TIKA HARDIYANTI','17634/083.067','-','P',32,'2020-01-06 07:57:53'),(809,'ELLYV SEPTIANA EKA PUTRI','17635/084.067','-','P',32,'2020-01-06 07:57:53'),(810,'FIONA NADA ALVITA','17636/085.067','-','P',32,'2020-01-06 07:57:53'),(811,'FIRYAL LAILA SYAFA','17637/086.067','-','P',32,'2020-01-06 07:57:53'),(812,'FITRIA DESTIA RINI','17638/087.067','-','P',32,'2020-01-06 07:57:53'),(813,'GERALD AGUNG WASIS RAHARJO','17639/088.067','-','L',32,'2020-01-06 07:57:53'),(814,'IDA NURIA','17640/089.067','-','P',32,'2020-01-06 07:57:53'),(815,'IKA HIJRIYATUSSHOLIHAH','17641/090.067','-','P',32,'2020-01-06 07:57:53'),(816,'INDAH EKA WULANDARI','17642/091.067','-','P',32,'2020-01-06 07:57:53'),(817,'KARINA DWI CAHYANI','17643/092.067','-','P',32,'2020-01-06 07:57:53'),(818,'KETUT INDIRA SARASWATI','17644/093.067','-','P',32,'2020-01-06 07:57:53'),(819,'LALUNA RACHEL PERMATA DIAN','17645/094.067','-','P',32,'2020-01-06 07:57:53'),(820,'LINTANG DWI SENTIKA','17646/095.067','-','P',32,'2020-01-06 07:57:53'),(821,'LOYA JIRGA ALINSYIRAH','17647/096.067','-','P',32,'2020-01-06 07:57:53'),(822,'LUQMAN HAKIM SUPRIYADI','17648/097.067','-','L',32,'2020-01-06 07:57:53'),(823,'MELVIA CIO ARTAMERTA GOPAR','17649/098.067','-','P',32,'2020-01-06 07:57:53'),(824,'MILATI','17650/099.067','-','P',32,'2020-01-06 07:57:53'),(825,'MOH. VICKY ALPIAN','17651/100.067','-','L',32,'2020-01-06 07:57:53'),(826,'MUHAMAD AINUN KAMAL','17652/101.067','-','L',32,'2020-01-06 07:57:53'),(827,'MUHAMAD JEFRIL OTHMAN','17653/102.067','-','L',32,'2020-01-06 07:57:53'),(828,'MUHAMMAD FUAD AL FARISY','17654/103.067','-','L',32,'2020-01-06 07:57:53'),(829,'NANDA MUHAMAD DANISWARA','17655/104.067','-','L',32,'2020-01-06 07:57:53'),(830,'NANDA TEGAR HADI SAPUTRA','17656/105.067','','L',32,'2020-01-06 07:57:53'),(831,'SEPTIAN WIBOWO','17009/057.067','-','L',33,'2020-01-06 07:58:40'),(832,'NANDITA YULIASTINI','17657/106.067','-','P',33,'2020-01-06 07:58:40'),(833,'NONA CANTIKA RATU DUNIA LEORITO','17658/107.067','-','P',33,'2020-01-06 07:58:40'),(834,'NOVY PUTRI RAMADHANI','17660/109.067','-','P',33,'2020-01-06 07:58:40'),(835,'NUR HALIMATUS SA`DIYAH','17661/110.067','-','P',33,'2020-01-06 07:58:40'),(836,'NURJANNAH','17662/111.067','-','P',33,'2020-01-06 07:58:40'),(837,'OKTAVIA DAMAYANTI','17663/112.067','-','P',33,'2020-01-06 07:58:40'),(838,'PUTRI NURIA','17664/113.067','-','P',33,'2020-01-06 07:58:40'),(839,'QOTHRUNADA FIRDAUSI','17665/114.067','-','P',33,'2020-01-06 07:58:40'),(840,'RADA AULIA SARI','17666/115.067','-','P',33,'2020-01-06 07:58:40'),(841,'RANGGA BICKY HANANTA','17667/116.067','-','L',33,'2020-01-06 07:58:40'),(842,'REGINA PUTRI RUSDIANTINI','17668/117.067','-','P',33,'2020-01-06 07:58:40'),(843,'REZA BERLIANTI','17669/118.067','-','P',33,'2020-01-06 07:58:40'),(844,'RHICO ARYA RADITYA','17670/119.067','-','L',33,'2020-01-06 07:58:40'),(845,'RIKI JUNATAN FADILA','17671/120.067','-','L',33,'2020-01-06 07:58:40'),(846,'RITZCAL ARIF PRAMECY','17672/121.067','-','P',33,'2020-01-06 07:58:40'),(847,'RHOMY MUHAMMAD FADLY','17673/122.067','-','L',33,'2020-01-06 07:58:40'),(848,'SAFIRA AZ ZAHRA','17675/124.067','-','P',33,'2020-01-06 07:58:40'),(849,'SALSA OKTAVIA SUKMAWATI','17676/125.067','-','P',33,'2020-01-06 07:58:40'),(850,'SANDRA MAUDY VERONICA','17677/126.067','-','P',33,'2020-01-06 07:58:40'),(851,'SELLY MARETA','17678/127.067','-','P',33,'2020-01-06 07:58:40'),(852,'SENDA FEBRIAN','17679/128.067','-','L',33,'2020-01-06 07:58:40'),(853,'SILVA FEBIAN NABILA','17681/130.067','-','P',33,'2020-01-06 07:58:40'),(854,'SINANGHAYU GINAMALINI','17682/131.067','-','P',33,'2020-01-06 07:58:40'),(855,'SISKA RATNASARI','17683/132.067','-','P',33,'2020-01-06 07:58:40'),(856,'SITI AISYAH','17684/133.067','-','P',33,'2020-01-06 07:58:40'),(857,'SYIFA WAHIDA RAHMANIYAH','17685/134.067','-','P',33,'2020-01-06 07:58:40'),(858,'TALITA SALSABILLA QUROTU`AIN','17686/135.067','-','P',33,'2020-01-06 07:58:40'),(859,'TIO FIRMANSYAH HARLIA PRATAMA','17687/136.067','-','L',33,'2020-01-06 07:58:40'),(860,'TRI MITA RAMADINA','17688/137.067','-','P',33,'2020-01-06 07:58:40'),(861,'TUTIK HIDAYANTI','17689/138.067','-','P',33,'2020-01-06 07:58:40'),(862,'VALENTINO ROSSI AKBAR','17690/139.067','-','L',33,'2020-01-06 07:58:40'),(863,'WARAS','17691/140.067','-','L',33,'2020-01-06 07:58:40'),(864,'ABILA PUTRI TITA PRATAMA','17692/001.108','-','P',34,'2020-01-06 07:59:08'),(865,'ALIFINAWILDA NIKMATUR ROBBANI','17693/002.108','-','P',34,'2020-01-06 07:59:08'),(866,'AMELIA AGUSTIN','17694/003.108','-','P',34,'2020-01-06 07:59:08'),(867,'ANGGI AYU SOFIA RINI','17695/004.108','-','P',34,'2020-01-06 07:59:08'),(868,'ANGGI EKA PUSPITA SARI','17696/005.108','-','P',34,'2020-01-06 07:59:08'),(869,'ARSYTA DEWI','17697/006.108','-','P',34,'2020-01-06 07:59:08'),(870,'AZHAR OKTAVIA MAHARANI','17698/007.108','-','P',34,'2020-01-06 07:59:08'),(871,'CINTA AURA ARMADANI','17699/008.108','-','P',34,'2020-01-06 07:59:08'),(872,'DANANG HIDAYAT','17700/009.108','-','L',34,'2020-01-06 07:59:08'),(873,'DEA DELIANA PUTRI','17701/010.108','-','P',34,'2020-01-06 07:59:08'),(874,'DEVI FITRI DINI PUSPITA SARI','17702/011.108','-','P',34,'2020-01-06 07:59:08'),(875,'DEVI MAYANG SARI','17703/012.108','-','P',34,'2020-01-06 07:59:08'),(876,'DEVI OKTAVIANI','17704/013.108','-','P',34,'2020-01-06 07:59:08'),(877,'DEWI SRI RAHAYU','17705/014.108','-','P',34,'2020-01-06 07:59:08'),(878,'DINA SUCI NURMALA SARI','17706/015.108','-','P',34,'2020-01-06 07:59:08'),(879,'DINI ALFIDA SARI','17707/016.108','-','P',34,'2020-01-06 07:59:08'),(880,'DWI MUTIARA WULANDARI','17708/017.108','-','P',34,'2020-01-06 07:59:08'),(881,'EVI YULITHA AFANDI','17709/018.108','-','P',34,'2020-01-06 07:59:08'),(882,'FRISKANIA AYUNING KARISMA','17710/019.108','-','P',34,'2020-01-06 07:59:08'),(883,'HALIMATUN NISYA','17711/020.108','-','P',34,'2020-01-06 07:59:08'),(884,'HERLINA EKA IRIANTI','17712/021.108','-','P',34,'2020-01-06 07:59:08'),(885,'ILMIYAH','17713/022.108','-','P',34,'2020-01-06 07:59:08'),(886,'INTAN ALVIANITA','17714/023.108','-','P',34,'2020-01-06 07:59:08'),(887,'IRMA WATI','17715/024.108','-','P',34,'2020-01-06 07:59:08'),(888,'JESICA MEYSA DELLA','17716/025.108','-','P',34,'2020-01-06 07:59:08'),(889,'JUISA PUTRI EKA BAHARI','17717/026.108','-','P',34,'2020-01-06 07:59:08'),(890,'KHAIRUN NISA','17718/027.108','-','P',34,'2020-01-06 07:59:08'),(891,'KHARISSA HANDAYANI','17719/028.108','-','P',34,'2020-01-06 07:59:08'),(892,'LINA RUSPITA','17720/029.108','-','P',34,'2020-01-06 07:59:08'),(893,'LOVENA CIPTA CAHYANI','17721/030.108','-','P',34,'2020-01-06 07:59:08'),(894,'LUTFILAH','17722/031.108','-','P',34,'2020-01-06 07:59:08'),(895,'M. ARIASHIDIQI MUHTAR','17723/032.108','-','L',34,'2020-01-06 07:59:08'),(896,'MARDIANA','17724/033.108','-','P',34,'2020-01-06 07:59:08'),(897,'MAULIDIA IQRIMA SAVIRA','17725/034.108','-','P',34,'2020-01-06 07:59:08'),(898,'MAULIDIA PURWANTA SARI','17726/035.108','-','P',35,'2020-01-06 07:59:25'),(899,'MOCH. TEGAR FIRDIANSYAH','17727/036.108','-','L',35,'2020-01-06 07:59:25'),(900,'NABILA NAUVI AUDINA','17728/037.108','-','P',35,'2020-01-06 07:59:25'),(901,'NADILLA','17729/038.108','-','P',35,'2020-01-06 07:59:25'),(902,'NANDA MAULIDA EKA SAPUTRI','17730/039.108','-','P',35,'2020-01-06 07:59:25'),(903,'NAZILA TURROHMAH','17731/040.108','-','P',35,'2020-01-06 07:59:25'),(904,'NIKMATUN NAZILA','17732/041.108','-','P',35,'2020-01-06 07:59:25'),(905,'NIKO YAFI RAMDANI','17733/042.108','-','L',35,'2020-01-06 07:59:25'),(906,'NILAM SARI','17734/043.108','-','P',35,'2020-01-06 07:59:25'),(907,'NOVI CHASKIA F.','17735/044.108','-','P',35,'2020-01-06 07:59:25'),(908,'NUR INTAN MUSTIKA SARI','17736/045.108','-','P',35,'2020-01-06 07:59:25'),(909,'NURUL DINDA AMALIA','17737/046.108','-','P',35,'2020-01-06 07:59:25'),(910,'OKTA RAHMAWATI','17738/047.108','-','P',35,'2020-01-06 07:59:25'),(911,'OKTAVIA FIRDHA AYU RAHMAWATI','17739/048.108','-','P',35,'2020-01-06 07:59:25'),(912,'OKTAVIANA IKA ANJARSARI','17740/049.108','-','P',35,'2020-01-06 07:59:25'),(913,'PATIMAH','17741/050.108','-','P',35,'2020-01-06 07:59:25'),(914,'PUTRI IRMA SARI','17742/051.108','-','P',35,'2020-01-06 07:59:25'),(915,'PUTRI NURMALAWATI','17743/052.108','-','P',35,'2020-01-06 07:59:25'),(916,'REFIKA OKTAVIA FATMAWATI','17744/053.108','-','P',35,'2020-01-06 07:59:25'),(917,'RETNO AYU OKTAVIYANA','17745/054.108','-','P',35,'2020-01-06 07:59:25'),(918,'RINA MARIYANI','17746/055.108','-','P',35,'2020-01-06 07:59:25'),(919,'SABRINA AYU LESTARI','17747/056.108','-','P',35,'2020-01-06 07:59:25'),(920,'SAFIRA NURUL ISLAMIA','17748/057.108','-','P',35,'2020-01-06 07:59:25'),(921,'SALFA NUR VADILA','17749/058.108','-','P',35,'2020-01-06 07:59:25'),(922,'SITI INGNGE SAVAAISYAH','17751/060.108','-','P',35,'2020-01-06 07:59:25'),(923,'SITI NAFISATUL ILMI','17752/061.108','-','P',35,'2020-01-06 07:59:25'),(924,'TANIA MAHARANI RIZAL','17753/062.108','-','P',35,'2020-01-06 07:59:25'),(925,'TRI DWI YULITA SARI','17754/063.108','-','P',35,'2020-01-06 07:59:25'),(926,'TRIANI YUSRIAN HAFIFA','17755/064.108','-','P',35,'2020-01-06 07:59:25'),(927,'VINA NUR KHOZIZA','17756/065.108','-','P',35,'2020-01-06 07:59:25'),(928,'VIONA DWI CANTIKA','17757/066.108','-','P',35,'2020-01-06 07:59:25'),(929,'WINDI DESTARINI','17758/067.108','-','P',35,'2020-01-06 07:59:25'),(930,'YASHINTA ZULFA AINI','17759/068.108','-','P',35,'2020-01-06 07:59:25'),(931,'YULIHATUL HASANAH','17760/069.108','-','P',35,'2020-01-06 07:59:25'),(932,'AKHLAKUL KHARIMAH','17761/001.110','-','P',36,'2020-01-06 07:59:47'),(933,'ALFI MUSTIKA FAHMI','17762/002.110','-','P',36,'2020-01-06 07:59:47'),(934,'ALIYAH','17763/003.110','-','P',36,'2020-01-06 07:59:47'),(935,'ANNA MAULIDIA','17764/004.110','-','P',36,'2020-01-06 07:59:47'),(936,'ANNISA OLGA OMPI PUTRI WIDAGDO','17765/005.110','-','P',36,'2020-01-06 07:59:47'),(937,'ANTI WIDYA NINGRUM','17766/006.110','-','P',36,'2020-01-06 07:59:47'),(938,'ANTIKA TRI AYU LESTARI','17767/007.110','-','P',36,'2020-01-06 07:59:47'),(939,'APRIL DAYANTI DWI YASNI PUTRI','17768/008.110','-','P',36,'2020-01-06 07:59:47'),(940,'APRILIA DWI NUR ILMI','17769/009.110','-','P',36,'2020-01-06 07:59:47'),(941,'APRIM MARITA ULFI','17770/010.110','-','P',36,'2020-01-06 07:59:47'),(942,'AQILATUN NAFISAH','17771/011.110','-','P',36,'2020-01-06 07:59:47'),(943,'AULIDATRI SHAFILA','17772/012.110','-','P',36,'2020-01-06 07:59:47'),(944,'AVEL FIOLAN PRASASTI','17773/013.110','-','P',36,'2020-01-06 07:59:47'),(945,'AYU PUSPITA SARI','17774/014.110','-','P',36,'2020-01-06 07:59:47'),(946,'BINTANG VALENTINA SALIHIN','17775/015.110','-','P',36,'2020-01-06 07:59:47'),(947,'CIA SURYA RACHMAN','17776/016.110','-','P',36,'2020-01-06 07:59:47'),(948,'DIDIN EKASARI','17777/017.110','-','P',36,'2020-01-06 07:59:47'),(949,'DINDA YUSNIA TEMARA PUTRI','17778/018.110','-','P',36,'2020-01-06 07:59:47'),(950,'DINI ULFIA ROSA','17779/019.110','-','P',36,'2020-01-06 07:59:47'),(951,'EKA ROSILAWATI','17780/020.110','-','P',36,'2020-01-06 07:59:47'),(952,'ELA SONYA','17781/021.110','-','P',36,'2020-01-06 07:59:47'),(953,'ELOK INDRIANI','17782/022.110','-','P',36,'2020-01-06 07:59:47'),(954,'ENGGIE DWI PUTRI','17783/023.110','-','P',36,'2020-01-06 07:59:47'),(955,'FAYZA NIHRUN NISA','17784/024.110','-','P',36,'2020-01-06 07:59:47'),(956,'FIRINDAH AYU CAHYA DEWI','17785/025.110','-','P',36,'2020-01-06 07:59:47'),(957,'GHINA FEBYTA LARASATI','17786/026.110','-','P',36,'2020-01-06 07:59:47'),(958,'HURIN IN','17787/027.110','-','P',36,'2020-01-06 07:59:47'),(959,'IKAYATUL QORI`AH','17788/028.110','-','P',36,'2020-01-06 07:59:47'),(960,'IKKE SABELLA','17789/029.110','-','P',36,'2020-01-06 07:59:47'),(961,'INGGI PUSPITA SARI','17790/030.110','-','P',36,'2020-01-06 07:59:47'),(962,'INTAN ALAWIYATUN NADA','17791/031.110','-','P',36,'2020-01-06 07:59:47'),(963,'IRANTI PRISDIANNOVI','17792/032.110','-','P',36,'2020-01-06 07:59:47'),(964,'IRMAWATI','17793/033.110','-','P',36,'2020-01-06 07:59:47'),(965,'ISNA KHOIRUN NISA`','17794/034.110','-','P',36,'2020-01-06 07:59:47'),(966,'JASMINE MILLA RUMANSYAH','17795/035.110','-','P',36,'2020-01-06 07:59:47'),(967,'KARISMA JULIYANTI','17796/036.110','-','P',36,'2020-01-06 07:59:47'),(968,'LAELATUL FITRIA','17797/037.110','-','P',37,'2020-01-06 08:00:08'),(969,'LINTA LAHUM','17798/038.110','-','P',37,'2020-01-06 08:00:08'),(970,'M. JAYA SAPUTRA','17799/039.110','-','L',37,'2020-01-06 08:00:08'),(971,'MILA SEPVIA LESTARI','17800/040.110','-','P',37,'2020-01-06 08:00:08'),(972,'MOCHAMMAD KHADAFI','17801/041.110','-','L',37,'2020-01-06 08:00:08'),(973,'NADYA RIZKI PUTRI KUSUMA','17802/042.110','-','P',37,'2020-01-06 08:00:08'),(974,'NANI YULIA PURDIANIS','17803/043.110','-','P',37,'2020-01-06 08:00:08'),(975,'NINA NURUL KHARISMA','17804/044.110','-','P',37,'2020-01-06 08:00:08'),(976,'NINDY MURTI HERYANI','17805/045.110','-','P',37,'2020-01-06 08:00:08'),(977,'NOVI PERMATASARI','17806/046.110','-','P',37,'2020-01-06 08:00:08'),(978,'NUR FADILAH UTAMI','17807/047.110','-','P',37,'2020-01-06 08:00:08'),(979,'NUR MAULIDA TRIMEIRINA','17808/048.110','-','P',37,'2020-01-06 08:00:08'),(980,'NURSARI HIDAYA','17809/049.110','-','P',37,'2020-01-06 08:00:08'),(981,'OCTHA SABELLA PRAMESTY','17810/050.110','-','P',37,'2020-01-06 08:00:08'),(982,'PUTRI AMANDA ADELIA ','17811/051.110','-','P',37,'2020-01-06 08:00:08'),(983,'PUTRI PAMUNGKAS','17812/052.110','-','P',37,'2020-01-06 08:00:08'),(984,'RETNO INDRIANI','17813/053.110','-','P',37,'2020-01-06 08:00:08'),(985,'RIA ANGGRAINI','17814/054.110','-','P',37,'2020-01-06 08:00:08'),(986,'RIYANI FINKA SASKIYAH','17815/055.110','-','P',37,'2020-01-06 08:00:08'),(987,'SALSABILA FITRI WIJAYA','17816/056.110','-','P',37,'2020-01-06 08:00:08'),(988,'SEPTI DWI ANGGRAINI','17817/057.110','-','P',37,'2020-01-06 08:00:08'),(989,'SERLY PERMATASARI','17818/058.110','-','P',37,'2020-01-06 08:00:08'),(990,'SHINTA DEWI LESTARI','17819/059.110','-','P',37,'2020-01-06 08:00:08'),(991,'SILVIA JESSICA MAHARANI','17820/060.110','-','P',37,'2020-01-06 08:00:08'),(992,'SINTA AYU AGUSTIN','17821/061.110','-','P',37,'2020-01-06 08:00:08'),(993,'SITI FARIDA','17822/062.110','-','P',37,'2020-01-06 08:00:08'),(994,'SITI LAYYINATUL QOMAIRAH','17823/063.110','-','P',37,'2020-01-06 08:00:08'),(995,'SITI RUSIANAH','17824/064.110','-','P',37,'2020-01-06 08:00:08'),(996,'STEVENY ERITRINA','17825/065.110','-','P',37,'2020-01-06 08:00:08'),(997,'TINARA NUR HAMIMAH','17826/066.110','-','P',37,'2020-01-06 08:00:08'),(998,'TITA MAULANI SAPUTRI','17827/067.110','-','P',37,'2020-01-06 08:00:08'),(999,'VERIA RIZKY PRIMADANI','17828/068.110','-','P',37,'2020-01-06 08:00:08'),(1000,'VINKA APRILLIANA','17829/069.110','-','P',37,'2020-01-06 08:00:08'),(1001,'WAHYUDI','17830/070.110','-','L',37,'2020-01-06 08:00:08'),(1002,'YUFA MARTHA CINTYA SILVYANI','17831/071.110','-','P',37,'2020-01-06 08:00:08'),(1003,'ZUHAIRINA BALQIS','17832/072.110','-','P',37,'2020-01-06 08:00:08'),(1004,'ADELIA EKA RAMADINI','17833/001.111','-','P',38,'2020-01-06 08:00:27'),(1005,'AFIFAH NOER JANNAH','17834/002.111','-','P',38,'2020-01-06 08:00:27'),(1006,'AGUS KURNIAWAN','17835/003.111','-','L',38,'2020-01-06 08:00:27'),(1007,'AHMAD DANANG SAGITA','17836/004.111','-','L',38,'2020-01-06 08:00:27'),(1008,'AHMAD SUPRIYADI','17837/005.111','-','L',38,'2020-01-06 08:00:27'),(1009,'AINUN SYAIRA DWI WIDYANI','17838/006.111','-','P',38,'2020-01-06 08:00:27'),(1010,'ALFIAN ALDO TRISTIATNO','17839/007.111','-','L',38,'2020-01-06 08:00:27'),(1011,'ANANDA PUTRI FITARISA','17840/008.111','-','P',38,'2020-01-06 08:00:27'),(1012,'ANDRAINA AZIZAH','17841/009.111','-','P',38,'2020-01-06 08:00:27'),(1013,'ANKA FEBRIANA ARGHATA','17842/010.111','-','P',38,'2020-01-06 08:00:27'),(1014,'ANNISA DWI NURDIANTY','17843/011.111','-','P',38,'2020-01-06 08:00:27'),(1015,'ANNISA NURFAWZIA FARASWATI','17844/012.111','-','P',38,'2020-01-06 08:00:27'),(1016,'ANNISA ZAHRA MULIAWAN','17845/013.111','-','P',38,'2020-01-06 08:00:27'),(1017,'ARBAU NURUL HOTIMAH','17846/014.111','-','P',38,'2020-01-06 08:00:27'),(1018,'ARDHA VICKY PERMANA PUTRA','17847/015.111','-','L',38,'2020-01-06 08:00:27'),(1019,'ARI KURNIA DAMAYANTI','17848/016.111','-','P',38,'2020-01-06 08:00:27'),(1020,'ARINI ADELIYA RAMADINI','17849/017.111','-','P',38,'2020-01-06 08:00:27'),(1021,'AUDI OKTAVIANTI','17850/018.111','-','P',38,'2020-01-06 08:00:27'),(1022,'AULA SAFITRI','17851/019.111','-','P',38,'2020-01-06 08:00:27'),(1023,'BENITA AJENG SAVIRA','17853/021.111','-','P',38,'2020-01-06 08:00:27'),(1024,'CHICIN NAILA IZATI','17854/022.111','-','P',38,'2020-01-06 08:00:27'),(1025,'CHOIRUNISA DEVITA JULIANA','17855/023.111','-','P',38,'2020-01-06 08:00:27'),(1026,'CILVI NANDA INDRIANI','17856/024.111','-','P',38,'2020-01-06 08:00:27'),(1027,'CINDY PAQUITA ROHALY','17857/025.111','-','P',38,'2020-01-06 08:00:27'),(1028,'CITRA OCTAVIANI CAHYA NINGRUM','17858/026.111','-','P',38,'2020-01-06 08:00:27'),(1029,'DEFANY REGINA ANGGRAINI','17859/027.111','-','P',38,'2020-01-06 08:00:27'),(1030,'DEVI RAMADANI','17860/028.111','-','P',38,'2020-01-06 08:00:27'),(1031,'DIAN AYU PUSPAYANTI','17861/029.111','-','P',38,'2020-01-06 08:00:27'),(1032,'DIAN NURIMAMAH','17862/030.111','-','P',38,'2020-01-06 08:00:27'),(1033,'DINDA KODNATUL NADA','17863/031.111','-','P',38,'2020-01-06 08:00:27'),(1034,'DINDA MAULIDA NURJANNAH','17864/032.111','-','P',38,'2020-01-06 08:00:27'),(1035,'DINDA NOVITA PERMATASARI','17865/033.111','-','P',38,'2020-01-06 08:00:27'),(1036,'DINDA RIZMA TRYANA','17866/034.111','-','P',38,'2020-01-06 08:00:27'),(1037,'DITA ANDINI','17867/035.111','-','P',38,'2020-01-06 08:00:27'),(1038,'DIYAH VUSVE NEGARI','17868/036.111','-','P',39,'2020-01-06 08:00:45'),(1039,'EKA LANIA PUTRI','17869/037.111','-','P',39,'2020-01-06 08:00:45'),(1040,'EKA ZHAFIRA AGUSTINA','17870/038.111','-','P',39,'2020-01-06 08:00:45'),(1041,'ELVIRA DWI SETYANINGRUM','17871/039.111','-','P',39,'2020-01-06 08:00:45'),(1042,'ELYSA SAQILLA PUTRI','17872/040.111','-','P',39,'2020-01-06 08:00:45'),(1043,'ERIKA AYU ANGRAINI','17873/041.111','-','P',39,'2020-01-06 08:00:45'),(1044,'EVITRI UTAMI','17874/042.111','-','P',39,'2020-01-06 08:00:45'),(1045,'FARA DIVA ARZETI','17875/043.111','-','P',39,'2020-01-06 08:00:45'),(1046,'FARIDA AMALIA','17876/044.111','-','P',39,'2020-01-06 08:00:45'),(1047,'FATHUN NAURA MAGHFIROH','17877/045.111','-','P',39,'2020-01-06 08:00:45'),(1048,'FEBI AYU HIDAYATI','17878/046.111','-','P',39,'2020-01-06 08:00:45'),(1049,'FISCA ANNISA RAMADHANI','17879/047.111','-','P',39,'2020-01-06 08:00:45'),(1050,'FITRIYATUL WULAN NASRUHA','17880/048.111','-','P',39,'2020-01-06 08:00:45'),(1051,'HELDA IKA YUNITA','17881/049.111','-','P',39,'2020-01-06 08:00:45'),(1052,'HURIN\'IN ','17882/050.111','-','P',39,'2020-01-06 08:00:45'),(1053,'HUSNUL HOTIJAH','17883/051.111','-','P',39,'2020-01-06 08:00:45'),(1054,'HUSNUL KHOTIMAH','17884/052.111','-','P',39,'2020-01-06 08:00:45'),(1055,'IKA MULYATI','17885/053.111','-','P',39,'2020-01-06 08:00:45'),(1056,'ILMI HANIF HIFDYA','17886/054.111','-','P',39,'2020-01-06 08:00:45'),(1057,'IMELDA FAHIRAFASI','17887/055.111','-','P',39,'2020-01-06 08:00:45'),(1058,'INDAH WIDIASTUTIK','17888/056.111','-','P',39,'2020-01-06 08:00:45'),(1059,'INDRI NOVITASARI','17889/057.111','-','P',39,'2020-01-06 08:00:45'),(1060,'INTAN AGUSTINA','17890/058.111','-','P',39,'2020-01-06 08:00:45'),(1061,'INTAN AYUNINGTYAS','17891/059.111','-','P',39,'2020-01-06 08:00:45'),(1062,'ISABELLA ASHARI','17892/060.111','-','P',39,'2020-01-06 08:00:45'),(1063,'JUANITO ERIC NASARIO AGUSTIN','17893/061.111','-','L',39,'2020-01-06 08:00:45'),(1064,'JUNDA MAKKATA','17894/062.111','-','L',39,'2020-01-06 08:00:45'),(1065,'KELVIN ADRIANSYAH','17895/063.111','-','L',39,'2020-01-06 08:00:45'),(1066,'KHAFIFA INDAH PARAWANSA','17896/064.111','-','P',39,'2020-01-06 08:00:45'),(1067,'KHARISMA MAULIDA MAHARANI','17897/065.111','-','P',39,'2020-01-06 08:00:45'),(1068,'LAILATUL FITRIYANI','17898/066.111','-','P',39,'2020-01-06 08:00:45'),(1069,'LAURA AQIDATUL ISLAMIYAH','17899/067.111','-','P',39,'2020-01-06 08:00:45'),(1070,'LORA AGUSTIN CAHAYA ASIH','17900/068.111','-','P',39,'2020-01-06 08:00:45'),(1071,'MARSHELIA AGNEZI PUTRI SURYONO','17901/069.111','-','P',39,'2020-01-06 08:00:45'),(1072,'MASYHABI GHOFUURO','17902/070.111','-','L',39,'2020-01-06 08:00:45'),(1073,'MEI AMIDATUS JAHRO','17903/071.111','-','P',39,'2020-01-06 08:00:45'),(1074,'MELVINTA PUTRI DEWANTI','17904/072.111','-','P',40,'2020-01-06 08:01:02'),(1075,'MIRANA ULFA','17905/073.111','-','P',40,'2020-01-06 08:01:02'),(1076,'MUFIDAH','17906/074.111','-','P',40,'2020-01-06 08:01:02'),(1077,'NABILA DESTANIA FITRI','17907/075.111','-','P',40,'2020-01-06 08:01:02'),(1078,'NAINA EKA SABILA','17908/076.111','-','P',40,'2020-01-06 08:01:02'),(1079,'NISSA LAILATUS SARIFA','17909/077.111','-','P',40,'2020-01-06 08:01:02'),(1080,'NITA PUSPITA SARI','17910/078.111','-','P',40,'2020-01-06 08:01:02'),(1081,'NOVITA ANGGRAINI','17911/079.111','-','P',40,'2020-01-06 08:01:02'),(1082,'NURIL UMIRATUS ZAHRA','17912/080.111','-','P',40,'2020-01-06 08:01:02'),(1083,'OVI VERA VIRNANDA','17913/081.111','-','P',40,'2020-01-06 08:01:02'),(1084,'PANCA DYAH ALFINTINA','17914/082.111','-','P',40,'2020-01-06 08:01:02'),(1085,'PUTI RERISSA','17915/083.111','-','P',40,'2020-01-06 08:01:02'),(1086,'PUTRI LEONI UTAMI','17916/084.111','-','P',40,'2020-01-06 08:01:02'),(1087,'PUTRI NOVITA SARI','17917/085.111','-','P',40,'2020-01-06 08:01:02'),(1088,'PUTRI WULAN MAULIDYA','17918/086.111','-','P',40,'2020-01-06 08:01:02'),(1089,'RAHMANIA ROMADHONA PUTRI SONJA','17919/087.111','-','P',40,'2020-01-06 08:01:02'),(1090,'RENI AL HAMDA','17920/088.111','-','P',40,'2020-01-06 08:01:02'),(1091,'RINDIANI MARCELATUL FARIHA','17921/089.111','-','P',40,'2020-01-06 08:01:02'),(1092,'RISTA LIYA MAHARANI','17922/090.111','-','P',40,'2020-01-06 08:01:02'),(1093,'RIZKI DWI ERLITA','17923/091.111','-','P',40,'2020-01-06 08:01:02'),(1094,'SABRINA BARLIANA LILLAH','17924/092.111','-','P',40,'2020-01-06 08:01:02'),(1095,'SAFIRA FITRIA WATI','17925/093.111','-','P',40,'2020-01-06 08:01:02'),(1096,'SEKAR FITRIYANI','17926/094.111','-','P',40,'2020-01-06 08:01:02'),(1097,'SEPTIYARTI AMELIA','17927/095.111','-','P',40,'2020-01-06 08:01:02'),(1098,'SHAFIRA NUR RINJANI','17928/096.111','-','P',40,'2020-01-06 08:01:02'),(1099,'SIVA JOSENUVA PUTRI WIJAYA','17929/097.111','-','P',40,'2020-01-06 08:01:02'),(1100,'SOFIYA KHOIRUNNISA','17930/098.111','-','P',40,'2020-01-06 08:01:02'),(1101,'SRI NANDA FITRIA','17931/099.111','-','P',40,'2020-01-06 08:01:02'),(1102,'SYFA CAHYANISA','17932/100.111','-','P',40,'2020-01-06 08:01:02'),(1103,'TALITHA FARRELIA NUR FIRDAUS','17933/101.111','-','P',40,'2020-01-06 08:01:02'),(1104,'TASYA YASMIN JANNA','17934/102.111','-','P',40,'2020-01-06 08:01:02'),(1105,'TITIK NOR','17935/103.111','-','P',40,'2020-01-06 08:01:02'),(1106,'VIRLYANA PIJAR','17936/104.111','-','P',40,'2020-01-06 08:01:02'),(1107,'WULAN MAULIDIYAH PUTRI','17937/105.111','-','P',40,'2020-01-06 08:01:02'),(1108,'YOLANDA SUKMASARI','17938/106.111','-','P',40,'2020-01-06 08:01:02'),(1109,'YULIANA','17939/107.111','-','P',40,'2020-01-06 08:01:02'),(1110,'DINDA AYU FANNY','17301/030.114','-','P',41,'2020-01-06 08:01:30'),(1111,'DESTRIE NADAA NAUROH','17296/025.114','-','P',41,'2020-01-06 08:01:30'),(1112,'ABDILATAMA SURYA PUTRA','17940/001.116','-','L',41,'2020-01-06 08:01:30'),(1113,'ADETYA RISWANDA','17941/002.116','-','P',41,'2020-01-06 08:01:30'),(1114,'ADINDA DWI AYU AGUSTIN','17942/003.116','-','P',41,'2020-01-06 08:01:30'),(1115,'AGESTA IRNA MARGARETA','17943/004.116','-','P',41,'2020-01-06 08:01:30'),(1116,'AGNES LUISA STEFANI','17944/005.116','-','P',41,'2020-01-06 08:01:30'),(1117,'AHMAD DWI PRASETYA ','17945/006.116','-','L',41,'2020-01-06 08:01:30'),(1118,'ALDO SANTA RISKY','17946/007.116','-','L',41,'2020-01-06 08:01:30'),(1119,'ALFINA DAMAYANTI','17947/008.116','-','P',41,'2020-01-06 08:01:30'),(1120,'ANDI ANISYA FARADILLA','17948/009.116','-','P',41,'2020-01-06 08:01:30'),(1121,'ANGEL OKA WAHYU DEWANTI','17949/010.116','-','P',41,'2020-01-06 08:01:30'),(1122,'ANISA MAHARANI PUTRI','17950/011.116','-','P',41,'2020-01-06 08:01:30'),(1123,'AULIA SEPTIYANA SARI','17951/012.116','-','P',41,'2020-01-06 08:01:30'),(1124,'CHORNELA DINDA PALUPI','17952/013.116','-','P',41,'2020-01-06 08:01:30'),(1125,'DANIEL AMRULLAH','17954/015.116','-','L',41,'2020-01-06 08:01:30'),(1126,'DEA DWI MAULITA','17955/016.116','-','P',41,'2020-01-06 08:01:30'),(1127,'DELLA DEVITA PUTRI','17956/017.116','-','P',41,'2020-01-06 08:01:30'),(1128,'DEVI KRISTIA PUTERI','17957/018.116','-','P',41,'2020-01-06 08:01:30'),(1129,'DEVY MUTIARA RENI','17958/019.116','-','P',41,'2020-01-06 08:01:30'),(1130,'DIAH AULIA PUTRI','17959/020.116','-','P',41,'2020-01-06 08:01:30'),(1131,'DIANA RAHAYU','17960/021.116','-','P',41,'2020-01-06 08:01:30'),(1132,'DINA DANIAR','17961/022.116','-','P',41,'2020-01-06 08:01:30'),(1133,'DWI LESTARI DAMAIHATI','17962/023.116','-','P',41,'2020-01-06 08:01:30'),(1134,'DYAS DWI ANGGRAINI','17963/024.116','-','P',41,'2020-01-06 08:01:30'),(1135,'EKA PUTRI NURMAYASARI','17964/025.116','-','P',41,'2020-01-06 08:01:30'),(1136,'ELMAMINGKA ARI SOPINDRI','17965/026.116','-','P',41,'2020-01-06 08:01:30'),(1137,'ELSYA PUTRI NATALIA SAPUTRO','17966/027.116','-','P',41,'2020-01-06 08:01:30'),(1138,'ERLINDA AMALIYAH PUTRI','17967/028.116','-','P',41,'2020-01-06 08:01:30'),(1139,'FIRDAUS ALFIANSAH','17968/029.116','-','L',41,'2020-01-06 08:01:30'),(1140,'FIRDAUS ANDRE MAULANA','17969/030.116','-','L',41,'2020-01-06 08:01:30'),(1141,'FITANIKO PUTRI MAYSESA','17970/031.116','-','P',41,'2020-01-06 08:01:30'),(1142,'FITRIA AYU H.S','17971/032.116','-','P',41,'2020-01-06 08:01:30'),(1143,'FRISKA MAHARANI','17972/033.116','-','P',41,'2020-01-06 08:01:30'),(1144,'GALUH DEWI PARWATI','17973/034.116','-','P',41,'2020-01-06 08:01:30'),(1145,'GEDE EKA SAPUTRA','17974/035.116','-','L',41,'2020-01-06 08:01:30'),(1146,'PUTRI ANGGUN RAHMADANY','18177/110.136','','P',41,'2020-01-06 08:01:30'),(1147,'GIGIH WAHYU PRASTYO','17975/036.116','-','L',42,'2020-01-06 08:01:55'),(1148,'GINA SEPTI MAHARANI','17976/037.116','-','P',42,'2020-01-06 08:01:55'),(1149,'GRACE MAHARANI','17977/038.116','-','P',42,'2020-01-06 08:01:55'),(1150,'HERMIGRIL NENSI ADE SANDOHA','17978/039.116','-','P',42,'2020-01-06 08:01:55'),(1151,'I PUTU SATYA OKKY NUGRAHA','17979/040.116','-','L',42,'2020-01-06 08:01:55'),(1152,'ILMA ANGRENI AYU LESTARI','17980/041.116','-','P',42,'2020-01-06 08:01:55'),(1153,'IRA SEPTIA IFANI SARI','17981/042.116','-','P',42,'2020-01-06 08:01:55'),(1154,'JEPRI ALPA HIDAYAT','17982/043.116','-','L',42,'2020-01-06 08:01:55'),(1155,'KARTIKA SARI DEVI','17983/044.116','-','P',42,'2020-01-06 08:01:55'),(1156,'KENZA DHIVA RINTARI','17984/045.116','-','P',42,'2020-01-06 08:01:55'),(1157,'KHOIRIN NIDA','17985/046.116','-','P',42,'2020-01-06 08:01:55'),(1158,'KRISNA FAJAR KURNIA','17986/047.116','-','L',42,'2020-01-06 08:01:55'),(1159,'LADYOLA HAKITA','17987/048.116','-','P',42,'2020-01-06 08:01:55'),(1160,'MARGARETHA DINDA EL PATRA','17988/049.116','-','P',42,'2020-01-06 08:01:55'),(1161,'MARIA ULFA','17989/050.116','-','P',42,'2020-01-06 08:01:55'),(1162,'MAYANGSARI','17990/051.116','-','P',42,'2020-01-06 08:01:55'),(1163,'MICHELLA DUTA IMANI','17991/052.116','-','P',42,'2020-01-06 08:01:55'),(1164,'MIFTAHUL DWI HUSDIANTI','17992/053.116','-','P',42,'2020-01-06 08:01:55'),(1165,'MITA APRILIA','17993/054.116','-','P',42,'2020-01-06 08:01:55'),(1166,'MITA PUTRI MAULINA','17994/055.116','-','P',42,'2020-01-06 08:01:55'),(1167,'MOH. ANDI SOHEBUL ARIF','17995/056.116','-','L',42,'2020-01-06 08:01:55'),(1168,'MOH. RISKI FIRMANSAH','17996/057.116','-','L',42,'2020-01-06 08:01:55'),(1169,'MUHAMMAD WILDHAN RAMADHANI','17997/058.116','-','L',42,'2020-01-06 08:01:55'),(1170,'NABELLA ANGGITA DWIYANTI','17998/059.116','-','P',42,'2020-01-06 08:01:55'),(1171,'NAFASYA YUNIKA MELIA','17999/060.116','-','P',42,'2020-01-06 08:01:55'),(1172,'NATASYA CHEFRILIA PUTRI','18000/061.116','-','P',42,'2020-01-06 08:01:55'),(1173,'NILA AZIZAH','18001/062.116','-','P',42,'2020-01-06 08:01:55'),(1174,'NOVIA DAMAYANTI','18002/063.116','-','P',42,'2020-01-06 08:01:55'),(1175,'NOVIA KHARISMA DWIYANTI','18003/064.116','-','P',42,'2020-01-06 08:01:55'),(1176,'NUNGKY DWI WAHYUNI','18004/065.116','-','P',42,'2020-01-06 08:01:55'),(1177,'NUR AINI PUSPITASARI','18005/066.116','-','P',42,'2020-01-06 08:01:55'),(1178,'NUR HALIMAH','18006/067.116','-','P',42,'2020-01-06 08:01:55'),(1179,'NURMA CANTIKA PURNAMA SARI','18007/068.116','-','P',42,'2020-01-06 08:01:55'),(1180,'NURMALA DWIAN PATTINAYA','18008/069.116','-','P',42,'2020-01-06 08:01:55'),(1181,'PUPUT ANANDA SAIRINA','18009/070.116','-','P',42,'2020-01-06 08:01:55'),(1182,'PUTRI KUMALA SARI','18010/071.116','-','P',42,'2020-01-06 08:01:55'),(1183,'NI PUTU SINTIA DEVI MARGARETHA','18177/109.136','','P',42,'2020-01-06 08:01:55'),(1184,'ERIKA NOVI ARDIANTI','17302/031.114','-','P',43,'2020-01-06 08:03:15'),(1185,'SAVINA AMALIA HIDAYAH','17356/085.114','-','P',43,'2020-01-06 08:03:15'),(1186,'YUNIAR MAULIDIYAH ROSDIANA KOESWOYO','17377/106.114','-','P',43,'2020-01-06 08:03:15'),(1187,'RAHMAD FAKHTUR IRVAN SYACH','18011/072.116','-','L',43,'2020-01-06 08:03:15'),(1188,'RANI DESITA PUTRI','18012/073.116','-','P',43,'2020-01-06 08:03:15'),(1189,'RANI YATI','18013/074.116','-','P',43,'2020-01-06 08:03:15'),(1190,'RESNANDYA RAHADIAN','18014/075.116','-','L',43,'2020-01-06 08:03:15'),(1191,'RETNO INDRI KURNIASARI','18015/076.116','-','P',43,'2020-01-06 08:03:15'),(1192,'REVI MEILA SARI','18016/077.116','-','P',43,'2020-01-06 08:03:15'),(1193,'RIFA NUR FARIDA','18017/078.116','-','P',43,'2020-01-06 08:03:15'),(1194,'RISKA APRILIANI','18018/079.116','-','P',43,'2020-01-06 08:03:15'),(1195,'ROSIANA PUTRI','18020/081.116','-','P',43,'2020-01-06 08:03:15'),(1196,'ROZA OKTAVIANA','18021/082.116','-','P',43,'2020-01-06 08:03:15'),(1197,'SANDI CANDRA SUTAWIJAYA','18022/083.116','-','L',43,'2020-01-06 08:03:15'),(1198,'SELA NURDIANA','18023/084.116','-','P',43,'2020-01-06 08:03:15'),(1199,'SELINDA ROSA NURCAHYATI','18024/085.116','-','P',43,'2020-01-06 08:03:15'),(1200,'SHEILA NANDA ARDANA','18025/086.116','-','P',43,'2020-01-06 08:03:15'),(1201,'SITI NUR`AINI','18026/087.116','-','P',43,'2020-01-06 08:03:15'),(1202,'SRI ASTUTIK','18027/088.116','-','P',43,'2020-01-06 08:03:15'),(1203,'STEVEN RONIS PANGARIBUAN','18028/089.116','-','L',43,'2020-01-06 08:03:15'),(1204,'SYAFAATUL MAZIDA FITRIANI','18029/090.116','-','P',43,'2020-01-06 08:03:15'),(1205,'TADZKIYYAH NUR ROCHMAH','18030/091.116','-','P',43,'2020-01-06 08:03:15'),(1206,'TALISA LABITHA','18031/092.116','-','P',43,'2020-01-06 08:03:15'),(1207,'TANSYA NOFITIYA','18032/093.116','-','P',43,'2020-01-06 08:03:15'),(1208,'TARIZA RIKE WIDIANI ','18033/094.116','-','P',43,'2020-01-06 08:03:15'),(1209,'TRI WULANDARI','18034/095.116','-','P',43,'2020-01-06 08:03:15'),(1210,'ULYA RAHMAWATI','18035/096.116','-','P',43,'2020-01-06 08:03:15'),(1211,'UPIK FAJARIYANI','18036/097.116','-','P',43,'2020-01-06 08:03:15'),(1212,'VENUS SEPTIANING','18037/098.116','-','P',43,'2020-01-06 08:03:15'),(1213,'VICCO ADRIAN PRATAMA','18038/099.116','-','L',43,'2020-01-06 08:03:15'),(1214,'VIRA MAYA UMAMI','18039/100.116','-','P',43,'2020-01-06 08:03:15'),(1215,'WAHYU HARIYANI PUTRI','18040/101.116','-','P',43,'2020-01-06 08:03:15'),(1216,'WIDI MELYA IKA ANDARA','18041/102.116','-','P',43,'2020-01-06 08:03:15'),(1217,'WIGATI','18042/103.116','-','P',43,'2020-01-06 08:03:15'),(1218,'YOHANES SEPTIAN PRATAMA','18044/105.116','-','L',43,'2020-01-06 08:03:15'),(1219,'ZAHRA AURELIA ANBIYA','18045/106.116','-','P',43,'2020-01-06 08:03:15'),(1220,'ZALSA SACHI RUWANDHA','18046/107.116','','P',43,'2020-01-06 08:03:15'),(1221,'ABDUL LATIEF','18047/001.126','-','L',44,'2020-01-06 08:03:33'),(1222,'ADELIA SALMAHUMA IRA','18048/002.126','-','P',44,'2020-01-06 08:03:33'),(1223,'ADEN NAUVAL FAROS','18049/003.126','-','L',44,'2020-01-06 08:03:33'),(1224,'ADITYA AJI PRAKOSO','18050/004.126','-','L',44,'2020-01-06 08:03:33'),(1225,'AGNES MEGA WULANDARI','18051/005.126','-','P',44,'2020-01-06 08:03:33'),(1226,'AHMAD RAHADIAN FIRMANSYAH','18052/006.126','-','L',44,'2020-01-06 08:03:33'),(1227,'ALVI SYAHRIN','18053/007.126','-','L',44,'2020-01-06 08:03:33'),(1228,'AMANDA NENY OKTAVIA','18054/008.126','-','P',44,'2020-01-06 08:03:33'),(1229,'AMELIA KURNIA PUTRI','18056/010.126','-','P',44,'2020-01-06 08:03:33'),(1230,'ANGGI CAHYO RAMADHANI','18057/011.126','-','L',44,'2020-01-06 08:03:33'),(1231,'ANNAS HADI PURNAMA','18058/012.126','-','L',44,'2020-01-06 08:03:33'),(1232,'ANNISA','18059/013.126','-','P',44,'2020-01-06 08:03:33'),(1233,'ARDINA ZAHIRO','18060/014.126','-','P',44,'2020-01-06 08:03:33'),(1234,'AULIA PUTRI NAZAHWA','18061/015.126','-','P',44,'2020-01-06 08:03:33'),(1235,'BERLIAN DWI NURAZIZAH','18062/016.126','-','P',44,'2020-01-06 08:03:33'),(1236,'BULAN KIRANA JUBRATA','18063/017.126','-','P',44,'2020-01-06 08:03:33'),(1237,'DAVID FIRMANSYAH','18064/018.126','-','L',44,'2020-01-06 08:03:33'),(1238,'DEVINDA ANGZY PUTRI DWI YANTO','18065/019.126','-','P',44,'2020-01-06 08:03:33'),(1239,'DEWA MEGA NANDA','18066/020.126','-','L',44,'2020-01-06 08:03:33'),(1240,'DIki FIRMAN DIKA','18067/021.126','-','L',44,'2020-01-06 08:03:33'),(1241,'DINA NUR AZIZAH','18068/022.126','-','P',44,'2020-01-06 08:03:33'),(1242,'DIO FERDINAN SUBANDRI','18069/023.126','-','L',44,'2020-01-06 08:03:33'),(1243,'DWI YULIANA','18070/024.126','-','P',44,'2020-01-06 08:03:33'),(1244,'EKI BAYU PRATAMA','18071/025.126','-','L',44,'2020-01-06 08:03:33'),(1245,'ELSA LISTIYANA','18072/026.126','-','P',44,'2020-01-06 08:03:33'),(1246,'FACHRUNNISA MAULIDA','18073/027.126','-','P',44,'2020-01-06 08:03:33'),(1247,'FEBILA AEYKATHURROFIKI HARDIYANTI','18074/028.126','-','P',44,'2020-01-06 08:03:33'),(1248,'FERRY BUDI SETIAWAN','18075/029.126','-','L',44,'2020-01-06 08:03:33'),(1249,'GINA NAFIYIL FIQRI','18076/030.126','-','P',44,'2020-01-06 08:03:33'),(1250,'IDA LATIFAH','18077/031.126','-','P',44,'2020-01-06 08:03:33'),(1251,'KEN NOVICE HAFIDZA PUTERI','18078/032.126','-','P',44,'2020-01-06 08:03:33'),(1252,'LUTFITA OKTA ULINNUHA','18079/033.126','-','P',44,'2020-01-06 08:03:33'),(1253,'MARIA ULFA','18080/034.126','-','P',44,'2020-01-06 08:03:33'),(1254,'MITA ADELIA','18081/035.126','-','P',45,'2020-01-06 08:03:53'),(1255,'MITA ERVIANA','18082/036.126','-','P',45,'2020-01-06 08:03:53'),(1256,'MOH. ALIPRIYANTO BAHTIAR','18083/037.126','-','L',45,'2020-01-06 08:03:53'),(1257,'MOHAMMAD SURYADI','18084/038.126','-','L',45,'2020-01-06 08:03:53'),(1258,'MORENO HARJOYUDANTO','18085/039.126','-','L',45,'2020-01-06 08:03:53'),(1259,'MUTIARA SILVA ZEYLANICA','18087/041.126','-','P',45,'2020-01-06 08:03:53'),(1260,'NISA MIFTAHUL JANNAH','18088/042.126','-','P',45,'2020-01-06 08:03:53'),(1261,'NOVA AYUNI','18089/043.126','-','P',45,'2020-01-06 08:03:53'),(1262,'NURIL KAMILA FARADISA','18090/044.126','-','P',45,'2020-01-06 08:03:53'),(1263,'OVA DWI MAHARANI','18091/045.126','-','P',45,'2020-01-06 08:03:53'),(1264,'PUTRI INDIRA PUSPITA SARI','18092/046.126','-','P',45,'2020-01-06 08:03:53'),(1265,'PUTRI NITA AMELIA','18093/047.126','-','P',45,'2020-01-06 08:03:53'),(1266,'RAMDLAN S. RIO BRILIAN A','18094/048.126','-','L',45,'2020-01-06 08:03:53'),(1267,'REZA ALFIEN MAULANA','18095/049.126','-','L',45,'2020-01-06 08:03:53'),(1268,'RIEKE DIAH AGUSTRIANA','18096/050.126','-','P',45,'2020-01-06 08:03:53'),(1269,'RIKI WISNU PUTRA KAMBUAYA','18097/051.126','-','L',45,'2020-01-06 08:03:53'),(1270,'RIMA IFA KURNIAWATI','18098/052.126','-','P',45,'2020-01-06 08:03:53'),(1271,'RISMA RIZKI AMALIA','18099/053.126','-','P',45,'2020-01-06 08:03:53'),(1272,'ROFIQOH','18100/054.126','-','P',45,'2020-01-06 08:03:53'),(1273,'SADDAM ICHWAN INTANUSYA','18101/055.126','-','L',45,'2020-01-06 08:03:53'),(1274,'SANDRA AYU APRILYANI','18102/056.126','-','P',45,'2020-01-06 08:03:53'),(1275,'SATRIA IRAWAN','18103/057.126','-','L',45,'2020-01-06 08:03:53'),(1276,'SAYU SIFA QONITA','18104/058.126','-','P',45,'2020-01-06 08:03:53'),(1277,'SELOMITA NUR AFFANDI','18105/059.126','-','P',45,'2020-01-06 08:03:53'),(1278,'SHINTA LIANA','18106/060.126','-','P',45,'2020-01-06 08:03:53'),(1279,'SUMARTINI','18107/061.126','-','P',45,'2020-01-06 08:03:53'),(1280,'SYAKILAH MUHAMMAD','18108/062.126','-','P',45,'2020-01-06 08:03:53'),(1281,'TRI INDAH WAHYUNI','18109/063.126','-','P',45,'2020-01-06 08:03:53'),(1282,'VIRGIN NAFILAH','18110/064.126','-','P',45,'2020-01-06 08:03:53'),(1283,'WIYOTA SALSABILLA AZIIZAH','18111/065.126','-','P',45,'2020-01-06 08:03:53'),(1284,'ZAMRATUS SOFIAH','18112/066.126','-','P',45,'2020-01-06 08:03:53'),(1285,'ZULFIKAR ALHAQ','18113/067.126','-','L',45,'2020-01-06 08:03:53'),(1286,'AGUS ALDY SUSANTO','18114/001.136','-','L',46,'2020-01-06 08:04:22'),(1287,'AINIA PANCA WULAN DARI','18115/002.136','-','P',46,'2020-01-06 08:04:22'),(1288,'AINUR ROHIMA','18116/003.136','-','P',46,'2020-01-06 08:04:22'),(1289,'ANGGA DWI PRATAMA','18117/004.136','-','L',46,'2020-01-06 08:04:22'),(1290,'ARISTA NOVIANA DEWI','18118/005.136','-','P',46,'2020-01-06 08:04:22'),(1291,'AULIA NURREZA AWALIN','18119/006.136','-','P',46,'2020-01-06 08:04:22'),(1292,'BELGIES FITRIYANI','18120/007.136','-','P',46,'2020-01-06 08:04:22'),(1293,'BELLA AFIDATUS SYIFA SUPRAGA','18121/008.136','-','P',46,'2020-01-06 08:04:22'),(1294,'BERLIAN MUTIA LESTARI','18122/009.136','-','P',46,'2020-01-06 08:04:22'),(1295,'CICIK MAULIDIAH','18123/010.136','-','P',46,'2020-01-06 08:04:22'),(1296,'CITRA DEWI MUSTIKA','18124/011.136','-','P',46,'2020-01-06 08:04:22'),(1297,'DAMARA LAEDY MEILANDA','18125/012.136','-','P',46,'2020-01-06 08:04:22'),(1298,'DESI RATNASARI','18126/013.136','-','P',46,'2020-01-06 08:04:22'),(1299,'DESI ROMANTIKA','18127/014.136','-','P',46,'2020-01-06 08:04:22'),(1300,'DHISMA NURANI','18128/015.136','-','P',46,'2020-01-06 08:04:22'),(1301,'DIAN AJENG NOVITASARI','18129/016.136','-','P',46,'2020-01-06 08:04:22'),(1302,'DWI WAHYU NINGTIYAS','18130/017.136','-','P',46,'2020-01-06 08:04:22'),(1303,'DWI WAHYUNINGTYAS','18131/018.136','-','P',46,'2020-01-06 08:04:22'),(1304,'FEBI ISNANIK','18132/019.136','-','P',46,'2020-01-06 08:04:22'),(1305,'FITRI ALIFAH','18133/020.136','-','P',46,'2020-01-06 08:04:22'),(1306,'JAKA BAGUS BIMANTORO','18136/023.136','-','L',46,'2020-01-06 08:04:22'),(1307,'JIHAN VEBBY ARISANDY','18137/024.136','-','P',46,'2020-01-06 08:04:22'),(1308,'KARMILA','18138/025.136','-','P',46,'2020-01-06 08:04:22'),(1309,'KESI KURNIAWATI','18139/026.136','-','P',46,'2020-01-06 08:04:22'),(1310,'KINO MIJI SERI','18140/027.136','-','P',46,'2020-01-06 08:04:22'),(1311,'LUSI SARI HERMAWATI','18141/028.136','-','P',46,'2020-01-06 08:04:22'),(1312,'MELDA EKA SANTI','18142/029.136','-','P',46,'2020-01-06 08:04:22'),(1313,'MIMMA ANGGIA WISDANI','18143/030.136','-','P',46,'2020-01-06 08:04:22'),(1314,'MOCH. SUPIRMAN','18144/031.136','-','L',46,'2020-01-06 08:04:22'),(1315,'MUHAMMAD GILANG ILHAM WAHYUDA','18145/032.136','-','L',47,'2020-01-06 08:04:50'),(1316,'NABILA RINIKA RAMADINA','18146/033.136','-','P',47,'2020-01-06 08:04:50'),(1317,'NABILA SAFITRI','18147/034.136','-','P',47,'2020-01-06 08:04:50'),(1318,'NABILAH PALUPI AGUSTIN','18148/035.136','-','P',47,'2020-01-06 08:04:50'),(1319,'NI PUTU VIVIN NARDILA','18149/036.136','-','P',47,'2020-01-06 08:04:50'),(1320,'NOVA AZIZAH','18150/037.136','-','P',47,'2020-01-06 08:04:50'),(1321,'NOVIANTI DWI AZIZAH','18151/038.136','-','P',47,'2020-01-06 08:04:50'),(1322,'PITRIANA','18153/040.136','-','P',47,'2020-01-06 08:04:50'),(1323,'PRAMITA APRILIYANTI','18154/041.136','-','P',47,'2020-01-06 08:04:50'),(1324,'PRETI ANDINI','18155/042.136','-','P',47,'2020-01-06 08:04:50'),(1325,'PUTRIYANI','18156/043.136','-','P',47,'2020-01-06 08:04:50'),(1326,'RISA ARWIYANI','18157/044.136','-','P',47,'2020-01-06 08:04:50'),(1327,'RISMA YULITA','18158/045.136','-','P',47,'2020-01-06 08:04:50'),(1328,'RIZKI MUHAMMAD PRASTYO','18159/046.136','-','L',47,'2020-01-06 08:04:50'),(1329,'ROSMALINA CITRA WIJAYA','18160/047.136','-','P',47,'2020-01-06 08:04:50'),(1330,'SELA MAULINA','18161/048.136','-','P',47,'2020-01-06 08:04:50'),(1331,'SEPTIA MAHARANI','18162/049.136','-','P',47,'2020-01-06 08:04:50'),(1332,'SINDI PATIKA SARI','18163/050.136','-','P',47,'2020-01-06 08:04:50'),(1333,'SINDI PUSPITASARI','18164/051.136','-','P',47,'2020-01-06 08:04:50'),(1334,'SITI SUGIRAHAYU','18165/052.136','-','P',47,'2020-01-06 08:04:50'),(1335,'SONIA PUJI APRILIA','18166/053.136','-','P',47,'2020-01-06 08:04:50'),(1336,'TIARA PURNAMA SARI','18168/055.136','-','P',47,'2020-01-06 08:04:50'),(1337,'ULFA RATNASARI','18169/056.136','-','P',47,'2020-01-06 08:04:50'),(1338,'ULFA WULANDARI','18170/057.136','-','P',47,'2020-01-06 08:04:50'),(1339,'WAHYU ALFARISKI','18171/058.136','-','L',47,'2020-01-06 08:04:50'),(1340,'YUDHISTIRA RYANANDA ASHARY','18173/060.136','-','L',47,'2020-01-06 08:04:50'),(1341,'YUDI SUGIYANTO','18174/061.136','-','L',47,'2020-01-06 08:04:50'),(1342,'YULI SARTIKA DEWI','18175/062.136','-','P',47,'2020-01-06 08:04:50'),(1343,'ATTIVAL FAZHEL ROBY FAYAZH','17492/079.065','-','L',48,'2020-01-06 08:05:54'),(1344,'LALA AMELIA FRANSISCA','17512/099.065','-','P',48,'2020-01-06 08:05:54');
-INSERT INTO `siswa` VALUES (1345,'MIFTAHUL FARIZ ADITYA','17516/103.065','-','L',48,'2020-01-06 08:05:54'),(1346,'A.M. FAHHIM ROYANI','18179/138.065','-','L',48,'2020-01-06 08:05:54'),(1347,'ACH. JAINI','18180/139.065','-','L',48,'2020-01-06 08:05:54'),(1348,'ADAM NURSAMSI','18181/140.065','-','L',48,'2020-01-06 08:05:54'),(1349,'ADEL LIYA SAPUTRI','18182/141.065','-','P',48,'2020-01-06 08:05:54'),(1350,'AHMAD RIFQI KADAFI','18183/142.065','-','L',48,'2020-01-06 08:05:54'),(1351,'AJI PRANATA','18184/143.065','-','L',48,'2020-01-06 08:05:54'),(1352,'AKMALUN NISA','18185/144.065','-','P',48,'2020-01-06 08:05:54'),(1353,'AMELIA TRI OKTAVIANI','18186/145.065','-','P',48,'2020-01-06 08:05:54'),(1354,'ARDILA SARI','18187/146.065','-','P',48,'2020-01-06 08:05:54'),(1355,'AVISTA DESTRINA','18188/147.065','-','P',48,'2020-01-06 08:05:54'),(1356,'AZAH SULISTYOWATI','18189/148.065','-','P',48,'2020-01-06 08:05:54'),(1357,'DESI INDRI CAHYANI','18190/149.065','-','P',48,'2020-01-06 08:05:54'),(1358,'DEVVANOV EL PINTO','18191/150.065','-','L',48,'2020-01-06 08:05:54'),(1359,'DICKA ARDIANSYAH','18192/151.065','-','L',48,'2020-01-06 08:05:54'),(1360,'DICKY ARDIANSYAH','18193/152.065','-','L',48,'2020-01-06 08:05:54'),(1361,'EDWIN RIYAN SAPUTRA','18194/153.065','-','L',48,'2020-01-06 08:05:54'),(1362,'EKA UTAMI','18195/154.065','-','P',48,'2020-01-06 08:05:54'),(1363,'ELSA NABILA ZUHRO','18196/155.065','-','P',48,'2020-01-06 08:05:54'),(1364,'ESSA DWI PRAYOGA','18197/156.065','-','L',48,'2020-01-06 08:05:54'),(1365,'FARIDA PUSPITASARI','18198/157.065','-','P',48,'2020-01-06 08:05:54'),(1366,'FEBIOLA TRI WANDASARI','18199/158.065','-','P',48,'2020-01-06 08:05:54'),(1367,'FRISKA APRILIANA HIDAYATI','18200/159.065','-','P',48,'2020-01-06 08:05:54'),(1368,'HAECKAL FIKRI','18201/160.065','-','L',48,'2020-01-06 08:05:54'),(1369,'LAELA FITRIYAH','18202/161.065','-','P',48,'2020-01-06 08:05:54'),(1370,'LAYINATUL UMMAH','18203/162.065','-','P',48,'2020-01-06 08:05:54'),(1371,'LILIK WIGIARTI','18204/163.065','-','P',48,'2020-01-06 08:05:54'),(1372,'LITA DWI SARI','18205/164.065','-','P',48,'2020-01-06 08:05:54'),(1373,'LUSI ROSA NOVELYA','18206/165.065','-','P',48,'2020-01-06 08:05:54'),(1374,'MADE WISNU SETYAWAN','18207/166.065','-','L',48,'2020-01-06 08:05:54'),(1375,'MELVIN FEMBRIANTI ','18208/167.065','-','P',48,'2020-01-06 08:05:54'),(1376,'MERRY WINDY ADISTYA RINI','18209/168.065','-','P',48,'2020-01-06 08:05:54'),(1377,'MOH BAGUS JATI KUSUMA','18210/169.065','-','L',48,'2020-01-06 08:05:54'),(1378,'MOH. WAHYU DIMASQI ','18211/170.065','-','L',48,'2020-01-06 08:05:54'),(1379,'','','','',48,'2020-01-06 08:05:54'),(1380,'MOHAMAD FAISHAL','18212/171.065','-','L',49,'2020-01-06 08:06:35'),(1381,'MOHAMMAD OJI SAPUTRA','18213/172.065','-','L',49,'2020-01-06 08:06:35'),(1382,'MUHAMMAD FARHAN ARROHIM','18214/173.065','-','L',49,'2020-01-06 08:06:35'),(1383,'NABILLA VIA VALENTINA','18215/174.065','-','P',49,'2020-01-06 08:06:35'),(1384,'NANDA TRIO AGUSTINO','18216/175.065','-','L',49,'2020-01-06 08:06:35'),(1385,'NIMATUL MAULIDAH','18217/176.065','-','P',49,'2020-01-06 08:06:35'),(1386,'NOVITA SARI','18218/177.065','-','P',49,'2020-01-06 08:06:35'),(1387,'NUR VINA ELSAYANI','18219/178.065','-','P',49,'2020-01-06 08:06:35'),(1388,'NURUL FITRI','18220/179.065','-','P',49,'2020-01-06 08:06:35'),(1389,'NUVIATUL AULIA','18221/180.065','-','P',49,'2020-01-06 08:06:35'),(1390,'PITRIA WULANDARI','18222/181.065','-','P',49,'2020-01-06 08:06:35'),(1391,'PUTRI DIVA MARIA DEWI','18223/182.065','-','P',49,'2020-01-06 08:06:35'),(1392,'RAFI NUR AMRI','18224/183.065','-','L',49,'2020-01-06 08:06:35'),(1393,'RAHMA ASYIFA','18225/184.065','-','P',49,'2020-01-06 08:06:35'),(1394,'RANI PATRICIA DEWI','18226/185.065','-','P',49,'2020-01-06 08:06:35'),(1395,'RASTHIAN RESTU FENDE DWIKI DARMAWAN','18227/186.065','-','L',49,'2020-01-06 08:06:35'),(1396,'RIO RAHMAT VAISOL','18228/187.065','-','L',49,'2020-01-06 08:06:35'),(1397,'RITA OKTAFIYANI','18229/188.065','-','P',49,'2020-01-06 08:06:35'),(1398,'RIZKI ARDIANSYAH','18230/189.065','-','L',49,'2020-01-06 08:06:35'),(1399,'SABILA NOOR FELISA','18231/190.065','-','P',49,'2020-01-06 08:06:35'),(1400,'SALNA TABA AULIYA SENJA','18232/191.065','-','P',49,'2020-01-06 08:06:35'),(1401,'SEKAR AYU FATMASARI','18233/192.065','-','P',49,'2020-01-06 08:06:35'),(1402,'SHEILA FRISCA DWI SEPTIANI','18234/193.065','-','P',49,'2020-01-06 08:06:35'),(1403,'SILVIA MAHARANI','18235/194.065','-','P',49,'2020-01-06 08:06:35'),(1404,'SITI KHOTIJAH','18236/195.065','-','P',49,'2020-01-06 08:06:35'),(1405,'SITI NURJANAH','18237/196.065','-','P',49,'2020-01-06 08:06:35'),(1406,'SOFIA MILLATI','18238/197.065','-','P',49,'2020-01-06 08:06:35'),(1407,'SUCI INDAHYANI','18239/198.065','-','P',49,'2020-01-06 08:06:35'),(1408,'TAFANA MEISYA AFRO DITHA ','18240/199.065','-','P',49,'2020-01-06 08:06:35'),(1409,'TRI DAMIYANTI LAILA EFENDI','18241/200.065','-','P',49,'2020-01-06 08:06:35'),(1410,'WENI FRIDA YANTHI','18242/201.065','-','P',49,'2020-01-06 08:06:35'),(1411,'WILDANIAR KAHLIL GIBRAN','18243/202.065','-','L',49,'2020-01-06 08:06:35'),(1412,'WIRA SETA WIJAYA','18244/203.065','-','L',49,'2020-01-06 08:06:35'),(1413,'WIWIK HARIYATI','18245/204.065','-','P',49,'2020-01-06 08:06:35'),(1414,'YESI ARISAS MITA','18246/205.065','-','P',49,'2020-01-06 08:06:35'),(1415,'ZULFA RAMADANI','18247/206.065','-','P',49,'2020-01-06 08:06:35'),(1416,'','','','',49,'2020-01-06 08:06:35'),(1417,'AHMAD RIDHO SYAHRU KAFILI','17555/077.066','-','L',50,'2020-01-06 08:07:07'),(1418,'ADELIA AGUSTIN ','18248/142.066','-','P',50,'2020-01-06 08:07:07'),(1419,'ADELIA ZAKIYA PUTRI','18249/143.066','-','P',50,'2020-01-06 08:07:07'),(1420,'AJI VINANDU ','18250/144.066','-','L',50,'2020-01-06 08:07:07'),(1421,'AMALIA SALWA SYABANIA PUTRI','18251/145.066','-','P',50,'2020-01-06 08:07:07'),(1422,'ANISA SHELA MARTA','18252/146.066','-','P',50,'2020-01-06 08:07:07'),(1423,'ANNISA NURDIANA SAFITRI','18253/147.066','-','P',50,'2020-01-06 08:07:07'),(1424,'ARDIANSHAH ANANDA JANUAL DIMAS ','18254/148.066','-','L',50,'2020-01-06 08:07:07'),(1425,'AYIK FATMAWATI ','18255/149.066','-','P',50,'2020-01-06 08:07:07'),(1426,'AYU WAHYUNI ','18256/150.066','-','P',50,'2020-01-06 08:07:07'),(1427,'AYUB FIRMAN SYAH','18257/151.066','-','L',50,'2020-01-06 08:07:07'),(1428,'BAGUS SATRIO','18258/152.066','-','L',50,'2020-01-06 08:07:07'),(1429,'CINDY WAHYU MUJIANTI','18259/153.066','-','P',50,'2020-01-06 08:07:07'),(1430,'DEWI HERLINA ','18260/154.066','-','P',50,'2020-01-06 08:07:07'),(1431,'DHYANITA OCTAVIANI','18261/155.066','-','P',50,'2020-01-06 08:07:07'),(1432,'DINA MEILINA ','18262/156.066','-','P',50,'2020-01-06 08:07:07'),(1433,'DINNY SALSABILLAH MALAKIANO','18263/157.066','-','P',50,'2020-01-06 08:07:07'),(1434,'DWI AGUSTINA','18264/158.066','-','P',50,'2020-01-06 08:07:07'),(1435,'DWI IRAWATI','18265/159.066','-','P',50,'2020-01-06 08:07:07'),(1436,'EKA PUTRI FEBRIYANTI','18266/160.066','-','P',50,'2020-01-06 08:07:07'),(1437,'ENGGAR SILALAHI','18267/161.066','-','L',50,'2020-01-06 08:07:07'),(1438,'ERICA WARDHA DWI HARJUNADY','18268/162.066','-','P',50,'2020-01-06 08:07:07'),(1439,'EVIKA DWI ANGGRAINI','18269/163.066','-','P',50,'2020-01-06 08:07:07'),(1440,'FADHEL PUTRA HERTUS ZULTAQWA','18270/164.066','-','L',50,'2020-01-06 08:07:07'),(1441,'FAHMI SURYA SAMUDRA ','18271/165.066','-','L',50,'2020-01-06 08:07:07'),(1442,'FEBY WULANDARI','18272/166.066','-','P',50,'2020-01-06 08:07:07'),(1443,'FIRDA LUSIYANTI','18273/167.066','-','P',50,'2020-01-06 08:07:07'),(1444,'GANI SAPTA PURNAMA','18274/168.066','-','L',50,'2020-01-06 08:07:07'),(1445,'I KADEK DWI FERNANDA','18275/169.066','-','L',50,'2020-01-06 08:07:07'),(1446,'JODI SETIAWAN ','18276/170.066','-','L',50,'2020-01-06 08:07:07'),(1447,'JORGI BAGAS ERLANGGA','18277/171.066','-','L',50,'2020-01-06 08:07:07'),(1448,'KARISMA DEWI','18278/172.066','-','P',50,'2020-01-06 08:07:07'),(1449,'KRESNA SURYA SYAHPUTRA','18279/173.066','-','L',50,'2020-01-06 08:07:07'),(1450,'LELY DWI LESTARI ','18280/174.066','-','P',50,'2020-01-06 08:07:07'),(1451,'M. DAVIS HUDI YANUARTA ','18281/175.066','-','L',50,'2020-01-06 08:07:07'),(1452,'MARISA BELLA NABILLA','18282/176.066','-','P',50,'2020-01-06 08:07:07'),(1453,'','','','',50,'2020-01-06 08:07:07'),(1454,'MAULANA ALFARIZI ','18283/177.066','-','L',52,'2020-01-06 08:07:41'),(1455,'MAULIDA YUNI SULVIA PUTRI ','18284/178.066','-','P',52,'2020-01-06 08:07:41'),(1456,'MIA RIZKA AULIA','18285/179.066','-','P',52,'2020-01-06 08:07:41'),(1457,'MICHAEL FABIAN SUSANTO','18286/180.066','-','L',52,'2020-01-06 08:07:41'),(1458,'MICHO ADI PUTRA WIBOWO ','18287/181.066','-','L',52,'2020-01-06 08:07:41'),(1459,'MOCH. RIZKI ASHABUL FAJRI ','18288/182.066','-','L',52,'2020-01-06 08:07:41'),(1460,'MOH. GALIH AGUSTIAN','18289/183.066','-','L',52,'2020-01-06 08:07:41'),(1461,'MOH. HARIS SOFYAN','18290/184.066','-','L',52,'2020-01-06 08:07:41'),(1462,'MOH. KATAMI','18291/185.066','-','L',52,'2020-01-06 08:07:41'),(1463,'MOHAMMAD RIZALDY RAMADHAN','18292/186.066','-','L',52,'2020-01-06 08:07:41'),(1464,'MUHAMMAD ABDAN RIZKY SYAKURAN','18293/187.066','-','L',52,'2020-01-06 08:07:41'),(1465,'MUHAMMAD FIKRI ','18294/188.066','-','L',52,'2020-01-06 08:07:41'),(1466,'MUHAMMAD RAFSANJANI ','18295/189.066','-','L',52,'2020-01-06 08:07:41'),(1467,'NADIA','18296/190.066','-','P',52,'2020-01-06 08:07:41'),(1468,'NADIA DWI SAFITRI','18297/191.066','-','P',52,'2020-01-06 08:07:41'),(1469,'NADIA DWI SEPTYA NINGRUM','18298/192.066','-','P',52,'2020-01-06 08:07:41'),(1470,'NANDA DWI SARI ','18299/193.066','-','P',52,'2020-01-06 08:07:41'),(1471,'NARITA FARHAM ','18300/194.066','-','P',52,'2020-01-06 08:07:41'),(1472,'NAVA ZAVIRA SALSABILA','18301/195.066','-','P',52,'2020-01-06 08:07:41'),(1473,'NAWANG JUWITA ASMARA DEWATI','18302/196.066','-','P',52,'2020-01-06 08:07:41'),(1474,'NIKKO DWI CAHYO ','18303/197.066','-','L',52,'2020-01-06 08:07:41'),(1475,'RIFDA FAUZIYAH','18304/198.066','-','P',52,'2020-01-06 08:07:41'),(1476,'RINDY APRILIANA LARASATI','18305/199.066','-','P',52,'2020-01-06 08:07:41'),(1477,'RISMA MAULIDA','18306/200.066','-','P',52,'2020-01-06 08:07:41'),(1478,'RIZQI RAMADHANA DWI KUSUMA','18307/201.066','-','L',52,'2020-01-06 08:07:41'),(1479,'ROBBIULANA','18308/202.066','-','L',52,'2020-01-06 08:07:41'),(1480,'SAHRUL GUNAWAN','18309/203.066','-','L',52,'2020-01-06 08:07:41'),(1481,'SINTA ADELIA ','18310/204.066','-','P',52,'2020-01-06 08:07:41'),(1482,'SURYANDA PUTRI APRILIA ','18311/205.066','-','P',52,'2020-01-06 08:07:41'),(1483,'SUSILO ANDYANI','18312/206.066','-','L',52,'2020-01-06 08:07:41'),(1484,'TALITHA ANINDYA SHAFIQAH','18313/207.066','-','P',52,'2020-01-06 08:07:41'),(1485,'TASYA ANGGRAINI PUTRI','18314/208.066','-','P',52,'2020-01-06 08:07:41'),(1486,'UMI LATIFATUNNISA','18315/209.066','-','P',52,'2020-01-06 08:07:41'),(1487,'VARISA WIDIYAWATI ','18316/210.066','-','P',52,'2020-01-06 08:07:41'),(1488,'WIDITYA ARISTA FIRNANDA','18317/211.066','-','P',52,'2020-01-06 08:07:41'),(1489,'YOGA MUHAMMAD REYVANANDA','18318/212.066','-','L',52,'2020-01-06 08:07:41'),(1490,'','','','',52,'2020-01-06 08:07:41'),(1491,'ADAM BAHREYSI','18319/141.067','-','L',54,'2020-01-06 08:08:04'),(1492,'AFITA DWI LESTARI ','18320/142.067','-','P',54,'2020-01-06 08:08:04'),(1493,'AGIN MAULANA','18321/143.067','-','L',54,'2020-01-06 08:08:04'),(1494,'AHMAD DAWWAS RAIS','18322/144.067','-','L',54,'2020-01-06 08:08:04'),(1495,'AISYAH ZHAFIRAH AS SALAM','18323/145.067','-','P',54,'2020-01-06 08:08:04'),(1496,'ALDI TRI PRASETIYO','18324/146.067','-','L',54,'2020-01-06 08:08:04'),(1497,'ALMA NOVIA MAHARANI ','18325/147.067','-','P',54,'2020-01-06 08:08:04'),(1498,'ALYA RAHMADANI','18326/148.067','-','P',54,'2020-01-06 08:08:04'),(1499,'AMALIYA PRASTIA IKA WARDANI','18327/149.067','-','P',54,'2020-01-06 08:08:04'),(1500,'ANDRE SURYA DHARMA','18328/150.067','-','L',54,'2020-01-06 08:08:04'),(1501,'ANGGITA MEGA ARISTIANTI','18329/151.067','-','P',54,'2020-01-06 08:08:04'),(1502,'ANISAH PUTRI ','18330/152.067','-','P',54,'2020-01-06 08:08:04'),(1503,'APRILIA RIHANING TYAS','18331/153.067','-','P',54,'2020-01-06 08:08:04'),(1504,'ARDIAN PRATAMA SETIAWAN','18332/154.067','-','L',54,'2020-01-06 08:08:04'),(1505,'ARUPADHATU PRIMA CAKTI RIJANTO ','18333/155.067','-','L',54,'2020-01-06 08:08:04'),(1506,'ARYA WIJAYA PRANATA DEWA','18334/156.067','-','L',54,'2020-01-06 08:08:04'),(1507,'ATIYATUS ZULFI SALSABILA ','18335/157.067','-','P',54,'2020-01-06 08:08:04'),(1508,'AUDREY NURAINI RISANG ANUGRAH ARIYANI','18336/158.067','-','P',54,'2020-01-06 08:08:04'),(1509,'AYU LOLITA','18337/159.067','-','P',54,'2020-01-06 08:08:04'),(1510,'AYU OKTAVIA ','18338/160.067','-','P',54,'2020-01-06 08:08:04'),(1511,'AZEL YAN SYANDANA','18339/161.067','-','L',54,'2020-01-06 08:08:04'),(1512,'BAYU SETIAWAN','18340/162.067','-','L',54,'2020-01-06 08:08:04'),(1513,'BRILYAN RAHMA LESTARI','18341/163.067','-','P',54,'2020-01-06 08:08:04'),(1514,'BUNGA AYU MARSALINDA','18342/164.067','-','P',54,'2020-01-06 08:08:04'),(1515,'CALVIN ALFARIZKI MULYANTO','18343/165.067','-','L',54,'2020-01-06 08:08:04'),(1516,'DANI RAHMAT','18344/166.067','-','L',54,'2020-01-06 08:08:04'),(1517,'DANIA YASMIN BAZLIAH','18345/167.067','-','P',54,'2020-01-06 08:08:04'),(1518,'DESI AYU TRISNOWATI','18346/168.067','-','P',54,'2020-01-06 08:08:04'),(1519,'DEVI RAHAYU','18347/169.067','-','P',54,'2020-01-06 08:08:04'),(1520,'DIKA BIAS DAMARA ','18348/170.067','-','L',54,'2020-01-06 08:08:04'),(1521,'DIVA ASQLAH','18349/171.067','-','P',54,'2020-01-06 08:08:04'),(1522,'EXLIMA RAMADANI','18350/172.067','-','P',54,'2020-01-06 08:08:04'),(1523,'FEBRIANA KUSUMAWATI','18351/173.067','-','P',54,'2020-01-06 08:08:04'),(1524,'FEBY CHAHYA KAMILA','18352/174.067','-','P',54,'2020-01-06 08:08:04'),(1525,'FIRMAN ','18353/175.067','-','L',54,'2020-01-06 08:08:04'),(1526,'FYMAS BAGUS HASBIANSYAH','18354/176.067','-','L',54,'2020-01-06 08:08:04'),(1527,'','','','',54,'2020-01-06 08:08:04'),(1528,'HANG BIMA SUCI','18355/177.067','-','L',55,'2020-01-06 08:08:25'),(1529,'HANY PRILIANTI','18356/178.067','-','P',55,'2020-01-06 08:08:25'),(1530,'INTAN PERMATASARI','18357/179.067','-','P',55,'2020-01-06 08:08:25'),(1531,'LILIS SETIYAWATI','18358/180.067','-','P',55,'2020-01-06 08:08:25'),(1532,'MAHKOTA PERMATA RATRI','18359/181.067','-','P',55,'2020-01-06 08:08:25'),(1533,'MEGA MUSTIKA ','18360/182.067','-','P',55,'2020-01-06 08:08:25'),(1534,'MIYA DANAYANTI','18361/183.067','-','P',55,'2020-01-06 08:08:25'),(1535,'MOCH. IQBAL WAHYU AULIYA','18362/184.067','-','L',55,'2020-01-06 08:08:25'),(1536,'MOCHAMAD FAIZ DANILA','18363/185.067','-','L',55,'2020-01-06 08:08:25'),(1537,'MOH BALIES ARDANA','18364/186.067','-','L',55,'2020-01-06 08:08:25'),(1538,'MOH.HAFIZ MAULANA DITO','18365/187.067','-','L',55,'2020-01-06 08:08:25'),(1539,'MUHAMAD GILANG WICAKSONO','18366/188.067','-','L',55,'2020-01-06 08:08:25'),(1540,'MUHAMMAD ZAHRAN RASYIQ SULAEMAN','18367/189.067','-','L',55,'2020-01-06 08:08:25'),(1541,'NADIA FEBRIANTI ','18368/190.067','-','P',55,'2020-01-06 08:08:25'),(1542,'NAFLAH MAULANA AZURA','18369/191.067','-','P',55,'2020-01-06 08:08:25'),(1543,'NANDHINI SRI LESTARI','18370/192.067','-','P',55,'2020-01-06 08:08:25'),(1544,'NAZHIFAH SALSABILA MAULANI','18371/193.067','-','P',55,'2020-01-06 08:08:25'),(1545,'NUR HIDAYATI','18372/194.067','-','P',55,'2020-01-06 08:08:25'),(1546,'RAMA DIPUTRA','18373/195.067','-','L',55,'2020-01-06 08:08:25'),(1547,'REZA DWI RAHAYU','18374/196.067','-','P',55,'2020-01-06 08:08:25'),(1548,'RIZA DWI FRANSISKA','18375/197.067','-','P',55,'2020-01-06 08:08:25'),(1549,'RIZKY MAULANA','18376/198.067','-','L',55,'2020-01-06 08:08:25'),(1550,'ROMI FARHAN','18377/199.067','-','L',55,'2020-01-06 08:08:25'),(1551,'SHELLY ARI WIJAYANTI','18378/200.067','-','P',55,'2020-01-06 08:08:25'),(1552,'SITI NUR KARIMAH','18379/201.067','-','P',55,'2020-01-06 08:08:25'),(1553,'SITI NURHALIZA','18380/202.067','-','P',55,'2020-01-06 08:08:25'),(1554,'SITI NURHOLISA','18381/203.067','-','P',55,'2020-01-06 08:08:25'),(1555,'STENNY MOORE WIJAYA WARDHANA','18382/204.067','-','P',55,'2020-01-06 08:08:25'),(1556,'TRIYA RACHAMTIKA','18383/205.067','-','P',55,'2020-01-06 08:08:25'),(1557,'VADA ULFA SUNDARI','18384/206.067','-','P',55,'2020-01-06 08:08:25'),(1558,'VICTOR ALESYUS ERLANDA','18385/207.067','-','L',55,'2020-01-06 08:08:25'),(1559,'VINDA RUCITA CORNELIA','18386/208.067','-','P',55,'2020-01-06 08:08:25'),(1560,'VINNEZA SURYA AGRI BERLIAN','18387/209.067','-','P',55,'2020-01-06 08:08:25'),(1561,'WAHYU INDRAWATI','18388/210.067','-','P',55,'2020-01-06 08:08:25'),(1562,'YESSY RIZKI APRILIANTI','18389/211.067','-','P',55,'2020-01-06 08:08:25'),(1563,'YULIYANTI','18390/212.067','-','P',55,'2020-01-06 08:08:25'),(1564,'','','','',55,'2020-01-06 08:08:25'),(1565,'SHERLY THRII AGUSTIARINI','17750/059.108','-','P',56,'2020-01-06 08:09:10'),(1566,'ALIFIYA MAUDY DIAH NABILA','18391/070.108','-','P',56,'2020-01-06 08:09:10'),(1567,'AMANIYAH ','18392/071.108','-','P',56,'2020-01-06 08:09:10'),(1568,'ANANDA AIDILIA FITRIYANI','18393/072.108','-','P',56,'2020-01-06 08:09:10'),(1569,'APRILINA RUSNASARI','18394/073.108','-','P',56,'2020-01-06 08:09:10'),(1570,'ARI PUJI LESTARI','18395/074.108','-','P',56,'2020-01-06 08:09:10'),(1571,'ASYADANTI TRI ALZUMA ','18396/075.108','-','P',56,'2020-01-06 08:09:10'),(1572,'CALISTA NURISTIANINGSIH ','18397/076.108','-','P',56,'2020-01-06 08:09:10'),(1573,'CHOFIFA NUR ISLAMIYANTI ','18398/077.108','-','P',56,'2020-01-06 08:09:10'),(1574,'DEVI TRIA ANGGRAINI ','18399/078.108','-','P',56,'2020-01-06 08:09:10'),(1575,'DEWI ANNISA FITRI ','18400/079.108','-','P',56,'2020-01-06 08:09:10'),(1576,'DEWI SANTITA ','18401/080.108','-','P',56,'2020-01-06 08:09:10'),(1577,'DINDA AYU TRISNAWATI','18402/081.108','-','P',56,'2020-01-06 08:09:10'),(1578,'DITA INDAH SARI ','18403/082.108','-','P',56,'2020-01-06 08:09:10'),(1579,'DITA NIRMALITA ','18404/083.108','-','P',56,'2020-01-06 08:09:10'),(1580,'DWI PUSPITA ','18405/084.108','-','P',56,'2020-01-06 08:09:10'),(1581,'ELLA OKTAVIA ','18406/085.108','-','P',56,'2020-01-06 08:09:10'),(1582,'EVA SUCIANA ','18407/086.108','-','P',56,'2020-01-06 08:09:10'),(1583,'EVANA EKA PEBRIYANTI','18408/087.108','-','P',56,'2020-01-06 08:09:10'),(1584,'FENI DWI HANDAYANI ','18409/088.108','-','P',56,'2020-01-06 08:09:10'),(1585,'FIDIA NUR AZIZAH','18410/089.108','-','P',56,'2020-01-06 08:09:10'),(1586,'FITRI HIDAYAH ','18411/090.108','-','P',56,'2020-01-06 08:09:10'),(1587,'HANA DUWI LESTARI','18412/091.108','-','P',56,'2020-01-06 08:09:10'),(1588,'INTAN SAVITRI','18413/092.108','-','P',56,'2020-01-06 08:09:10'),(1589,'KARISMA OCTAVIANI','18414/093.108','-','P',56,'2020-01-06 08:09:10'),(1590,'LIDYA WULANDARI ','18415/094.108','-','P',56,'2020-01-06 08:09:10'),(1591,'LILIS SURYANI ','18416/095.108','-','P',56,'2020-01-06 08:09:10'),(1592,'MARINA SELVIANA ','18417/096.108','-','P',56,'2020-01-06 08:09:10'),(1593,'MARINI SAVITRI ','18418/097.108','-','P',56,'2020-01-06 08:09:10'),(1594,'MARIYA ULFA ','18419/098.108','-','P',56,'2020-01-06 08:09:10'),(1595,'MAYA ANGELICA LAZUARDI HALIM','18420/099.108','-','P',56,'2020-01-06 08:09:10'),(1596,'MELIA AVICA PUTRI ','18421/100.108','-','P',56,'2020-01-06 08:09:10'),(1597,'MOHAMAD YASIN ','18422/101.108','-','L',56,'2020-01-06 08:09:10'),(1598,'NAFISATUL AIDA ','18423/102.108','-','P',56,'2020-01-06 08:09:10'),(1599,'NAJWA HAFIDZATUZZAHRA AUREA PUTRI','18424/103.108','-','P',56,'2020-01-06 08:09:10'),(1600,'NOFFANI PRADINDA IVONNE ','18425/104.108','-','P',56,'2020-01-06 08:09:10'),(1601,'','','','',56,'2020-01-06 08:09:10'),(1602,'NOVI ZULIA QIRANI ','18426/105.108','-','P',57,'2020-01-06 08:09:46'),(1603,'NUR HAZIZAH','18427/106.108','-','P',57,'2020-01-06 08:09:46'),(1604,'NUR WULAN AYU LESTARI','18428/107.108','-','P',57,'2020-01-06 08:09:46'),(1605,'NURI SAVIRA','18429/108.108','-','P',57,'2020-01-06 08:09:46'),(1606,'REGI DWI PANGESTU ','18430/109.108','-','L',57,'2020-01-06 08:09:46'),(1607,'RINA PEBRIANTI ','18431/110.108','-','P',57,'2020-01-06 08:09:46'),(1608,'RINA SUHERMIANA','18432/111.108','-','P',57,'2020-01-06 08:09:46'),(1609,'RISQITA FITRI WIDHIANTARI ','18433/112.108','-','P',57,'2020-01-06 08:09:46'),(1610,'ROHANI RUS SAUDIA','18434/113.108','-','P',57,'2020-01-06 08:09:46'),(1611,'ROSSA VINA NILAWATI ','18435/114.108','-','P',57,'2020-01-06 08:09:46'),(1612,'SAFITRI ','18436/115.108','-','P',57,'2020-01-06 08:09:46'),(1613,'SALSABILA LARASATI','18437/116.108','-','P',57,'2020-01-06 08:09:46'),(1614,'SARI NINGSIH ','18438/117.108','-','P',57,'2020-01-06 08:09:46'),(1615,'SERINA NOVITA SARI ','18439/118.108','-','P',57,'2020-01-06 08:09:46'),(1616,'SHEILA ANANDA PUTRI ','18440/119.108','-','P',57,'2020-01-06 08:09:46'),(1617,'SHELA NUR HAINI ','18441/120.108','-','P',57,'2020-01-06 08:09:46'),(1618,'SHINDY NUR ANISAH','18442/121.108','-','P',57,'2020-01-06 08:09:46'),(1619,'SHIVA RISKY AMALIA','18443/122.108','-','P',57,'2020-01-06 08:09:46'),(1620,'SHOFIA LAROIBA','18444/123.108','-','P',57,'2020-01-06 08:09:46'),(1621,'SINDI MIRANDA MAULINA ','18445/124.108','-','P',57,'2020-01-06 08:09:46'),(1622,'SINDY KIRANA YULANDA ','18446/125.108','-','P',57,'2020-01-06 08:09:46'),(1623,'SINTA NURUL IMAMA ','18447/126.108','-','P',57,'2020-01-06 08:09:46'),(1624,'SINTIYA PUTRI WINATA','18448/127.108','-','P',57,'2020-01-06 08:09:46'),(1625,'SITI ANISA WAHYUNI','18449/128.108','-','P',57,'2020-01-06 08:09:46'),(1626,'SITI NUR AFIYAH ','18450/129.108','-','P',57,'2020-01-06 08:09:46'),(1627,'SITI NURLAILI ','18451/130.108','-','P',57,'2020-01-06 08:09:46'),(1628,'SITI NURMA FITRIANI ','18452/131.108','-','P',57,'2020-01-06 08:09:46'),(1629,'SOFIA NISRINA BALQIS','18453/132.108','-','P',57,'2020-01-06 08:09:46'),(1630,'SULPIYAH MAHARANI ','18454/133.108','-','P',57,'2020-01-06 08:09:46'),(1631,'TIARA PERMATA SARI','18455/134.108','-','P',57,'2020-01-06 08:09:46'),(1632,'UTROTUL QORIAH ','18456/135.108','-','P',57,'2020-01-06 08:09:46'),(1633,'VARISKA ANDINI WINARSIH','18457/136.108','-','P',57,'2020-01-06 08:09:46'),(1634,'VIA ALDILLA YUNIAR RAHMI','18458/137.108','-','P',57,'2020-01-06 08:09:46'),(1635,'WAHYU HIDAYAH ','18459/138.108','-','P',57,'2020-01-06 08:09:46'),(1636,'WIWIN HANDAYANI ','18460/139.108','-','P',57,'2020-01-06 08:09:46'),(1637,'YULIANA ','18461/140.108','-','P',57,'2020-01-06 08:09:46'),(1638,'','','','',57,'2020-01-06 08:09:46'),(1639,'ADIT PRASETYA ','18462/073.110','-','L',58,'2020-01-06 08:10:20'),(1640,'AHMAD ZAINUL ARIFIN','18463/074.110','-','L',58,'2020-01-06 08:10:20'),(1641,'ALFINA DAMAYANTI ','18464/075.110','-','P',58,'2020-01-06 08:10:20'),(1642,'ARIN AMALINA','18465/076.110','-','P',58,'2020-01-06 08:10:20'),(1643,'ATIKAH WINDI AFIFAH ','18466/077.110','-','P',58,'2020-01-06 08:10:20'),(1644,'BELLA FEBRIYANA','18467/078.110','-','P',58,'2020-01-06 08:10:20'),(1645,'CHINDY MONICA SISIHEANING VONI','18468/079.110','-','P',58,'2020-01-06 08:10:20'),(1646,'DHOMIRO ','18469/080.110','-','P',58,'2020-01-06 08:10:20'),(1647,'DIAN PATMAWATI ','18470/081.110','-','P',58,'2020-01-06 08:10:20'),(1648,'DIAN RETNO PANGESTU','18471/082.110','-','P',58,'2020-01-06 08:10:20'),(1649,'DILA RESTITA','18472/083.110','-','P',58,'2020-01-06 08:10:20'),(1650,'DINA ANANTA SYAFALIA','18473/084.110','-','P',58,'2020-01-06 08:10:20'),(1651,'DWI PUTRI RAMADANI ','18474/085.110','-','P',58,'2020-01-06 08:10:20'),(1652,'EKA CAHYA RAMADHANI','18475/086.110','-','P',58,'2020-01-06 08:10:20'),(1653,'EKA HERNANDA','18476/087.110','-','P',58,'2020-01-06 08:10:20'),(1654,'FENI ELDIANA ','18477/088.110','-','P',58,'2020-01-06 08:10:20'),(1655,'FIONNA YARLI ','18478/089.110','-','P',58,'2020-01-06 08:10:20'),(1656,'FIRA LESTARI ','18479/090.110','-','P',58,'2020-01-06 08:10:20'),(1657,'FREECIA JENI KRISTIANA','18480/091.110','-','P',58,'2020-01-06 08:10:20'),(1658,'HANI NURIYANA ','18481/092.110','-','P',58,'2020-01-06 08:10:20'),(1659,'HELMI YUNITASARI ','18482/093.110','-','P',58,'2020-01-06 08:10:20'),(1660,'ICHA ZENI YEAR TRI DAMAYANTI','18483/094.110','-','P',58,'2020-01-06 08:10:20'),(1661,'INEKE PUTRI DEWI LESTARI','18484/095.110','-','P',58,'2020-01-06 08:10:20'),(1662,'ISTIHAROH ','18485/096.110','-','P',58,'2020-01-06 08:10:20'),(1663,'KARINA NUR HANDAYANI ','18486/097.110','-','P',58,'2020-01-06 08:10:20'),(1664,'KINANTI SELA DEWI ','18487/098.110','-','P',58,'2020-01-06 08:10:20'),(1665,'LAILA FAUZIAH YASMIN','18488/099.110','-','P',58,'2020-01-06 08:10:20'),(1666,'LAILIMAH ','18489/100.110','-','P',58,'2020-01-06 08:10:20'),(1667,'LINDA LUSIANI ','18490/101.110','-','P',58,'2020-01-06 08:10:20'),(1668,'MAGFIROTUL BANIYAH ','18491/102.110','-','P',58,'2020-01-06 08:10:20'),(1669,'MIYA SETIYARNI ','18492/103.110','-','P',58,'2020-01-06 08:10:20'),(1670,'NANDA MISYA ASHARI','18493/104.110','-','P',58,'2020-01-06 08:10:20'),(1671,'NANDINA SALSABILLA','18494/105.110','-','P',58,'2020-01-06 08:10:20'),(1672,'NARIYA MAULINDA ','18495/106.110','-','P',58,'2020-01-06 08:10:20'),(1673,'NENSA AYU RAMADHANI ','18496/107.110','-','P',58,'2020-01-06 08:10:20'),(1674,'NENSI AYU RAMADHANI ','18497/108.110','-','P',58,'2020-01-06 08:10:20'),(1675,'','','','',58,'2020-01-06 08:10:20'),(1676,'NUR AINI ','18498/109.110','-','P',59,'2020-01-06 08:10:50'),(1677,'NUR IKLIL ALFI SYAHRIA','18499/110.110','-','P',59,'2020-01-06 08:10:50'),(1678,'NUR INDAH ','18500/111.110','-','P',59,'2020-01-06 08:10:50'),(1679,'NURMA YUNITA ','18501/112.110','-','P',59,'2020-01-06 08:10:50'),(1680,'NURUL AINI','18502/113.110','-','P',59,'2020-01-06 08:10:50'),(1681,'NURUL HIKMAH PUTRI MARISA H. GORANG','18503/114.110','-','P',59,'2020-01-06 08:10:50'),(1682,'PUJI AYU LESTARI ','18504/115.110','-','P',59,'2020-01-06 08:10:50'),(1683,'PUSPITA MANDA TALU ','18505/116.110','-','P',59,'2020-01-06 08:10:50'),(1684,'PUTRI NOFIA AGUSTIN ','18506/117.110','-','P',59,'2020-01-06 08:10:50'),(1685,'RATIH INDAH PURWANINGSIH','18507/118.110','-','P',59,'2020-01-06 08:10:50'),(1686,'REZA PUSPITA ','18508/119.110','-','P',59,'2020-01-06 08:10:50'),(1687,'REZA UMAMI FERISKA','18509/120.110','-','P',59,'2020-01-06 08:10:50'),(1688,'REZKIYANI','18510/121.110','-','P',59,'2020-01-06 08:10:50'),(1689,'RISKA RISMATUL MUNIROH ','18511/122.110','-','P',59,'2020-01-06 08:10:50'),(1690,'RIVA SETYO WATI ','18512/123.110','-','P',59,'2020-01-06 08:10:50'),(1691,'RULY JAYANTI ','18513/124.110','-','P',59,'2020-01-06 08:10:50'),(1692,'RUTH GABRISIA WINARTO','18514/125.110','-','P',59,'2020-01-06 08:10:50'),(1693,'SALMA ABUBAKAR SALIM MACHFUD','18515/126.110','-','P',59,'2020-01-06 08:10:50'),(1694,'SASMITA','18516/127.110','-','P',59,'2020-01-06 08:10:50'),(1695,'SEPTI ARDIYANTI WULANDARI ','18517/128.110','-','P',59,'2020-01-06 08:10:50'),(1696,'SESEN ANGGELIYA','18518/129.110','-','P',59,'2020-01-06 08:10:50'),(1697,'SHINTYA EKA NURCAHYANI ','18519/130.110','-','P',59,'2020-01-06 08:10:50'),(1698,'SILVIA APRILLINA ANTIKASARI ','18520/131.110','-','P',59,'2020-01-06 08:10:50'),(1699,'SINTIA BETI AGUSTINA','18521/132.110','-','P',59,'2020-01-06 08:10:50'),(1700,'SITI HAWA RATIH KUSHARTANTI ','18522/133.110','-','P',59,'2020-01-06 08:10:50'),(1701,'SITI HUSNATUL MAROYA','18523/134.110','-','P',59,'2020-01-06 08:10:50'),(1702,'SITI KARMIYATI ','18524/135.110','-','P',59,'2020-01-06 08:10:50'),(1703,'SITI NURJANAH ','18525/136.110','-','P',59,'2020-01-06 08:10:50'),(1704,'SIWI DIAN PRATIWI ','18526/137.110','-','P',59,'2020-01-06 08:10:50'),(1705,'TRI NAVELLA NATASYA ','18527/138.110','-','P',59,'2020-01-06 08:10:50'),(1706,'UBAIDAH NABILAH ','18528/139.110','-','P',59,'2020-01-06 08:10:50'),(1707,'WULANDARI ','18529/140.110','-','P',59,'2020-01-06 08:10:50'),(1708,'WULANDARI OKTAVIA ','18530/141.110','-','P',59,'2020-01-06 08:10:50'),(1709,'YUNDA INTANA ','18531/142.110','-','P',59,'2020-01-06 08:10:50'),(1710,'YUNI ANGGRAININGRUM ','18532/143.110','-','P',59,'2020-01-06 08:10:50'),(1711,'ZETA ZAIMATUS AGUSTINA','18533/144.110','-','P',59,'2020-01-06 08:10:50'),(1712,'','','','',59,'2020-01-06 08:10:50'),(1713,'ACHMAT SAIFULLAH MAULANA ','18534/108.111','-','L',60,'2020-01-06 08:11:29'),(1714,'ADINDA THULIFIA SALSABILLAH','18535/109.111','-','P',60,'2020-01-06 08:11:29'),(1715,'AGISTA DWI QONITA','18536/110.111','-','P',60,'2020-01-06 08:11:29'),(1716,'ALFINA SYAHARANI ','18537/111.111','-','P',60,'2020-01-06 08:11:29'),(1717,'AMELIYA WAHYUNINGSIH','18538/112.111','-','P',60,'2020-01-06 08:11:29'),(1718,'AMILYA','18539/113.111','-','P',60,'2020-01-06 08:11:29'),(1719,'ANGGI VERONIKA','18540/114.111','-','P',60,'2020-01-06 08:11:29'),(1720,'ANISAH','18541/115.111','-','P',60,'2020-01-06 08:11:29'),(1721,'ANNISA LUTHFI ZAKIYA','18542/116.111','-','P',60,'2020-01-06 08:11:29'),(1722,'APRILIA DWI PUTRI','18543/117.111','-','P',60,'2020-01-06 08:11:29'),(1723,'ASTER HOLIPATUL AJIJAH ','18544/118.111','-','P',60,'2020-01-06 08:11:29'),(1724,'ASTRY SHAFANY','18545/119.111','-','P',60,'2020-01-06 08:11:29'),(1725,'ASYIFA AVIZA ZHULVI','18546/120.111','-','P',60,'2020-01-06 08:11:29'),(1726,'AULIA RAHMADANY','18547/121.111','-','P',60,'2020-01-06 08:11:29'),(1727,'AURA SHAFA SALSABILA','18548/122.111','-','P',60,'2020-01-06 08:11:29'),(1728,'AURA VAURELIA VANESYA ZAHRA ZENVANI','18549/123.111','-','P',60,'2020-01-06 08:11:29'),(1729,'AVIVA SENDI ARDIYANI','18550/124.111','-','P',60,'2020-01-06 08:11:29'),(1730,'AYU JUNITA ANGGRAINI','18551/125.111','-','P',60,'2020-01-06 08:11:29'),(1731,'AYU WINDA ROSANIA ','18552/126.111','-','P',60,'2020-01-06 08:11:29'),(1732,'AZIZATUL MUNAWAROH','18553/127.111','-','P',60,'2020-01-06 08:11:29'),(1733,'BELA SAPIRA ','18554/128.111','-','P',60,'2020-01-06 08:11:29'),(1734,'CATUR PRASASTI PUTRI\nRAHMAWATI','18555/129.111','-','P',60,'2020-01-06 08:11:29'),(1735,'CITRA MAULIDIA','18556/130.111','-','P',60,'2020-01-06 08:11:29'),(1736,'CITRA NING WULAN','18557/131.111','-','P',60,'2020-01-06 08:11:29'),(1737,'CLAUDIA AURORA NOVANTY','18558/132.111','-','P',60,'2020-01-06 08:11:29'),(1738,'DEASY DWI PRASETYOWATI','18559/133.111','-','P',60,'2020-01-06 08:11:29'),(1739,'DELLIN NELA AGUSTINA','18560/134.111','-','P',60,'2020-01-06 08:11:29'),(1740,'DITA RAHMASARI','18561/135.111','-','P',60,'2020-01-06 08:11:29'),(1741,'DWI NINDI ARIYANI','18562/136.111','-','P',60,'2020-01-06 08:11:29'),(1742,'DWI YULIANA ','18563/137.111','-','P',60,'2020-01-06 08:11:29'),(1743,'EKA MEI PRATIWI ','18564/138.111','-','P',60,'2020-01-06 08:11:29'),(1744,'ELIEL PUTRI TABITA','18565/139.111','-','P',60,'2020-01-06 08:11:29'),(1745,'ELOK SAPUTRI','18566/140.111','-','P',60,'2020-01-06 08:11:29'),(1746,'ERINDA DWI NAFISAH','18567/141.111','-','P',60,'2020-01-06 08:11:29'),(1747,'EVI ANGGITA RAHMA','18568/142.111','-','P',60,'2020-01-06 08:11:29'),(1748,'FADILATUL RIZQI MAULIDA','18569/143.111','-','P',60,'2020-01-06 08:11:29'),(1749,'','','','',60,'2020-01-06 08:11:29'),(1750,'FAHNIATI SOFI TARTILLA','18570/144.111','-','P',61,'2020-01-06 08:12:05'),(1751,'FARDANILA UTARI','18571/145.111','-','P',61,'2020-01-06 08:12:05'),(1752,'FATMA TYAS YUNITASARI','18572/146.111','-','P',61,'2020-01-06 08:12:05'),(1753,'FIKA ARIVIANA','18573/147.111','-','P',61,'2020-01-06 08:12:05'),(1754,'FIRLY NOVALIA DWI PUTRI','18574/148.111','-','P',61,'2020-01-06 08:12:05'),(1755,'FITRI HANDAYANI ','18575/149.111','-','P',61,'2020-01-06 08:12:05'),(1756,'FORTUNA OKTAVIAN RAMADHANI','18576/150.111','-','P',61,'2020-01-06 08:12:05'),(1757,'HARI PURNOMO','18577/151.111','-','L',61,'2020-01-06 08:12:05'),(1758,'HENNY LISTYASTUTI','18578/152.111','-','P',61,'2020-01-06 08:12:05'),(1759,'I GEDE WIRA ATMAJA','18579/153.111','-','L',61,'2020-01-06 08:12:05'),(1760,'INTAN PERMATA MUSTIYADI','18580/154.111','-','P',61,'2020-01-06 08:12:05'),(1761,'IRA APRILIA','18581/155.111','-','P',61,'2020-01-06 08:12:05'),(1762,'KADEK AYU DEA PRATAMA','18582/156.111','-','P',61,'2020-01-06 08:12:05'),(1763,'KIRANA NDARU MARVINTHA','18583/157.111','-','P',61,'2020-01-06 08:12:05'),(1764,'LAILA MAULIDYA','18584/158.111','-','P',61,'2020-01-06 08:12:05'),(1765,'LAILATUL FITRIYA ','18585/159.111','-','P',61,'2020-01-06 08:12:05'),(1766,'LISDA IRAWATI','18586/160.111','-','P',61,'2020-01-06 08:12:05'),(1767,'MARSHANDA CLESYIFA','18587/161.111','-','P',61,'2020-01-06 08:12:05'),(1768,'MAWARINDA NURITA SARI','18588/162.111','-','P',61,'2020-01-06 08:12:05'),(1769,'MOH. NUR AFANDI ','18589/163.111','-','L',61,'2020-01-06 08:12:05'),(1770,'NABILA PUTRI SALSABIL','18590/164.111','-','P',61,'2020-01-06 08:12:05'),(1771,'NACHWA SALFIA BASWARA','18591/165.111','-','P',61,'2020-01-06 08:12:05'),(1772,'NADIA ARLI RAFIFAH','18592/166.111','-','P',61,'2020-01-06 08:12:05'),(1773,'NANDA SILVIA EKA DAMAYANTI','18593/167.111','-','P',61,'2020-01-06 08:12:05'),(1774,'NATIZATUL MUIFFAH','18594/168.111','-','P',61,'2020-01-06 08:12:05'),(1775,'NAUVAL CAHYO ABADI','18595/169.111','-','L',61,'2020-01-06 08:12:05'),(1776,'NISKE WAHYU NINGRUM','18596/170.111','-','P',61,'2020-01-06 08:12:05'),(1777,'NOVITA PUSPITA SARI ','18597/171.111','-','P',61,'2020-01-06 08:12:05'),(1778,'OVIE VERNANDA RUMMAN FIRDAUS','18598/172.111','-','P',61,'2020-01-06 08:12:05'),(1779,'QORY FAJRIYAH','18599/173.111','-','P',61,'2020-01-06 08:12:05'),(1780,'RANI SEPTA RAHAYU ','18600/174.111','-','P',61,'2020-01-06 08:12:05'),(1781,'REFINDA SEFTIANI','18601/175.111','-','P',61,'2020-01-06 08:12:05'),(1782,'RESIZA FEBI AULIA FIRDAUS','18602/176.111','-','P',61,'2020-01-06 08:12:05'),(1783,'REVANELA ANGGUN BERLIANTI','18603/177.111','-','P',61,'2020-01-06 08:12:05'),(1784,'RINA MAULIDIA ','18604/178.111','-','P',61,'2020-01-06 08:12:05'),(1785,'RINDI PUSMA SARI','18605/179.111','-','P',61,'2020-01-06 08:12:05'),(1786,'','','','',61,'2020-01-06 08:12:05'),(1787,'RIRIN HASANAH ','18606/180.111','-','P',62,'2020-01-06 08:12:22'),(1788,'RISKA BUNGA ROSMALIA PUTRI','18607/181.111','-','P',62,'2020-01-06 08:12:22'),(1789,'RISKA NUR ISTIKOMAH','18608/182.111','-','P',62,'2020-01-06 08:12:22'),(1790,'RISMA RAMADHANI ','18609/183.111','-','P',62,'2020-01-06 08:12:22'),(1791,'RISTHA NANDA AUDISTIAS','18610/184.111','-','P',62,'2020-01-06 08:12:22'),(1792,'RIZKI CAMELIA TANTRI ','18611/185.111','-','P',62,'2020-01-06 08:12:22'),(1793,'ROSI SEPTIYANI ','18612/186.111','-','P',62,'2020-01-06 08:12:22'),(1794,'SAFIRATUL JANAH ','18613/187.111','-','P',62,'2020-01-06 08:12:22'),(1795,'SAFRINA EKA NURHALIZAH ','18614/188.111','-','P',62,'2020-01-06 08:12:22'),(1796,'SANDY FEBRIAN ARSYAPUTRA','18615/189.111','-','L',62,'2020-01-06 08:12:22'),(1797,'SASKIA JUNIATUS ZUHRO ','18616/190.111','-','P',62,'2020-01-06 08:12:22'),(1798,'SEFTI UL-LAM DARI','18617/191.111','-','P',62,'2020-01-06 08:12:22'),(1799,'SEPTIA FIRDA MUSTIKA SARI','18618/192.111','-','P',62,'2020-01-06 08:12:22'),(1800,'SERLY DWI ANGGRAINI ','18619/193.111','-','P',62,'2020-01-06 08:12:22'),(1801,'SHERIN DEVITA SARI','18620/194.111','-','P',62,'2020-01-06 08:12:22'),(1802,'SHINTYA FATMA TRI UTAMI','18621/195.111','-','P',62,'2020-01-06 08:12:22'),(1803,'SHOFIATUL JANNA ','18622/196.111','-','P',62,'2020-01-06 08:12:22'),(1804,'SILVI KIRANI ','18623/197.111','-','P',62,'2020-01-06 08:12:22'),(1805,'SILVIA DIFA OKTAVIYANI ','18624/198.111','-','P',62,'2020-01-06 08:12:22'),(1806,'SILVIA MULYANI','18625/199.111','-','P',62,'2020-01-06 08:12:22'),(1807,'SINTIA LUSTIANA PUTRI ','18626/200.111','-','P',62,'2020-01-06 08:12:22'),(1808,'SISKA AULIA PUTRI','18627/201.111','-','P',62,'2020-01-06 08:12:22'),(1809,'SOFI MARYAM','18628/202.111','-','P',62,'2020-01-06 08:12:22'),(1810,'SYAHRU RAMA YURIS SAHPUTRA','18629/203.111','-','L',62,'2020-01-06 08:12:22'),(1811,'TEGUH NUR HADI','18630/204.111','-','L',62,'2020-01-06 08:12:22'),(1812,'TIA FITRIA ','18631/205.111','-','P',62,'2020-01-06 08:12:22'),(1813,'TIANT EKA SARI','18632/206.111','-','P',62,'2020-01-06 08:12:22'),(1814,'USWATUN HASANAH','18633/207.111','-','P',62,'2020-01-06 08:12:22'),(1815,'USWATUN HASANAH','18634/208.111','-','P',62,'2020-01-06 08:12:22'),(1816,'VANNY IRTANTI ','18635/209.111','-','P',62,'2020-01-06 08:12:22'),(1817,'VEBRIANTI WULANDARI','18636/210.111','-','P',62,'2020-01-06 08:12:22'),(1818,'VIVI SILFIYANI ANISA PUTRI','18637/211.111','-','P',62,'2020-01-06 08:12:22'),(1819,'WILDANI RIZKY NOVITASARI ','18638/212.111','-','P',62,'2020-01-06 08:12:22'),(1820,'YORA TITIS AURORA','18639/213.111','-','P',62,'2020-01-06 08:12:22'),(1821,'YOSY ALVITASARI','18640/214.111','-','P',62,'2020-01-06 08:12:22'),(1822,'YURIKE PUTRI FEBRIANTI','18641/215.111','-','P',62,'2020-01-06 08:12:22'),(1823,'','','','',62,'2020-01-06 08:12:22'),(1824,'WILDAN THORIQ MUSTAQIM','18043/104.116','-','L',63,'2020-01-06 08:13:05'),(1825,'RIVAL DATHONA','18019/080.116','-','L',63,'2020-01-06 08:13:05'),(1826,'ACHMAD JALIL FAJAR ','18642/111.116','-','L',63,'2020-01-06 08:13:05'),(1827,'ADELIA DWI SAFITRI ','18643/112.116','-','P',63,'2020-01-06 08:13:05'),(1828,'ADI SURYO UTOMO','18644/113.116','-','L',63,'2020-01-06 08:13:05'),(1829,'ADILA NURUN NASYWA','18645/114.116','-','L',63,'2020-01-06 08:13:05'),(1830,'AFILA FIRNANDA','18646/115.116','-','P',63,'2020-01-06 08:13:05'),(1831,'AGASTHEA VIORENT SASMITA','18647/116.116','-','L',63,'2020-01-06 08:13:05'),(1832,'AHMAD ILMAN NAFIA','18648/117.116','-','L',63,'2020-01-06 08:13:05'),(1833,'AKBAR NUR FAIZIN FIRDIYANSYAH','18649/118.116','-','L',63,'2020-01-06 08:13:05'),(1834,'ALDI GEGER PAMUNGKAS ','18650/119.116','-','L',63,'2020-01-06 08:13:05'),(1835,'ALFA FATHUR RIZQI','18651/120.116','-','L',63,'2020-01-06 08:13:05'),(1836,'AMANDA SEPTIYATUZZAHRO','18652/121.116','-','P',63,'2020-01-06 08:13:05'),(1837,'ANISYAH SAHKCILAH ','18653/122.116','-','P',63,'2020-01-06 08:13:05'),(1838,'ANUR SETIA NINGSIH','18654/123.116','-','P',63,'2020-01-06 08:13:05'),(1839,'ARDINA LUTVIANTI','18655/124.116','-','P',63,'2020-01-06 08:13:05'),(1840,'ARIN AYUNINGTYAS','18656/125.116','-','P',63,'2020-01-06 08:13:05'),(1841,'ASTRID MARGARITA YUONO','18657/126.116','-','P',63,'2020-01-06 08:13:05'),(1842,'AYU BUNGA PRIHMIATI','18658/127.116','-','P',63,'2020-01-06 08:13:05'),(1843,'AYU LESTARI','18659/128.116','-','P',63,'2020-01-06 08:13:05'),(1844,'BAYU HANGGONO','18660/129.116','-','L',63,'2020-01-06 08:13:05'),(1845,'BERIL MUSTIKA FITRI','18661/130.116','-','P',63,'2020-01-06 08:13:05'),(1846,'BILLY SUBAKTI','18662/131.116','-','L',63,'2020-01-06 08:13:05'),(1847,'CINDI YULIA CITRA','18663/132.116','-','P',63,'2020-01-06 08:13:05'),(1848,'CINDY EMILIA SARI','18664/133.116','-','P',63,'2020-01-06 08:13:05'),(1849,'CITRA LAILI AGUSTINA','18665/134.116','-','P',63,'2020-01-06 08:13:05'),(1850,'DEBI ALIFATUL IFA','18666/135.116','-','P',63,'2020-01-06 08:13:05'),(1851,'DEVI AYU SAPITRI','18667/136.116','-','P',63,'2020-01-06 08:13:05'),(1852,'DEVI TRIA IDA PAWESTI','18668/137.116','-','P',63,'2020-01-06 08:13:05'),(1853,'DEVINA ZSA ZSA ZERLINDA','18669/138.116','-','P',63,'2020-01-06 08:13:05'),(1854,'DIAH AYU KHARISMA','18670/139.116','-','P',63,'2020-01-06 08:13:05'),(1855,'DIAN RINA AGUSTIN','18671/140.116','-','P',63,'2020-01-06 08:13:05'),(1856,'DINY YULIA RAHMAWATI','18672/141.116','-','P',63,'2020-01-06 08:13:05'),(1857,'DIO IQBAL ZAINULLOH','18673/142.116','-','L',63,'2020-01-06 08:13:05'),(1858,'DIYAH AYU PUSPITASARI','18674/143.116','-','P',63,'2020-01-06 08:13:05'),(1859,'','','','',63,'2020-01-06 08:13:05'),(1860,'DWI AYU PRASTIKA ','18675/144.116','-','P',64,'2020-01-06 08:13:30'),(1861,'EKA FARI SUYANTI','18676/145.116','-','P',64,'2020-01-06 08:13:30'),(1862,'ELYA SINDY DAMAYANTI','18677/146.116','-','P',64,'2020-01-06 08:13:30'),(1863,'ESTU PRAJA ','18678/147.116','-','L',64,'2020-01-06 08:13:30'),(1864,'EVA NURSILA DEWI','18679/148.116','-','P',64,'2020-01-06 08:13:30'),(1865,'FEBRIZA TRI HARIYANITA ','18680/149.116','-','P',64,'2020-01-06 08:13:30'),(1866,'FERDY WIJAYA KUSUMA','18681/150.116','-','L',64,'2020-01-06 08:13:30'),(1867,'FRANCISKA MAHARANI','18682/151.116','-','P',64,'2020-01-06 08:13:30'),(1868,'GELI DWI PRASTYANI','18683/152.116','-','P',64,'2020-01-06 08:13:30'),(1869,'IKA APRILIA PUTRI ','18684/153.116','-','P',64,'2020-01-06 08:13:30'),(1870,'IMANINA RAHMAWATI','18685/154.116','-','P',64,'2020-01-06 08:13:30'),(1871,'INDRY CAHYANI','18686/155.116','-','P',64,'2020-01-06 08:13:30'),(1872,'INKA ARISANTI','18687/156.116','-','P',64,'2020-01-06 08:13:30'),(1873,'INTAN LAILATUL FAWAIDA SARI','18688/157.116','-','P',64,'2020-01-06 08:13:30'),(1874,'INTAN SEFPITRIYANI','18689/158.116','-','P',64,'2020-01-06 08:13:30'),(1875,'IRMAWATI ','18690/159.116','-','P',64,'2020-01-06 08:13:30'),(1876,'JANU DWI SAPUTRA','18691/160.116','-','L',64,'2020-01-06 08:13:30'),(1877,'KEYSHA PINGKY ADELIA','18692/161.116','-','P',64,'2020-01-06 08:13:30'),(1878,'LAILATHUL LATIVIANY RACHMAWATI','18693/162.116','-','P',64,'2020-01-06 08:13:30'),(1879,'LAILIYA SAPITRI ','18694/163.116','-','P',64,'2020-01-06 08:13:30'),(1880,'LELIN DWI CAHYANINGTIA','18695/164.116','-','P',64,'2020-01-06 08:13:30'),(1881,'MARISKA TESSA FADIA WARDHANI','18696/165.116','-','P',64,'2020-01-06 08:13:30'),(1882,'MARSILA SINTIA UTAMI','18697/166.116','-','P',64,'2020-01-06 08:13:30'),(1883,'MAULIDIA NIKMATUL AKHLAFI','18698/167.116','-','P',64,'2020-01-06 08:13:30'),(1884,'MEGA PUSPARANI NAWANGSASI','18699/168.116','-','P',64,'2020-01-06 08:13:30'),(1885,'MEISYA WANDA ARYANTI','18700/169.116','-','P',64,'2020-01-06 08:13:30'),(1886,'MEIWA LARASHINTA AYU KARISMA ','18701/170.116','-','P',64,'2020-01-06 08:13:30'),(1887,'MITA FITRI SALSABILA','18702/171.116','-','P',64,'2020-01-06 08:13:30'),(1888,'MOCH. FATHUR RIZAL PRATAMA','18703/172.116','-','L',64,'2020-01-06 08:13:30'),(1889,'MUTIARA SETIYAWAN','18704/173.116','-','P',64,'2020-01-06 08:13:30'),(1890,'NABILLAH AULIA ASDAR','18705/174.116','-','P',64,'2020-01-06 08:13:30'),(1891,'NADILA AYU PUSPITASARI','18706/175.116','-','P',64,'2020-01-06 08:13:30'),(1892,'NADINDA PUTRI AYU WULANDARI','18707/176.116','-','P',64,'2020-01-06 08:13:30'),(1893,'NADYA HARDIYANTI','18708/177.116','-','P',64,'2020-01-06 08:13:30'),(1894,'NANDIRA ABELLIA FAZZAH','18709/178.116','-','P',64,'2020-01-06 08:13:30'),(1895,'NILUH PUTU DAVINA JOVANCA','18710/179.116','-','P',64,'2020-01-06 08:13:30'),(1896,'','','','',64,'2020-01-06 08:13:30'),(1897,'NOUFAL RAYYAN AFINANTO ','18711/180.116','-','L',65,'2020-01-06 08:14:02'),(1898,'NUR AISYAH HAQUE','18712/181.116','-','P',65,'2020-01-06 08:14:02'),(1899,'NURIKA VERNANDA APRIANI','18713/182.116','-','P',65,'2020-01-06 08:14:02'),(1900,'NURIL HIDAYAH','18714/183.116','-','P',65,'2020-01-06 08:14:02'),(1901,'NURIL ISTIQOMAH','18715/184.116','-','P',65,'2020-01-06 08:14:02'),(1902,'NURLENI AGUSTINA','18716/185.116','-','P',65,'2020-01-06 08:14:02'),(1903,'OQI SINTIA WIHARJA','18717/186.116','-','P',65,'2020-01-06 08:14:02'),(1904,'PUTRI WULANDARI','18718/187.116','-','P',65,'2020-01-06 08:14:02'),(1905,'RAHAJENG YULINAR EMERALDA','18719/188.116','-','P',65,'2020-01-06 08:14:02'),(1906,'RAKA ADITYA RAHMADANI ','18720/189.116','-','L',65,'2020-01-06 08:14:02'),(1907,'RANI SETIYAWATI','18721/190.116','-','P',65,'2020-01-06 08:14:02'),(1908,'REGI ELMA VIANI','18722/191.116','-','P',65,'2020-01-06 08:14:02'),(1909,'REGITHA FEBY MAHARANI ','18723/192.116','-','P',65,'2020-01-06 08:14:02'),(1910,'REVINDA RIZKI MARETHA','18724/193.116','-','P',65,'2020-01-06 08:14:02'),(1911,'REZZA SAFIRA ','18725/194.116','-','P',65,'2020-01-06 08:14:02'),(1912,'RIFKI INDRIAWAN','18726/195.116','-','L',65,'2020-01-06 08:14:02'),(1913,'RINA WAHIDA','18727/196.116','-','P',65,'2020-01-06 08:14:02'),(1914,'RIZKA APRILIYANTI','18728/197.116','-','P',65,'2020-01-06 08:14:02'),(1915,'ROBERTA MAURA APRILIA','18729/198.116','-','P',65,'2020-01-06 08:14:02'),(1916,'ROIHANNY BINAR MAULIDDA ','18730/199.116','-','P',65,'2020-01-06 08:14:02'),(1917,'RYAN DWI MAYDIANTO','18731/200.116','-','L',65,'2020-01-06 08:14:02'),(1918,'SAGHINA RANAVIA AZZAHRA','18732/201.116','-','P',65,'2020-01-06 08:14:02'),(1919,'SELLA ARININGTYAS','18733/202.116','-','P',65,'2020-01-06 08:14:02'),(1920,'SETIYANINGSIH','18734/203.116','-','P',65,'2020-01-06 08:14:02'),(1921,'SHABIA KITANTRI','18735/204.116','-','P',65,'2020-01-06 08:14:02'),(1922,'SIGIT PURNOMO','18736/205.116','-','L',65,'2020-01-06 08:14:02'),(1923,'SILA NABILLA','18737/206.116','-','P',65,'2020-01-06 08:14:02'),(1924,'SITI LAILATUL RULIA','18738/207.116','-','P',65,'2020-01-06 08:14:02'),(1925,'SITI RATNA SARI ','18739/208.116','-','P',65,'2020-01-06 08:14:02'),(1926,'SUGIHANARTIN ','18740/209.116','-','P',65,'2020-01-06 08:14:02'),(1927,'TEGUH RISTANTO','18741/210.116','-','L',65,'2020-01-06 08:14:02'),(1928,'TRIO ANDY BIMANTARA','18742/211.116','-','L',65,'2020-01-06 08:14:02'),(1929,'UMROTUL HASANAH','18743/212.116','-','P',65,'2020-01-06 08:14:02'),(1930,'VINA DWI ARISKI','18744/213.116','-','P',65,'2020-01-06 08:14:02'),(1931,'WARIH DHINA HARMARITA','18745/214.116','-','P',65,'2020-01-06 08:14:02'),(1932,'ZACKY ILHAMI ','18746/215.116','-','L',65,'2020-01-06 08:14:02'),(1933,'','','','',65,'2020-01-06 08:14:02'),(1934,'MUHAMMAD FARHAN AL HABSYI','18086/040.126','-','L',67,'2020-01-06 08:14:33'),(1935,'ADILA','18747/068.126','-','P',67,'2020-01-06 08:14:33'),(1936,'AHMAD SUFADLI','18748/069.126','-','L',67,'2020-01-06 08:14:33'),(1937,'AKHDAN RAFIF MAULANA','18749/070.126','-','L',67,'2020-01-06 08:14:33'),(1938,'ALFIA SETYANINGRUM','18750/071.126','-','P',67,'2020-01-06 08:14:33'),(1939,'ALPY SEPDIAN PRASASTI','18751/072.126','-','P',67,'2020-01-06 08:14:33'),(1940,'ANA NOFITASARI','18752/073.126','-','P',67,'2020-01-06 08:14:33'),(1941,'ANISA WULANDARI','18753/074.126','-','P',67,'2020-01-06 08:14:33'),(1942,'ARGYA BYANTARA','18754/075.126','-','L',67,'2020-01-06 08:14:33'),(1943,'BAGUS SAPITRI ','18755/076.126','-','L',67,'2020-01-06 08:14:33'),(1944,'BINTANG WICAKSONO ','18756/077.126','-','L',67,'2020-01-06 08:14:33'),(1945,'CANTIKA RATU NATASYA IKTIARA','18757/078.126','-','P',67,'2020-01-06 08:14:33'),(1946,'CARISSA CAMILA CALANY CALYA SUMANTRI','18758/079.126','-','P',67,'2020-01-06 08:14:33'),(1947,'CHELSEA IMAMOVA HIDAYAT ','18759/080.126','-','P',67,'2020-01-06 08:14:33'),(1948,'CINTA KHARISMA SARI','18760/081.126','-','P',67,'2020-01-06 08:14:33'),(1949,'CITRA MARIESKA DINI MUSTIKA NURCAHYANI','18761/082.126','-','P',67,'2020-01-06 08:14:33'),(1950,'DESI LAILATUL OKTAVIA ','18762/083.126','-','P',67,'2020-01-06 08:14:33'),(1951,'DEWI FATIMAH','18763/084.126','-','P',67,'2020-01-06 08:14:33'),(1952,'DIMAS DYAH SUCI LESTARI','18764/085.126','-','P',67,'2020-01-06 08:14:33'),(1953,'DITA PRASTIKA','18765/086.126','-','P',67,'2020-01-06 08:14:33'),(1954,'DURROTUN NABILA','18766/087.126','-','P',67,'2020-01-06 08:14:33'),(1955,'DWI SETYA NINGRUM','18767/088.126','-','P',67,'2020-01-06 08:14:33'),(1956,'EKA DEWI SYAFITRI','18768/089.126','-','P',67,'2020-01-06 08:14:33'),(1957,'EKA FERDIYANTI','18769/090.126','-','P',67,'2020-01-06 08:14:33'),(1958,'ELLA SAGITA','18770/091.126','-','P',67,'2020-01-06 08:14:33'),(1959,'EYRICHA DINDA PUTRI ANNISA HAKIM','18771/092.126','-','P',67,'2020-01-06 08:14:33'),(1960,'FADHILA NURHALIZA','18772/093.126','-','P',67,'2020-01-06 08:14:33'),(1961,'FENNY HARDHIANTI','18773/094.126','-','P',67,'2020-01-06 08:14:33'),(1962,'FINDY AMYLIA','18774/095.126','-','P',67,'2020-01-06 08:14:33'),(1963,'FITRIYANI NOVITA SARI','18775/096.126','-','P',67,'2020-01-06 08:14:33'),(1964,'HILWA','18776/097.126','-','P',67,'2020-01-06 08:14:33'),(1965,'IKE JIAN ARIS MADONA','18777/098.126','-','P',67,'2020-01-06 08:14:33'),(1966,'IKROMATUL ULYA','18778/099.126','-','P',67,'2020-01-06 08:14:33'),(1967,'JOAN SHERLY DINIRA ','18779/100.126','-','P',67,'2020-01-06 08:14:33'),(1968,'KURNIA BINTANG RAHMAWATI','18780/101.126','-','P',67,'2020-01-06 08:14:33'),(1969,'MEGA MUSTIKA','18781/102.126','-','P',67,'2020-01-06 08:14:33'),(1970,'','','','',67,'2020-01-06 08:14:33'),(1971,'MEI AYU SUKMA KALYANA TANTRI','18782/103.126','-','P',68,'2020-01-06 08:14:57'),(1972,'MIFTA WIDIYASTUTI','18783/104.126','-','L',68,'2020-01-06 08:14:57'),(1973,'MOCH. AGAM ARDIANSYA','18784/105.126','-','L',68,'2020-01-06 08:14:57'),(1974,'MOHAMMAD CHELSEA DERMAWAN PUTRA','18785/106.126','-','L',68,'2020-01-06 08:14:57'),(1975,'MOHAMMAD HIDAYATULLOH ','18786/107.126','-','L',68,'2020-01-06 08:14:57'),(1976,'MUHAMMAD ZAINNUR HADIARTA','18787/108.126','-','L',68,'2020-01-06 08:14:57'),(1977,'NADILLA NUR FAIZAH','18788/109.126','-','P',68,'2020-01-06 08:14:57'),(1978,'NICKYTA VEGA INDRYANI','18789/110.126','-','P',68,'2020-01-06 08:14:57'),(1979,'NOVIA WULANDARI','18790/111.126','-','P',68,'2020-01-06 08:14:57'),(1980,'NOVITA INDAH P','18791/112.126','-','P',68,'2020-01-06 08:14:57'),(1981,'NURUL AINNY','18792/113.126','-','P',68,'2020-01-06 08:14:57'),(1982,'PUTRI AYU LESTARI','18793/114.126','-','P',68,'2020-01-06 08:14:57'),(1983,'PUTRI IDA SINDIKA','18794/115.126','-','P',68,'2020-01-06 08:14:57'),(1984,'PUTRI SURYA WILLYANA','18795/116.126','-','P',68,'2020-01-06 08:14:57'),(1985,'RESTI AJENG SHOLIHA','18796/117.126','-','P',68,'2020-01-06 08:14:57'),(1986,'RIA RIVIANA PUTRI','18797/118.126','-','P',68,'2020-01-06 08:14:57'),(1987,'RINO SAPUTRA','18798/119.127','-','P',68,'2020-01-06 08:14:57'),(1988,'RISKA RESTU MULYA','18799/120.126','-','P',68,'2020-01-06 08:14:57'),(1989,'RISKANALIYA','18800/121.126','-','L',68,'2020-01-06 08:14:57'),(1990,'RIYAN FITRA RAHMAN','18801/122.126','-','L',68,'2020-01-06 08:14:57'),(1991,'SAHRUL ANDI ROSANDI','18802/123.126','-','P',68,'2020-01-06 08:14:57'),(1992,'SHAFIRA QURROTA AYUN','18803/124.126','-','L',68,'2020-01-06 08:14:57'),(1993,'SHINDA DWI FITRIYANTO ','18804/125.126','-','P',68,'2020-01-06 08:14:57'),(1994,'SILVI INAYATRI DEWI','18805/126.126','-','P',68,'2020-01-06 08:14:57'),(1995,'SISILIA FAHLEVI','18806/127.126','-','L',68,'2020-01-06 08:14:57'),(1996,'SUCAHYO DWI ISMUWIYOTO','18807/128.126','-','P',68,'2020-01-06 08:14:57'),(1997,'SULASTIYA NINGSIH','18808/129.126','-','L',68,'2020-01-06 08:14:57'),(1998,'TITAN EZRANO FAUSTA ADJIE','18809/130.126','-','P',68,'2020-01-06 08:14:57'),(1999,'TRI UTAMI','18810/131.126','-','P',68,'2020-01-06 08:14:57'),(2000,'VIRA ALMIRA NOVIA RAMADINA','18811/132.126','-','L',68,'2020-01-06 08:14:57'),(2001,'YANUAR DWI ARDIYANTO','18812/133.126','-','L',68,'2020-01-06 08:14:57'),(2002,'YHOAN ADI RIYANTO','18813/134.126','-','P',68,'2020-01-06 08:14:57'),(2003,'YUAN APTA RENA','18814/135.126','-','P',68,'2020-01-06 08:14:57'),(2004,'YULI ASTUTIK','18815/136.126','-','P',68,'2020-01-06 08:14:57'),(2005,'YUNIZAR GISTI FIRDAUS','18816/137.126','-','P',68,'2020-01-06 08:14:57'),(2006,'YUSRINA SAHARANI','18817/138.126','-','P',68,'2020-01-06 08:14:57'),(2007,'','','','',68,'2020-01-06 08:14:57'),(2008,'FITRIANI','18134/021.136','-','P',69,'2020-01-06 08:15:23'),(2009,'WINDI RAHAYU','18172/059.136','-','P',69,'2020-01-06 08:15:23'),(2010,'ABDI FIRMANSYAH','18818/063.136','-','L',69,'2020-01-06 08:15:23'),(2011,'ABZARIN FIRDAUS AGVA','18819/064.136','-','L',69,'2020-01-06 08:15:23'),(2012,'ACHMAD IRFAN MAULANA','18820/065.136','-','L',69,'2020-01-06 08:15:23'),(2013,'AHMAD SYAHRUL MUHARRAM FEBRIANTO','18821/066.136','-','L',69,'2020-01-06 08:15:23'),(2014,'ALFINA DAMAYANTI','18822/067.136','-','P',69,'2020-01-06 08:15:23'),(2015,'ANGGI LESMANA','18823/068.136','-','P',69,'2020-01-06 08:15:23'),(2016,'ANITA RATNASARI','18824/069.136','-','P',69,'2020-01-06 08:15:23'),(2017,'ARMAN MAULANA','18825/070.136','-','L',69,'2020-01-06 08:15:23'),(2018,'ATIKA NUR AINI','18826/071.136','-','P',69,'2020-01-06 08:15:23'),(2019,'AYU ATIKA','18827/072.136','-','P',69,'2020-01-06 08:15:23'),(2020,'CITRA AULIA UTAMI','18828/073.136','-','P',69,'2020-01-06 08:15:23'),(2021,'DANDA KUSWOYO','18829/074.136','-','L',69,'2020-01-06 08:15:23'),(2022,'DANU PRATAMA','18830/075.136','-','L',69,'2020-01-06 08:15:23'),(2023,'DHEA ANANTA SALSAHADI\nPRATIWI ','18831/076.136','-','P',69,'2020-01-06 08:15:23'),(2024,'DWI LESTARI','18832/077.136','-','P',69,'2020-01-06 08:15:23'),(2025,'EKA WULANDARI','18833/078.136','-','P',69,'2020-01-06 08:15:23'),(2026,'ELVA NUR ILMIAH','18834/079.136','-','P',69,'2020-01-06 08:15:23'),(2027,'ENJELY GITALISASI SYAH PUTRI','18835/080.136','-','P',69,'2020-01-06 08:15:23'),(2028,'ERIKA OKTAVIANI','18836/081.136','-','P',69,'2020-01-06 08:15:23'),(2029,'EVA ZAHRO APRILIA','18837/082.136','-','P',69,'2020-01-06 08:15:23'),(2030,'GESTI SILFANY','18838/083.136','-','P',69,'2020-01-06 08:15:23'),(2031,'HAIKAL PUTRA ARDIAN','18839/084.136','-','L',69,'2020-01-06 08:15:23'),(2032,'HANDAYANA EKA FEBRIANI ','18840/085.136','-','P',69,'2020-01-06 08:15:23'),(2033,'HANNY SELFIANI','18841/086.136','-','P',69,'2020-01-06 08:15:23'),(2034,'HERA AYU UTAMI','18842/087.136','-','P',69,'2020-01-06 08:15:23'),(2035,'HOLIMAH','18843/088.136','-','P',69,'2020-01-06 08:15:23'),(2036,'INDAH NOFITA DEWI ','18844/089.136','-','P',69,'2020-01-06 08:15:23'),(2037,'IRA IKA PUSPITASARI','18845/090.136','-','P',69,'2020-01-06 08:15:23'),(2038,'IZZUL HAK AN NASIR','18846/091.136','-','L',69,'2020-01-06 08:15:23'),(2039,'ILDA JULIANTI','18847/092.136','-','P',69,'2020-01-06 08:15:23'),(2040,'','','','',69,'2020-01-06 08:15:23'),(2041,'JESSICA GUSTIVIANA ROMBON ','18848/093.136','-','P',70,'2020-01-06 08:15:45'),(2042,'KHARISMA MELLI NOPIYANA ','18849/094.136','-','P',70,'2020-01-06 08:15:45'),(2043,'KHUSNUL KHOTIMAH','18850/095.136','-','P',70,'2020-01-06 08:15:45'),(2044,'LAILATUL FITRIA','18851/096.136','-','P',70,'2020-01-06 08:15:45'),(2045,'LIA KAROMAH','18852/097.136','-','P',70,'2020-01-06 08:15:45'),(2046,'MAULIDA ','18853/098.136','-','P',70,'2020-01-06 08:15:45'),(2047,'MAULIDAH WAHYU NINGRUM','18854/099.136','-','P',70,'2020-01-06 08:15:45'),(2048,'MEI KURNIA DEWI','18855/100.136','-','P',70,'2020-01-06 08:15:45'),(2049,'MIMIN ANGGUN KINANTI','18856/101.136','-','P',70,'2020-01-06 08:15:45'),(2050,'MUHAMAD BENI IQQROBI','18857/102.136','-','P',70,'2020-01-06 08:15:45'),(2051,'NOVIA','18858/103.136','-','P',70,'2020-01-06 08:15:45'),(2052,'NOVIA TRIWAHYUNI','18859/104.136','-','P',70,'2020-01-06 08:15:45'),(2053,'NOVITA SARI','18860/105.136','-','P',70,'2020-01-06 08:15:45'),(2054,'NUR CAHYANA ','18861/106.136','-','P',70,'2020-01-06 08:15:45'),(2055,'PIPIN ALAYDA','18862/107.136','-','P',70,'2020-01-06 08:15:45'),(2056,'PUTRI AMALIA','18863/108.136','-','P',70,'2020-01-06 08:15:45'),(2057,'PUTRI MANDASARI','18864/109.136','-','P',70,'2020-01-06 08:15:45'),(2058,'RANGGA ARDIANSYAH','18865/110.136','-','P',70,'2020-01-06 08:15:45'),(2059,'RENNY AKHTERYANTI PRIMANDARI ','18866/111.136','-','P',70,'2020-01-06 08:15:45'),(2060,'RESTINA DWI UTAMI ','18867/112.136','-','P',70,'2020-01-06 08:15:45'),(2061,'RIA RIZQI ZAVIRA','18868/113.136','-','P',70,'2020-01-06 08:15:45'),(2062,'RICO WIDANA','18869/114.136','-','L',70,'2020-01-06 08:15:45'),(2063,'ROSSY AYUDYANINGTYAS','18870/115.136','-','P',70,'2020-01-06 08:15:45'),(2064,'SHINTA PUSPITA SARI','18871/116.136','-','P',70,'2020-01-06 08:15:45'),(2065,'SUCI AYU LESTARI','18872/117.136','-','P',70,'2020-01-06 08:15:45'),(2066,'SUSILOWATI','18873/118.136','-','P',70,'2020-01-06 08:15:45'),(2067,'WANDA FINOLIA','18874/119.136','-','P',70,'2020-01-06 08:15:45'),(2068,'YASHINTA NURAINI','18875/120.136','-','P',70,'2020-01-06 08:15:45'),(2069,'YASINTA FEBIYANI','18875/121.136','-','P',70,'2020-01-06 08:15:45'),(2070,'','','','',70,'2020-01-06 08:15:45');
+INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `no_induk`, `alamat`, `jenis_kelamin`, `id_kelas`, `tanggal_input`) VALUES
+(1, 'Abd. Malik', '11889/053.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(2, 'Abd. Rahman Sudaisy', '11890/054.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(3, 'Ach. Fikru Maulana', '11891/055.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(4, 'Aditya Pratama', '11892/;056.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(5, 'Ahmad Safik Kamil', '11893/057.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(6, 'Aisyah Qurruta Ainy', '11894/058.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(7, 'Akbar Ferli Kurniawan', '11895/059.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(8, 'Aldi Bayu Saputra', '11896/060.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(9, 'Alfredo Ahmad D.', '11897/061.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(10, 'Annisa Al Maghfiroh', '11898/062.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(11, 'Ariel Ikma Salvino A. W', '11899/063.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(12, 'Bagastyawan Maulana', '11900/064.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(13, 'Caesar Ramadhan', '11901/065.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(14, 'Christian James Juliano', '11902/066.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(15, 'Dani Maulana', '11903/067.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(16, 'Dewangga', '11904/068.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(17, 'Dimas Ferdinand A.', '11905/069.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(18, 'Diska Elisia', '11906/070.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(19, 'Dwi Ikvina Maulidiya', '11907/071.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(20, 'Fadila Bayu Aji', '11908/072.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(21, 'Fajar Dwi Kurniawan', '11909/073.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(22, 'Fariz Helga Dafiansya', '11910/074.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(23, 'Felicia Hanny Manjulang', '11911/075.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(24, 'Fitria', '11912/076.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(25, 'Haikal Alsyirazy Mochtar', '11913/077.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(26, 'Imanuel Okta Putra Wijaya', '11914/078.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(27, 'Indrawan Dwiki Saputra', '11915/079.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(28, 'Isti Sabilatul Irma', '11916/080.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(29, 'Itqon Fahmi Satria Wijaya', '11917/081.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(30, 'Jesika Andini Devia Eka Putri', '11918/082.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(31, 'Jhelang Fajar Sembrani', '11919/083.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(32, 'Keyzabryna Rahmadhany Salihin', '11920/084.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(33, 'Liskiyanto', '11921/085.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(34, 'M. Fahmi Aqil', '11922/086.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(35, 'Maria Ulfa', '11923/087.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(36, 'Mas Cahyo Nugraha', '11924/088.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(37, 'Maulina Sylva Sayu Kurniadinata', '11925/089.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(38, 'Meliyana', '11926/090.22', 'Banyuwangi', 'P', 10, '2023-01-01 06:00:00'),
+(39, 'Moch. Daffa Ramadhana', '11927/091.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(40, 'Moch.Bintang Naufal H.', '11928/092.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(41, 'Mochammad Bhalazham Idhar Halqi', '11929/093.22', 'Banyuwangi', 'L', 10, '2023-01-01 06:00:00'),
+(42, 'Moh. Aditya Ridwan', '11930/094.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(43, 'Moh. Bahrul Ulum', '11931/095.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(44, 'Moh Rizki ', '11932/096.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(45, 'Mohamad Fafa Maulana', '11933/097.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(46, 'Mohammad Ergi Breiniansyah', '11934/098.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(47, 'Mohammad Maulana Zavierur Rizky', '11935/099.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(48, 'Muhamad Fariz Hidayat', '11936/100.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(49, 'Muhammad Ibrahim', '11937/101.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(50, 'Muhammad Iqbal Irawan', '11938/102.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(51, 'Muhammad Maulana Iskhak', '11939/103.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(52, 'Muhammad Orisa Maulana Arista', '11940/104.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(53, 'Nabilla', '11941/105.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(54, 'Naswa Salsabila Khoirun Nissa', '11942/106.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(55, 'Naufal Arkaan Briliant Syahputra', '11943/107.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(56, 'Putri Fantasi Hariawani', '11944/108.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(57, 'Raido Octaviandy', '11945/109.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(58, 'Rajes Sanjaya', '11946/110.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(59, 'Rayhan Zein Farrel', '11947/111.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(60, 'Rendy Satria Fahrezy', '11948/112.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(61, 'Reza Chandra Ibrahim', '11949/113.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(62, 'Rijal Hidayatuloh ', '11950/114.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(63, 'Rino Bastiar Marsellona W', '11951/115.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(64, 'Rio Dwi Rama Dani', '11952/116.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(65, 'Riski', '11953/117.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(66, 'Risky Maulana ', '11954/118.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(67, 'Roby Prasetyo', '11955/119.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(68, 'Rosid Dwi Saputra', '11956/120.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(69, 'Rusdi Arif Budianto', '11957/121.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(70, 'Salsabila Sartika Dewi', '11958/122.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(71, 'Serli Herawati', '11959/123.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(72, 'Siti Nuraini', '11960/124.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(73, 'Siti Nurlailiawati', '11961/125.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(74, 'Suci Ayu Rahmawati', '11962/126.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(75, 'Syahfrizal Rahadyan', '11963/127.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(76, 'Tegar Candra Kusuma', '11964/128.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(77, 'Teguh Wahyu Anggoro', '11965/129.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(78, 'Verischa Anabel Susanto', '11966/130.22', 'Banyuwangi', 'P', 11, '2023-01-01 06:00:00'),
+(79, 'Wahyu Prabowo', '11967/131.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(80, 'Wisnu Eka Ardianto', '11968/132.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(81, 'Zasfit Pratama', '11969/133.22', 'Banyuwangi', 'L', 11, '2023-01-01 06:00:00'),
+(82, 'Abellia Okta Maeivia', '11970/057.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(83, 'Adek Jumilang', '11971/058.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(84, 'Adinda Fibriyanti', '11972/059.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(85, 'Adinia Citra', '11973/060.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(86, 'Aldi Fahri', '11974/061.37', 'Banyuwangi', 'L', 5, '2023-01-01 06:00:00'),
+(87, 'Anggita Sintya Mardiana', '11975/062.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(88, 'Anggun Dwi S Prasasty', '11976/063.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(89, 'Anina Zakiatun Nufus', '11977/064.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(90, 'Anisa', '11978/065.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(91, 'Anisa Indah Kurnia Sari', '11979/066.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(92, 'Asti Diva Ananta', '11980/067.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(93, 'Auliya Fathura Rachmasari', '11981/068.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(94, 'Aurel Widi Feriska Salsabila', '11982/069.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(95, 'Chindy May Claudia', '11983/070.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(96, 'Dea Nofitasari', '11984/071.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(97, 'Dedi Dwi Ariyanto', '11985/072.37', 'Banyuwangi', 'L', 5, '2023-01-01 06:00:00'),
+(98, 'Della Riski Apriliana Dewi', '11986/073.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(99, 'Desi Nur Holisa', '11987/074.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(100, 'Devi Ayu Safitri', '11988/075.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(101, 'Dia Nurita ', '11989/076.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(102, 'Dwi Agustin', '11990/077.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(103, 'Enjel Tiara Natasia', '11992/079.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(104, 'Finda Dewi Ulandari', '11993/080.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(105, 'Husnul Aini', '11994/081.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(106, 'Husnul Amelia Syafitri', '11995/082.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(107, 'Imely Putri Desiyanti', '11996/083.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(108, 'Intan Gabrelia', '11997/084.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(109, 'Jihan Aulia', '11998/085.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(110, 'Kaila Tarisa Aulia', '11999/086.37', 'Banyuwangi', 'P', 5, '2023-01-01 06:00:00'),
+(111, 'Kasiyanti', '12000/087.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(112, 'Kensa Maharani', '12001/088.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(113, 'Laila Risa', '12002/089.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(114, 'Laudia Gita Kumalasari', '12003/090.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(115, 'Laura Bunga Savira', '12004/091.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(116, 'Melvia Tri Vani', '12005/092.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(117, 'Moh. Riski', '12006/093.37', 'Banyuwangi', 'L', 6, '2023-01-01 06:00:00'),
+(118, 'Nafisa Gianti Pradipta', '12007/094.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(119, 'Natasya Amisya Putri', '12008/095.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(120, 'Nur Hazizah', '12010/097.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(121, 'Nur Imamah', '12011/098.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(122, 'Pinkan Sevina Valentin', '12012/099.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(123, 'Putri Wahyuni', '12013/100.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(124, 'Putu Moza Amanda Pratiwi', '12014/101.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(125, 'Rachmad Tri Saputra', '12015/102.37', 'Banyuwangi', 'L', 6, '2023-01-01 06:00:00'),
+(126, 'Radit Prayoga', '12016/103.37', 'Banyuwangi', 'L', 6, '2023-01-01 06:00:00'),
+(127, 'Rahma Eka Jovita Sari', '12017/104.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(128, 'Rahmania Putri', '12018/105.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(129, 'Rahmawati Maulidya Safitri', '12019/106.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(130, 'Ratna Andriyani', '12020/107.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(131, 'Riska Maisaroh', '12021/108.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(132, 'Sayu Zavira Nuraini', '12022/109.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(133, 'Shofiya Ramadani', '12023/110.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(134, 'Sinta Putri Laura', '12024/111.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(135, 'Veronika Natalia Kalangit', '12025/112.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(136, 'Wigati Ningrum', '12026/113.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(137, 'Yasmin Prasasti Agustina', '12027/114.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(138, 'Yholanda Putri Joenila', '12028/115.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(139, 'Zakya Intan Ayu Tricipta', '12029/116.37', 'Banyuwangi', 'P', 6, '2023-01-01 06:00:00'),
+(140, 'Adinda Gita Lestari', '12030/073.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(141, 'Agita Alodia Okta Fitria', '12031/074.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(142, 'Agustina Dwi Syafitri', '12032/075.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(143, 'Alvia Yulianti', '12033/076.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(144, 'Alya Natasya', '12034/077.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(145, 'Amanda Eka Putri Febiola', '12035/078.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(146, 'Amelia Fitriani', '12036/079.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(147, 'Anggun Pratiwi Putri', '12037/080.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(148, 'Ari Yans Sagita', '12038/081.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(149, 'Arif Dwi Saputro', '12039/082.38', 'Banyuwangi', 'L', 1, '2023-01-01 06:00:00'),
+(150, 'Arista Eka Damayanti', '12040/083.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(151, 'Asni Yulistiani', '12041/084.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(152, 'Aulia Sastra Pratiwi', '12042/085.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(153, 'Ayu Laura Dewi', '12043/086.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(154, 'Azizatul Masruroh', '12045/088.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(155, 'Bagus Dermawan', '12046/089.38', 'Banyuwangi', 'L', 1, '2023-01-01 06:00:00'),
+(156, 'Cahya Owy Ardinanda', '12047/090.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(157, 'Cindy Dwi Grisselda', '12049/092.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(158, 'Cipta Ayu NiImmatirillah', '12050/093.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(159, 'Devi Islami Wulandari', '12051/094.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(160, 'Devika Andriani Ismoyo', '12052/095.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(161, 'Dewi Shinta', '12053/096.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(162, 'Diana Lufitasari', '12054/097.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(163, 'Diandis Kartika Julianti P.', '12055/098.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(164, 'Dwi Indah Lestari', '12056/099.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(165, 'Eka Trisna', '12057/100.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(166, 'Elsa Alimaroh', '12058/101.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(167, 'Fitriyani', '12059/102.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(168, 'Hikmatul Kamila', '12060/103.38', 'Banyuwangi', 'P', 1, '2023-01-01 06:00:00'),
+(169, 'Hilda Shafira ', '12061/104.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(170, 'Holisah', '12062/105.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(171, 'Imada Azka Putri Fania', '12063/106.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(172, 'Intan Islamiyah', '12064/107.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(173, 'Istighfara Novita Suparman', '12065/108.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(174, 'Jheni Julindar', '12066/109.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(175, 'Juwita Rahmawati', '12067/110.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(176, 'Karin Kurniasari', '12068/111.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(177, 'Kartika', '12069/112.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(178, 'Kheysa Eka Widyananta', '12070/113.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(179, 'Krisna Wijayanti', '12071/114.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(180, 'Kurniawati Dwi Maharani', '12072/115.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(181, 'Latansya Agustin Afdrella', '12073/116.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(182, 'Lemstin Mulyana', '12074/117.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(183, 'Lidya Afisa Wulandari', '12075/118.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(184, 'Lovia Anggraini', '12076/119.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(185, 'Maghfira Bahris', '12077/120.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(186, 'Marshall Aurelia Putri Dermawan', '12078/121.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(187, 'Marta Ayu Fitri Rahmadani', '12079/122.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(188, 'Maulana Rifqi', '12080/123.38', 'Banyuwangi', 'L', 2, '2023-01-01 06:00:00'),
+(189, 'Maulidia Aprilia', '12081/124.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(190, 'Meyra Ameliya Ninda Putri', '12082/125.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(191, 'Moh Egi Maulana', '12083/126.38', 'Banyuwangi', 'L', 2, '2023-01-01 06:00:00'),
+(192, 'Muhammad Ragil Al Fauzi', '12084/127.38', 'Banyuwangi', 'L', 2, '2023-01-01 06:00:00'),
+(193, 'Nabila', '12085/128.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(194, 'Nadia Ramadani', '12086/129.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(195, 'Nadia Safwa Risky', '12087/130.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(196, 'Naili Humaida', '12088/131.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(197, 'Nanda Bunga Vanesa', '12089/132.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(198, 'Natya Margarani', '12090/133.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(199, 'Nawal Nafis Bamaisarah', '12091/134.38', 'Banyuwangi', 'P', 2, '2023-01-01 06:00:00'),
+(200, 'Nur Yulita Azizah', '12092/135.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(201, 'Nurul Insiyah', '12093/136.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(202, 'Oky Wildan', '12094/137.38', 'Banyuwangi', 'L', 3, '2023-01-01 06:00:00'),
+(203, 'Pili Sofiya', '12095/138.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(204, 'Pingkan Yonata', '12096/139.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(205, 'Pingki Danata', '12097/140.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(206, 'Rain Syabana', '12098/141.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(207, 'Rani Cintiya Arini', '12099/142.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(208, 'Resta Islamaya', '12100/143.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(209, 'Revinda Putri Aziza', '12101/144.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(210, 'Rika Novita', '12102/145.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(211, 'Risa Hertiamah', '12103/146.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(212, 'Risma Fironika', '12104/147.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(213, 'Safiatul Mifta Hermansyah', '12105/148.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(214, 'Savira Dwi Mentari', '12106/149.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(215, 'Septya Eka Pratiwi', '12107/150.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(216, 'Shavira Azzahro', '12108/151.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(217, 'Shinta Afkarina', '12109/152.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(218, 'Silvy', '12110/153.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(219, 'Siti Karomah', '12111/154.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(220, 'Suciatik', '12112/155.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(221, 'Tata Santika', '12113/156.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(222, 'Tissa Ayuni Putri', '12114/157.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(223, 'Tri Agustin Putri Rahayu', '12115/158.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(224, 'Tya Setya Anugrah', '12116/159.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(225, 'Ummi Latifah', '12117/160.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(226, 'Vidyah Ramadani', '12118/161.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(227, 'Vila Risqia Amalia', '12119/162.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(228, 'Wulandari', '12120/163.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(229, 'Yasmin Imelda', '12121/164.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(230, 'Yunda Arifa Sari', '12122/165.38', 'Banyuwangi', 'P', 3, '2023-01-01 06:00:00'),
+(231, 'Atta Riskiya', '12124/310.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(232, 'Aqifa Salsabila Abdat', '12125/311.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(233, 'Bunga Ayu Citra Aprilia', '12126/312.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(234, 'Chynthia Chitra Lestary', '12127/313.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(235, 'Davina Lutfia Ramadhani', '12128/314.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(236, 'Dita Via Soraya', '12129/315.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(237, 'Fahira Delia', '12130/316.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(238, 'Fifi Ali Yahya', '12131/317.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(239, 'Fita Delia', '12132/318.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(240, 'Hafiah Nur Fadilah', '12133/319.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(241, 'Halimatus Sakdiyah', '12134/320.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(242, 'Jasmin Syifa Isnaini Putri', '12136/322.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(243, 'Jemima Agustina Arifin', '12137/323.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(244, 'Kartika Alika Putri', '12139/325.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(245, 'Lili Amalia', '12141/327.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(246, 'Mutiara Farah Maulidya', '12142/328.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(247, 'Nabila Fatya Anugerah Pratiwi', '12143/329.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(248, 'Nia Hermawati', '12144/330.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(249, 'Nida Maulida Rosyidin', '12145/331.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(250, 'Nofi Kristyanti', '12146/332.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(251, 'Novita Dwi Wulan Sari', '12147/333.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(252, 'Ria Rista Ayu Dwi Wijayanti', '12148/334.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(253, 'Sagita Julia Ananda Rusadi', '12149/335.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(254, 'Salsabila Oktavia Ramadani', '12150/336.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(255, 'Savira Rahmadita Nilona', '12151/337.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(256, 'Sayidatul Aszarah', '12152/338.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(257, 'Silvia Ramadani Putri', '12153/339.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(258, 'Siti Maghfirotul Karima', '12154/340.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(259, 'Trifia Alfiatu Rokhma', '12155/341.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(260, 'Uci Nurhayati', '12156/342.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(261, 'Wulandari Riska Putri Cambuaya', '12157/343.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(262, 'Yulanda Octavia Ramadani', '12158/344.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(263, 'Yuni Astuti', '12159/345.39', 'Banyuwangi', 'P', 4, '2023-01-01 06:00:00'),
+(264, 'Abdul Munif', '12160/001.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(265, 'Ahmad Bayu ', '12161/002.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(266, 'Ahmad Zidan Afkarin Nabil', '12162/003.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(267, 'Bagus Made Parameswara Mahardika Putra', '12163/004.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(268, 'Chrisna Dwi Tama', '12165/006.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(269, 'Cici Octavia Rahmadani', '12166/007.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(270, 'Dwikye Rahma Mawarda', '12168/009.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(271, 'Eka Dewi Kesatu', '12169/010.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(272, 'Fanina Ulin Nuha', '12171/012.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(273, 'Fitri Nur Halisa', '12172/013.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(274, 'Gilang Bima Saputra', '12174/015.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(275, 'Hesti Aullya Putri Anjani', '12175/016.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(276, 'Hidayatur Rohman', '12176/017.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(277, 'Illum Naura Auliya', '12177/018.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(278, 'Khaila Juliani Putri', '12178/019.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(279, 'Levina Triyas Pattinaya', '12179/20.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(280, 'Moch. Gilang Rahmadhan', '12180/021.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(281, 'Muhamad Alvian Hadi', '12181/022.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(282, 'Muhamad Iqbal Siswanto', '12182/023.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(283, 'Mutiara Khairani Koto', '12183/024.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(284, 'Naysila Eka Ayu Saputri', '12184/025.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(285, 'Nazizatur Rohmah', '12185/026.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(286, 'Ni Ketut Ayu Putri Dyanti', '12186/027.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(287, 'Nofisatul Fahiroh', '12187/028.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(288, 'Nur Damayanti', '12188/029.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(289, 'Praditya Hariansyah', '12189/030.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(290, 'Reni Aprilia', '12190/031.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(291, 'Sinta Dwi Juli Armadayanti', '12191/032.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(292, 'Siti Nur Andini Damayyanti', '12192/033.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(293, 'Wahyu Wisnu Hadi', '12193/034.41', 'Banyuwangi', 'L', 9, '2023-01-01 06:00:00'),
+(294, 'Zaskia Fissi Mezzaluna', '12195/036.41', 'Banyuwangi', 'P', 9, '2023-01-01 06:00:00'),
+(295, 'Abi Manyu', '12196/051.42', 'Banyuwangi', 'L', 7, '2023-01-01 06:00:00'),
+(296, 'Afiffah Ayu Maharani', '12197/052.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(297, 'Agni Prathista Virgianti', '12198/053.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(298, 'Ahmad Juliansyah', '12199/054.42', 'Banyuwangi', 'L', 7, '2023-01-01 06:00:00'),
+(299, 'Akhfinatul Zahra', '12200/055.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(300, 'Ammi Eldaa Mamahit', '12201/056.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(301, 'Angelina Natasha Putri', '12202/057.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(302, 'Anggy Indana Zulfa', '12203/058.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(303, 'Anna Maulydia', '12204/059.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(304, 'Aprilia', '12205/060.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(305, 'Aprilia Dwi Lestari', '12206/061.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(306, 'Aurellia Azzahra', '12207/062.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(307, 'Ayu Aulidia Khosshoh', '12208/063.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(308, 'Azra Amirah', '12209/064.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(309, 'Bagas Alfan Prihartono', '12210/065.42', 'Banyuwangi', 'L', 7, '2023-01-01 06:00:00'),
+(310, 'Cahya Ramdany Prastya', '12211/066.42', 'Banyuwangi', 'L', 7, '2023-01-01 06:00:00'),
+(311, 'Cello Surya Saputra', '12212/067.42', 'Banyuwangi', 'L', 7, '2023-01-01 06:00:00'),
+(312, 'Davina Nu Aimah', '12213/068.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(313, 'Dhita Lintang Diah Pramesti', '12214/069.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(314, 'Dias Elza Fathin Febriyani', '12215/070.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(315, 'Dimas Ferdian Laurensius', '12216/071.42', 'Banyuwangi', 'L', 7, '2023-01-01 06:00:00'),
+(316, 'Dinda Olyta Haslyn', '12217/072.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(317, 'Dwi Maulidya Apriliany', '12218/073.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(318, 'Engeline Jasmine', '12219/074.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(319, 'Esa Aulia Azzahra', '12220/075.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(320, 'Feby Dwi Lestari', '12221/076.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(321, 'Felani Agustina Putri', '12222/077.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(322, 'Fifin Krustia Wulandari', '12223/078.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(323, 'Giovanni Agustio Alois', '12224/079.42', 'Banyuwangi', 'L', 7, '2023-01-01 06:00:00'),
+(324, 'Heru Setiawan', '12225/080.42', 'Banyuwangi', 'L', 7, '2023-01-01 06:00:00'),
+(325, 'Holifah', '12226/081.42', 'Banyuwangi', 'P', 7, '2023-01-01 06:00:00'),
+(326, 'Hutomo Ndaru Mukti', '12227/082.42', 'Banyuwangi', 'L', 8, '2023-01-01 06:00:00'),
+(327, 'Ila Aulia', '12228/083.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(328, 'Jehan Wildani', '12229/084.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(329, 'Kartika Rahma Santi', '12230/085.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(330, 'Kezia Shenie Ikma Wijaya', '12231/086.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(331, 'Marsya Dwi Wahyuni', '12232/087.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(332, 'Melati Puspa Andini', '12233/088.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(333, 'Moh Aldi Maulana', '12234/089.42', 'Banyuwangi', 'L', 8, '2023-01-01 06:00:00'),
+(334, 'Nabilatul Fani', '12235/090.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(335, 'Nadine Auliyah', '12236/091.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(336, 'Nanditha Eka Febriani', '12237/092.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(337, 'Ni Komang Vira', '12238/093.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(338, 'Nias Mahrani Tafenao', '12239/094.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(339, 'Nova Amelia Safitri', '12240/095.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(340, 'Novi Lestari', '12241/096.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(341, 'Novianti Tri Andini Rahayu', '12242/097.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(342, 'Nur Diana Khalidah', '12243/098.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(343, 'Nurul Qomariyah', '12244/099.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(344, 'Putri Julia Nazzila', '12245/100.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(345, 'Resa Anggraeni', '12246/101.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(346, 'Sela Pebriani', '12247/102.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(347, 'Selvi Safitri', '12248/103.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(348, 'Selvita Sari', '12249/104.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(349, 'Sheril Ayu Prasiska', '12250/105.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(350, 'Syifa Ainaani Tarjriyaan', '12251/106.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(351, 'Sylviana Dewi Lestari', '12252/107.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(352, 'Tania Erie', '12253/108.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(353, 'Tifany Sunjayanti', '12254/109.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(354, 'Vivi Khoirun Nisa', '12255/110.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(355, 'Wisnu Diki Samudra', '12256/111.42', 'Banyuwangi', 'L', 8, '2023-01-01 06:00:00'),
+(356, 'Yeremia Wahyu Oktapriatna', '12257/112.42', 'Banyuwangi', 'L', 8, '2023-01-01 06:00:00'),
+(357, 'Yunita Zulfa Masyhuda', '12258/113.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(358, 'Zahir Hudzaifi', '12259/114.42', 'Banyuwangi', 'L', 8, '2023-01-01 06:00:00'),
+(359, 'Lailatul Karimah', '12260/115.42', 'Banyuwangi', 'P', 8, '2023-01-01 06:00:00'),
+(360, 'Abdul Gofur', '11606/001.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(361, 'Abraham Alexis Putra Prasetya', '11607/002.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(362, 'Agil Pangestu', '11608/003.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(363, 'Ahmad Abdul Munip', '11609/004.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(364, 'Ahmad Arif Hamdani', '11610/005.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(365, 'Ahmad Muzaiyin', '11611/006.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(366, 'Andrey Suhendro', '11612/007.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(367, 'Anna Dwiyanti', '11613/008.22', 'Banyuwangi', 'P', 20, '2023-01-01 06:00:00'),
+(368, 'Arjuna Anjasmara Zaman', '11614/009.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(369, 'Aulia Rizki Nia Agustin', '11615/010.22', 'Banyuwangi', 'P', 20, '2023-01-01 06:00:00'),
+(370, 'Bahrul Ulum', '11617/012.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(371, 'Cristian Firmansyah', '11618/013.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(372, 'Daris Firmansyah', '11619/014.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(373, 'Dian Putra Rama Widodo', '11620/015.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(374, 'Diyan Nurul Aini', '11621/016.22', 'Banyuwangi', 'P', 20, '2023-01-01 06:00:00'),
+(375, 'Dwi Cahyanto', '11622/017.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(376, 'Eko Satrio', '11623/018.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(377, 'Enggar Kurniawan', '11624/019.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(378, 'Galang Saputra', '11626/021.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(379, 'Gus Wahyu Endik Rohmat', '11627/022.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(380, 'Hasanul Hulqi', '11628/023.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(381, 'Hava Rino Arnatha Arnil', '11629/024.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(382, 'Helmi Yahya', '11630/025.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(383, 'Ilham Dwi Kurniawan', '11631/026.22', 'Banyuwangi', 'L', 20, '2023-01-01 06:00:00'),
+(384, 'M Pablo Putra Pratama', '11632/027.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(385, 'M. Nahdiyin', '11633/028.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(386, 'Marco Milandri', '11634/029.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(387, 'Mochamad Al Ikhwan', '11635/030.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(388, 'Mochammad Marchel P.', '11636/031.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(389, 'Moh. Febriyansyah', '11637/032.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(390, 'Moh. Sholeh', '11638/033.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(391, 'Muhamad Andhika Permana', '11640/035.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(392, 'Muhamad Andra', '11641/036.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(393, 'Muhamad Baitul Rohman', '11642/037.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(394, 'Nadip Prayoga', '11643/038.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(395, 'Naufal Aziz Atsari', '11644/039.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(396, 'Navi Qurrota A Yun', '11645/040.22', 'Banyuwangi', 'P', 21, '2023-01-01 06:00:00'),
+(397, 'Nikita Dwi Agustia Ayu L.', '11646/041.22', 'Banyuwangi', 'P', 21, '2023-01-01 06:00:00'),
+(398, 'Novi Indah Damayanti', '11647/042.22', 'Banyuwangi', 'P', 21, '2023-01-01 06:00:00'),
+(399, 'Randi Sampurna Adi', '11648/043.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(400, 'Riyanurita', '11649/044.22', 'Banyuwangi', 'P', 21, '2023-01-01 06:00:00'),
+(401, 'Siti Bintang Wulandari Z.', '11652/047.22', 'Banyuwangi', 'P', 21, '2023-01-01 06:00:00'),
+(402, 'Suro Hariyanto', '11653/048.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(403, 'Triyan Hardi Prasetiyo', '11654/049.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(404, 'Yelinda Putri Alhamdan', '11655/050.22', 'Banyuwangi', 'P', 21, '2023-01-01 06:00:00'),
+(405, 'Yeyen Wahyutia Ningseh', '11656/051.22', 'Banyuwangi', 'P', 21, '2023-01-01 06:00:00'),
+(406, 'Zakie Aminuddin', '11657/052.22', 'Banyuwangi', 'L', 21, '2023-01-01 06:00:00'),
+(407, 'Aisyah Dea Raras', '11658/001.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(408, 'Ajeng Een Maulina', '11659/002.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(409, 'Alysia Dita Amanda', '11660/003.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(410, 'Andre Saputra', '11661/004.37', 'Banyuwangi', 'L', 16, '2023-01-01 06:00:00'),
+(411, 'Anisa Amelia', '11662/005.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(412, 'Ardhi Firmansyah', '11663/006.37', 'Banyuwangi', 'L', 16, '2023-01-01 06:00:00'),
+(413, 'Aulia Fauzian', '11664/007.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(414, 'Azzahra Natzhuasyah', '11665/008.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(415, 'Bela Novia Safitri', '11666/009.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(416, 'Dalila Duri Nada', '11667/010.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(417, 'Della Tri Utami', '11668/011.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(418, 'Dhita Apriyani', '11669/012.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(419, 'Dinda Febyyana', '11670/013.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(420, 'Elda Elisa Tasyakuranti', '11672/015.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(421, 'Fanessa Auliya Denita ', '11673/016.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(422, 'Fardianto Mahda Pradista', '11674/017.37', 'Banyuwangi', 'L', 16, '2023-01-01 06:00:00'),
+(423, 'Febrian Ages Shehab', '11675/018.37', 'Banyuwangi', 'L', 16, '2023-01-01 06:00:00'),
+(424, 'Vera Windayani', '11676/019.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(425, 'Firda Zhaina Fitri', '11678/021.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(426, 'Fitri Fatmawati', '11680/023.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(427, 'Heni Herlindah', '11681/024.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(428, 'Indah Puspitasari', '11682/025.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(429, 'Karisma Irawan', '11683/026.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(430, 'Lintang Meilani Sumantri', '11684/027.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(431, 'Maulidatul Karimah', '11685/028.37', 'Banyuwangi', 'P', 16, '2023-01-01 06:00:00'),
+(432, 'Mayang Agustin', '11686/029.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(433, 'Mega Dwi Nur Andani', '11687/030.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(434, 'Miftahul Qorib', '11688/031.37', 'Banyuwangi', 'L', 17, '2023-01-01 06:00:00'),
+(435, 'Mohammad Haswin Pratama', '11689/032.37', 'Banyuwangi', 'L', 17, '2023-01-01 06:00:00'),
+(436, 'Nabila Tunajah', '11690/033.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(437, 'Nadirotul Laili', '11691/034.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(438, 'Nazwa Miftania', '11692/035.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(439, 'Nina Andriyani', '11693/036.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(440, 'Nova Charina Fitriyani', '11694/037.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(441, 'Nurhayati', '11695/038.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(442, 'Qoriatul Intania', '11696/039.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(443, 'Rifia Binta Ariyani', '11697/040.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(444, 'Rika Yuliana', '11698/041.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(445, 'Rizka Wahyuni', '11699/042.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(446, 'Sabrina Ayu Azahra Eka Alamsyah', '11701/044.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(447, 'Selvi Prasiska Dewi', '11702/045.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(448, 'Sindi Amalia Dewi', '11704/047.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(449, 'Siti Karimah', '11705/048.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(450, 'Siti Naviza Rahmi Azzahra', '11706/049.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(451, 'Siti Shobiyatul Magfiroh', '11707/050.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(452, 'Tria Afriani', '11708/051.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(453, 'Vany Firdaus', '11709/052.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(454, 'Viona Firnanda Putri', '11710/053.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(455, 'Vita Safitri Armadani', '11711/054.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(456, 'Wanda Dewi Purwanti', '11712/055.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(457, 'Zulfa Nur Islamiah', '11713/056.37', 'Banyuwangi', 'P', 17, '2023-01-01 06:00:00'),
+(458, 'Aenaya Saylla Nuraulia', '11714/001.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(459, 'Alfisita Putri Azhari', '11715/002.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(460, 'Allicia Sahwa', '11716/003.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(461, 'Anisa Kartika Dewi', '11717/004.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(462, 'Apriliyah Nabilah Alfi', '11718/005.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(463, 'Arlina Gustiar Pratama', '11719/006.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(464, 'Artanti Catur Ramadhani', '11720/007.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(465, 'Cantika Ratu Aulia', '11721/008.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(466, 'Desak Ayu Dwi Septi W.', '11722/009.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(467, 'Desta Dwi Dela Prenanti', '11723/010.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(468, 'Dinda Ayu Ulfiah Indriani', '11725/012.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(469, 'Divi Asfila Melani', '11727/014.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(470, 'Dwi Fitriyani', '11728/015.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(471, 'Ellang Maharani Marlon', '11729/016.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(472, 'Elvi Riska Aulia', '11730/017.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(473, 'Eva Multiyani Putri', '11731/018.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(474, 'Farizza Ainun Nadine Maulana', '11732/019.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(475, 'Ferdiyana Yuni Riyanti', '11733/020.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(476, 'Fibri Ayu Prastia', '11734/021.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(477, 'Fikris Saadah', '11735/022.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(478, 'Firman Pramana Putra', '11736/023.38', 'Banyuwangi', 'L', 12, '2023-01-01 06:00:00'),
+(479, 'Friska Verlita', '11737/024.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(480, 'Heni Susanti', '11738/025.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(481, 'Iffah Irdina', '11739/026.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(482, 'Ika Suci Maulida', '11740/027.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(483, 'Imelda Farisalsabilla', '11741/028.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(484, 'Iren Erdiana Putri', '11742/029.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(485, 'Irnawati', '11743/030.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(486, 'Kristina Dwi Putri', '11744/031.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(487, 'Laili Cahya Muhfiro', '11745/032.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(488, 'Lutvia Agustina', '11746/033.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(489, 'Maya Sofi Afkarina', '11747/034.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(490, 'Mega Dwi Lestari', '11748/035.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(491, 'Mega Shinta Wulandari', '11749/036.38', 'Banyuwangi', 'P', 12, '2023-01-01 06:00:00'),
+(492, 'Melati Andjeli Kafur', '11750/037.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(493, 'Nabila Anggraini Cantika D.', '11751/038.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(494, 'Nadifa Eflina Prahasti', '11752/039.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(495, 'Nagita Indah Cahyani', '11753/040.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(496, 'Naza Putri Rosadi', '11754/041.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(497, 'Neni Astia Ningrum', '11755/042.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(498, 'Niken Puji Ayu Lestari', '11756/043.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(499, 'Novi Fitriya', '11757/044.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(500, 'Primatura Damaiyanti', '11758/045.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(501, 'Putri Cahyaningsih', '11759/046.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(502, 'Putri Dian Krisna', '11760/047.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(503, 'Rani Tri Maulidin', '11761/048.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(504, 'Reva Eka Yulianingrum', '11762/049.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(505, 'Risa Sifa Ul Uyun', '11763/050.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(506, 'Riski Dwiyanti', '11764/051.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(507, 'Risma Sari', '11765/052.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(508, 'Rojulun Amanu Husnul H.', '11766/053.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(509, 'Rysta Safiraningrum', '11767/054.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(510, 'Sabilla Nuraini', '11768/055.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(511, 'Sara Mazid Aprilia', '11769/056.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(512, 'Saskia Ramadhania Dwi Putri', '11770/057.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(513, 'Serli Arta Nevia Putri', '11771/058.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(514, 'Shelviana', '11772/059.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(515, 'Sherly Dwi Ladista', '11773/060.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(516, 'Sintia Istikomah', '11774/061.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(517, 'Sintiya', '11775/062.38.', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(518, 'Siti Nur Azizah', '11776/063.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(519, 'Syfa Aulia Ramadhanti', '11777/064.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(520, 'Tara Ayu Nuryani', '11778/065.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(521, 'Tita Naqsya Dzulkarnain', '11779/066.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(522, 'Ulfatul Dwi Wulandari', '11781/068.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(523, 'Utami Ariyanti', '11782/069.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(524, 'Virda Putri Anna Martha', '11783/070.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(525, 'Wahyu Adelia Yasmit', '11784/071.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(526, 'Zakiatus Zahra', '11785/072.38', 'Banyuwangi', 'P', 13, '2023-01-01 06:00:00'),
+(527, 'Adi Jaya Sampurna', '11476/179.39', 'Banyuwangi', 'L', 14, '2023-01-01 06:00:00'),
+(528, 'Adelia Citra', '11786/256.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(529, 'Aldo Pratama', '11787/257.39', 'Banyuwangi', 'L', 14, '2023-01-01 06:00:00'),
+(530, 'Ana Dwi Lestari', '11788/258.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(531, 'Ananda Mufaddila', '11789/259.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(532, 'Ashila Ergin Jelita', '11791/261.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(533, 'Aura Maulidia', '11792/262.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(534, 'Desinta Wahyuni', '11796/266.39', 'Banyuwangi', 'L', 14, '2023-01-01 06:00:00'),
+(535, 'Eka Rahayu Safitri', '11800/270.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(536, 'Endang Wijiastutik', '11802/272.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(537, 'Febriyanti', '11803/273.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(538, 'Ghariza Aulia Insany', '11804/274.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(539, 'Hilda Wardani Aprilia', '11805/275.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(540, 'Karima Oktavia Rizky', '11806/276.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(541, 'Lushi Purnamasari Julia E.', '11808/278.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(542, 'Maharani Aprilia', '11809/279.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(543, 'Maisyarah Hamimatul F.', '11810/280.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(544, 'Masulah', '11813/283.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(545, 'Maulidia Faricha', '11814/284.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(546, 'Miky Ilham Akbar', '11815/285.39', 'Banyuwangi', 'L', 14, '2023-01-01 06:00:00'),
+(547, 'Miroslave Rava Al Araaf', '11816/286.39', 'Banyuwangi', 'L', 14, '2023-01-01 06:00:00'),
+(548, 'Nilam Cahya', '11818/288.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(549, 'Putri Agustina', '11823/293.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(550, 'Refal Jovi Pratama', '11825/295.39', 'Banyuwangi', 'L', 14, '2023-01-01 06:00:00'),
+(551, 'Siti Nur Aini', '11832/302.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(552, 'Yunita Putri Pratama', '11837/307.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(553, 'Yusina Fairun Nisa', '11838/308.39', 'Banyuwangi', 'P', 14, '2023-01-01 06:00:00'),
+(554, 'Edgar Yudiantara', '11494/197.39', 'Banyuwangi', 'L', 15, '2023-01-01 06:00:00'),
+(555, 'Anggi Safitri', '11790/260.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(556, 'Ceria Dian Kartika', '11793/263.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(557, 'Dea Indriyani', '11794/264.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(558, 'Dewi Riskiyani', '11797/267.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(559, 'Dini Sintha Permata Sari', '11798/268.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(560, 'Dwi Sayu Pratiwi', '11799/269.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(561, 'Eka Wardatul Janah', '11801/271.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(562, 'Karisma Kapur', '11807/277.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(563, 'Nabila Salsabiila', '11817/287.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(564, 'Noviatun Nasifah', '11819/289.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(565, 'Nur Rahmania', '11820/290.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(566, 'Oktafia Putri Lestari', '11821/291.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00');
+INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `no_induk`, `alamat`, `jenis_kelamin`, `id_kelas`, `tanggal_input`) VALUES
+(567, 'Popi Indah Mustika', '11822/292.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(568, 'Rara Ayu Dalu Eldyeanty', '11824/294.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(569, 'Reva Amalia Syahputri', '11826/296.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(570, 'Riski Durotun Nafisah', '11828/298.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(571, 'Rismatul Hasanah', '11829/299.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(572, 'Septi Putri Amelia', '11830/300.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(573, 'Shinta Mardiana', '11831301.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(574, 'Tria Novita Sari', '11835/305.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(575, 'Triya Astuti', '11836/306.39', 'Banyuwangi', 'P', 15, '2023-01-01 06:00:00'),
+(576, 'Achmad Akbar Aljidan', '11839/001.42', 'Banyuwangi', 'L', 18, '2023-01-01 06:00:00'),
+(577, 'Afnelia Nazwa Ashari', '11841/003.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(578, 'Ahmad Yudi Siswanto', '11842/004.42', 'Banyuwangi', 'L', 18, '2023-01-01 06:00:00'),
+(579, 'Andien Anastasya', '11843/005.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(580, 'Anggi Dwi Tristian', '11845/007.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(581, 'Anggun', '11846/008.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(582, 'Arisya Fadia Pratiwi', '11847/009.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(583, 'Bella Dwi Anggraini', '11849/011.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(584, 'Baerliana Aisyah Sunarjadi', '11850/012.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(585, 'Cornelia Agatha Dewi S', '11852/014.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(586, 'Desak Putu Gayatri Devi Anyu Indah Permata Sari', '11853/015.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(587, 'Elta Kemala Cantika', '11854/016.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(588, 'Farhan Dimas Saputra', '11855/017.42', 'Banyuwangi', 'L', 18, '2023-01-01 06:00:00'),
+(589, 'Genie Firda Hariyani', '11856/018.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(590, 'Harnung Mardiana', '11857/019.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(591, 'Heni Mutia Zulfa', '11858/020.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(592, 'Imelda Rahmawardhani', '11859/021.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(593, 'Irfan Habibi', '11860/022.42', 'Banyuwangi', 'L', 18, '2023-01-01 06:00:00'),
+(594, 'Isnul Khotimah', '11861/025.42', 'Banyuwangi', 'P', 18, '2023-01-01 06:00:00'),
+(595, 'Julio Kurniawan Wijaya', '11862/024.42', 'Banyuwangi', 'L', 18, '2023-01-01 06:00:00'),
+(596, 'Maily Fitriyani', '11864/026.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(597, 'Marta Aulia Anggita', '11865/027.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(598, 'Maulidia', '11866/028.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(599, 'Maulidina Rhaudatul J', '11867/029.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(600, 'Moh. Vicky Maulana', '11868/030.42', 'Banyuwangi', 'L', 19, '2023-01-01 06:00:00'),
+(601, 'Mohamad Jidni', '11869/031.42', 'Banyuwangi', 'L', 19, '2023-01-01 06:00:00'),
+(602, 'Muhammad Rivaldo Nur Fajar', '11871/033.42', 'Banyuwangi', 'L', 19, '2023-01-01 06:00:00'),
+(603, 'Nabila Noviana', '11872/034.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(604, 'Nabira Aurellia Silvia', '11873/035.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(605, 'Noki Andriyanto', '11874/036.42', 'Banyuwangi', 'L', 19, '2023-01-01 06:00:00'),
+(606, 'Putri Handayani', '11875/037.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(607, 'Redy Agung Saputra', '11876/038.42', 'Banyuwangi', 'L', 19, '2023-01-01 06:00:00'),
+(608, 'Reva Yuliastiningsih', '11877/039.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(609, 'Rina Gunawan', '11878/040.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(610, 'Rini Gunawan', '11879/041.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(611, 'Riobrin Yusuf Achyar', '11880/042.42', 'Banyuwangi', 'L', 19, '2023-01-01 06:00:00'),
+(612, 'Rista Zakiyatun Nabila', '11881/043.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(613, 'Siti Wahyuni', '11882/044.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(614, 'Syafira Dolya Filepy', '11883/045.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(615, 'Tasya', '11884/046.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(616, 'Taufikur Rohman', '11885/047.42', 'Banyuwangi', 'L', 19, '2023-01-01 06:00:00'),
+(617, 'Tegar Rifky Nugraha', '11886/048.42', 'Banyuwangi', 'L', 19, '2023-01-01 06:00:00'),
+(618, 'Yulia Hirda Susilowati', '11888/050.42', 'Banyuwangi', 'P', 19, '2023-01-01 06:00:00'),
+(619, 'Slamet Refandi', '10846/271.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(620, 'Abdan Sofyan Pratama', '11232/276.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(621, 'Achmad Ridwan Saputra', '11233/277.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(622, 'Achmad Sukron Mahendra', '11234/278.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(623, 'Adam Tiyo Prakusia', '11235/279.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(624, 'Adiesa Rizky Zahwania Efendi', '11236/280.066', 'Banyuwangi', 'P', 29, '2023-01-01 06:00:00'),
+(625, 'Agus Sugiyarto', '11237/281.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(626, 'Ahmad Jibril Al Ars', '11238/282.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(627, 'Ahmat Nur Rosulyh', '11239/283.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(628, 'Akh. Wafa Hermawan', '11240/284.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(629, 'Aril Firmansyah', '11241/285.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(630, 'Bima Triyono', '11242/286.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(631, 'Daffa Rohmanusta', '11244/288.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(632, 'Diky Suyitno', '11245/289.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(633, 'Dimas Arli Deganata', '11246/290.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(634, 'Dimas Firza Fawaid', '11247/291.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(635, 'Fahrur Fauzi Wibisono', '11248/292.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(636, 'Faizal Septian Firdaus', '11249/293.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(637, 'Farrelyno Luhur Priyambodo Putra', '11250/294.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(638, 'Ferdiansyah Ali Akbar', '11251/295.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(639, 'Fery Budi Artha', '11252/296.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(640, 'Fiqi Wahyu Setiawan', '11253/297.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(641, 'Gayatri Alifia Salsabilla', '11254/298.066', 'Banyuwangi', 'P', 29, '2023-01-01 06:00:00'),
+(642, 'Grace Normalita Tuahatu', '11255/299.066', 'Banyuwangi', 'P', 29, '2023-01-01 06:00:00'),
+(643, 'Hernianti', '11256/300.066', 'Banyuwangi', 'P', 29, '2023-01-01 06:00:00'),
+(644, 'Iola Ardelia Pramastya', '11257/301.066', 'Banyuwangi', 'P', 29, '2023-01-01 06:00:00'),
+(645, 'Julia Dwi Saputri', '11258/302.066', 'Banyuwangi', 'P', 29, '2023-01-01 06:00:00'),
+(646, 'Khoirun Nisa Nur Aini', '11259/303.066', 'Banyuwangi', 'P', 29, '2023-01-01 06:00:00'),
+(647, 'Kiky Restu Noviansyah', '11261/305.066', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(648, 'Lufiatus Sholiha', '11262/306.066', 'Banyuwangi', 'P', 29, '2023-01-01 06:00:00'),
+(649, 'Muhammad Nabil Saqofi', '11271/315.006', 'Banyuwangi', 'L', 29, '2023-01-01 06:00:00'),
+(650, 'Mochammad Rifky Zahendra', '11264/308.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(651, 'Moh. Bayu Priyo Utama', '11265/309.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(652, 'Moh. Rizal Maulana ', '11266/310.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(653, 'Mohammad Budi Abdillah', '11267/311.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(654, 'Mohammad Hariyono', '11268/312.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(655, 'Muhammad Ali Fikri', '11269/313.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(656, 'Muhammad Fahreza Reynaldy', '11270/314.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(657, 'Muhammad Ridho Syahputra', '11272/316.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(658, 'Nandini Febi Rahayu', '11273/317.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(659, 'Nazmie Rizwa Jamal', '11274/318.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(660, 'Nurma Yulita', '11275/319.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(661, 'Nurul Puspitasari', '11276/320.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(662, 'Piyut Dwi Kurniawan', '11277/321.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(663, 'Putri Ayu Pratama', '11278/322.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(664, 'Rangga Wasito', '11281/325.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(665, 'Ratna Hudaeva', '11282/326.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(666, 'Ratu Zakina', '11283/327.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(667, 'Reydho Caessaar Pramundhita', '11284/328.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(668, 'Rico Aditya', '11285/329.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(669, 'Risna Intan Septiani', '11286/330.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(670, 'Siti Kurniawati', '11287/331.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(671, 'Siti Meisyaroh', '11288/332.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(672, 'Stevanus Andre Dwi Pradana', '11289/333.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(673, 'Surya Aditya Darma', '11290/334.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(674, 'Trio Purnomo', '11291/335.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(675, 'Ubay Dillah', '11292/336.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(676, 'Wikan Virgiawan', '11293/337.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(677, 'Yogi Adi Prasetyo', '11294/338.066', 'Banyuwangi', 'L', 30, '2023-01-01 06:00:00'),
+(678, 'Zahrotul Mahdaniah', '11295/339.066', 'Banyuwangi', 'P', 30, '2023-01-01 06:00:00'),
+(679, 'Adila Nurun Nasywa Az-Zahra', '11296/244.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(680, 'Agus Saputra', '11297/245.108', 'Banyuwangi', 'L', 27, '2023-01-01 06:00:00'),
+(681, 'Ahmad Mudakir Firdaus', '11298/246.108', 'Banyuwangi', 'L', 27, '2023-01-01 06:00:00'),
+(682, 'Apriliah', '11299/247.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(683, 'Aprilliyani Tri Susanti', '11300/248.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(684, 'Artika Sari Dewi', '11302/250.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(685, 'Aulia Zahro', '11303/251.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(686, 'Bella Oktavia', '11304/252.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(687, 'Bulan Febryanti', '11306/254.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(688, 'Cintia Pratiwi', '11307/255.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(689, 'Dea Aprillia', '11308/256.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(690, 'Dea Fadilatul Laili', '11309/257.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(691, 'Devi Amanda Setiawati', '11310/258.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(692, 'Devi Maulina', '11311/259.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(693, 'Dwi Rofiqo Zainiyah', '11315/263.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(694, 'Eka Mahmita Septiani', '11316/264.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(695, 'Eka Putri Cahya Ningrum', '11317/265.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(696, 'Eka Wulandari', '11318/266.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(697, 'Faisatu Nimah', '11320/268.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(698, 'Frisky Sabella Indahati', '11321/269.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(699, 'Gavrila Reza Firnanda', '11322/270.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(700, 'Iin Setyawati', '11324/272.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(701, 'Ika Mareta', '11325/273.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(702, 'Indah Permata Wardani', '11326/274.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(703, 'Irfan Cahyo Nur Efendi', '11327/275.108', 'Banyuwangi', 'L', 27, '2023-01-01 06:00:00'),
+(704, 'Irma Agustina', '11328/276.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(705, 'Liatus Soleha', '11329/277.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(706, 'Martha Imatun Nadiva ', '11330/278.108', 'Banyuwangi', 'P', 27, '2023-01-01 06:00:00'),
+(707, 'Meilina Trihapsari Putri', '11332/280.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(708, 'Moch. Bima Handika', '11333/281.108', 'Banyuwangi', 'L', 28, '2023-01-01 06:00:00'),
+(709, 'Moch. Boge Marofin', '11334/282.108', 'Banyuwangi', 'L', 28, '2023-01-01 06:00:00'),
+(710, 'Nabila Dian Rosana', '11335/283.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(711, 'Nadila Febriyanti', '11336/284.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(712, 'Natasya Fatimatuz Zahra', '11337/285.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(713, 'Nazwa Meiliani', '11338/286.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(714, 'Novi Dwi Febriyanti', '11339/287.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(715, 'Novita Amalia Rahmasani', '11340/288.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(716, 'Nurul Khotimah', '11341/289.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(717, 'Putri Citra Alicia Hariyanti', '11342/290.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(718, 'Putri Nelly Renata', '11344/292.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(719, 'Putri Vioni Aisyah', '11345/293.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(720, 'Rahmania Azzahra ', '11346/294.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(721, 'Rani Pebrianti', '11347/295.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(722, 'Reni Mariyani', '11348/296.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(723, 'Restu Dwi Saputra', '11349/297.108', 'Banyuwangi', 'L', 28, '2023-01-01 06:00:00'),
+(724, 'Reza Nurseftiani', '11350/298.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(725, 'Rizky Ali Vina', '11353/301.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(726, 'Rizky Ayu Ramadani', '11354/302.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(727, 'Sabutri Yana Maria Eliysabet', '11355/303.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(728, 'Sanggita Anggraini', '11356/304.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(729, 'Selma Wijayanty M.S', '11357/305.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(730, 'Silva Dwi Nurdiana', '11358/306.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(731, 'Sinta Karoniya Dewi', '11359/307.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(732, 'Siti Nur Rahma', '11360/308.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(733, 'Sri Wahyuni', '11361/309.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(734, 'Susi', '11362/310.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(735, 'Syania Isna Faradilla', '11363/311.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(736, 'Tara Naelendra', '11364/312.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(737, 'Tian Sri Lestari', '11366/314.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(738, 'Wanda Putri Emilya', '11367/315.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(739, 'Zaskia Sefty Anggraini S.P.', '11368/316.108', 'Banyuwangi', 'P', 28, '2023-01-01 06:00:00'),
+(740, 'Afandi Yahya', '11369/216.110', 'Banyuwangi', 'L', 22, '2023-01-01 06:00:00'),
+(741, 'Afrista Dhisa Wandilla', '11370/217.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(742, 'Afti Sari Dentifa', '11371/218.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(743, 'Agus Setiawan', '11372/219.110', 'Banyuwangi', 'L', 22, '2023-01-01 06:00:00'),
+(744, 'Aisah', '11373/220.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(745, 'Ajeng Andini Putri Pertiwi', '11374/221.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(746, 'Ajeng Anggi Putri Hidayat', '11375/222.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(747, 'Akhmad Hamdani Yuafi', '11376/223.110', 'Banyuwangi', 'L', 22, '2023-01-01 06:00:00'),
+(748, 'Amanda Bunga Safitri', '11377/224.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(749, 'Anggih Yuliyanti', '11379/226.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(750, 'Anis Nurlaili', '11380/227.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(751, 'Ariyanti', '11381/228.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(752, 'Arshela Yunita. Zn', '11382/229.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(753, 'Asri Rizki Putri Islamiah', '11383/230.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(754, 'Ayisa Ayu Damayanti', '11384/231.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(755, 'Ayu Dwi Cahyani', '11385/232.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(756, 'Bintang Maharani', '11386/233.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(757, 'Brenda Olga Ayudyaningsih', '11387/234.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(758, 'Cindy Artika Safitri', '11388/235.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(759, 'Dedy Yusuf', '11389/236.110', 'Banyuwangi', 'L', 22, '2023-01-01 06:00:00'),
+(760, 'Dela Aprilia', '11390/237.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(761, 'Della Ayu Maharani', '11391/238.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(762, 'Desi Jumatul Laili', '11392/239.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(763, 'Desi Rosita', '11393/240.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(764, 'Desta Melyna Putri', '11394/241.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(765, 'Dewi Khotimatus Solicha', '11395/242.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(766, 'Dewi Nimas Ayu Boyong K.', '11396/243.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(767, 'Dian Krisna', '11397/244.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(768, 'Dimas Yoga Pratama', '11398/245.110', 'Banyuwangi', 'L', 22, '2023-01-01 06:00:00'),
+(769, 'Dinda Apriliyanti', '11400/247.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(770, 'Dinda Retnowati', '11401/248.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(771, 'Dini Ayu Septiyah', '11402/249.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(772, 'Dini Intan Fajriyah', '11403/250.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(773, 'Difa Ananta', '11404/251.110', 'Banyuwangi', 'P', 22, '2023-01-01 06:00:00'),
+(774, 'Diva Laylin Driya Putri', '11405/252.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(775, 'Divia Yasmin Malika Fauzia', '11406/253.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(776, 'Dwi Ari Rahayu', '11407/254.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(777, 'Egi Wardana', '11408/255.110', 'Banyuwangi', 'L', 23, '2023-01-01 06:00:00'),
+(778, 'Eka Kristiani ', '11409/256.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(779, 'Eka Kurniyawati', '11410/257.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(780, 'Eka Putri Anjani', '11411/258.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(781, 'Elvin Kumala Ika Sari', '11412/259.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(782, 'Erina Desi Aulia', '11413/260.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(783, 'Fajar Dwi Setiawan', '11414/261.110', 'Banyuwangi', 'L', 23, '2023-01-01 06:00:00'),
+(784, 'Farah Nihal Safitri', '11415/262.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(785, 'Faridatul Ismi', '11416/263.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(786, 'Fembi Hardianto ', '11417/264.110', 'Banyuwangi', 'L', 23, '2023-01-01 06:00:00'),
+(787, 'Fera Syafitri', '11418/265.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(788, 'Fitria Novianti', '11420/267.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(789, 'Hani Ayu Maharani', '11421/268.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(790, 'Heni Suwandani', '11422/269.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(791, 'Hepy Agustina', '11423/270.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(792, 'Hevy Dewita Sari', '11424/271.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(793, 'Ika Erni Hidayah', '11425/272.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(794, 'Intan Balgis Humairo', '11426/273.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(795, 'Intania Agustia Ningrum', '11427/274.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(796, 'It Finah Nur Imani', '11429/276.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(797, 'Jamiatun Hasanah', '11430/277.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(798, 'Juwanda Marsela Margareta', '11431/278.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(799, 'Lelita Yuniarti', '11433/280.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(800, 'Lira Puspita', '11434/281.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(801, 'Lois Ropiatoh', '11435/282.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(802, 'Mareta Harliyanti Dewi', '11436/283.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(803, 'Mei Shinta', '11437/284.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(804, 'Melly Oktavia Eka Putri Anabel', '11438/285.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(805, 'Muhammad Hariyanto', '11439/286.110', 'Banyuwangi', 'L', 23, '2023-01-01 06:00:00'),
+(806, 'Ni Luh Aulia Cindy Ardana', '11440/287.110', 'Banyuwangi', 'P', 23, '2023-01-01 06:00:00'),
+(807, 'Novita Aulia Karyani', '11443/290.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(808, 'Novita Dwi Safitri', '11444/291.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(809, 'Nur Wazirotus Sakinah', '11445/292.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(810, 'Nur Yani', '11446/293.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(811, 'Nurjianah', '11447/294.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(812, 'Ovi Mutiara Sany', '11448/295.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(813, 'Qurotul Annisa Amanda Putri', '11449/296.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(814, 'Rahma Puspa Aulia', '11450/297.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(815, 'Ratih Puspita Sari', '11451/298.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(816, 'Reni Fitriawati', '11452/299.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(817, 'Restu Ana ', '11453/300.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(818, 'Resyta Bintang Aurany', '11454/301.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(819, 'Retno Maulidia', '11455/302.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(820, 'Ridho Maulana Gunawan', '11456/303.110', 'Banyuwangi', 'L', 24, '2023-01-01 06:00:00'),
+(821, 'Rifqi Dwi Firmanda', '11457/304.110', 'Banyuwangi', 'L', 24, '2023-01-01 06:00:00'),
+(822, 'Rima Nurjannah', '11458/305.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(823, 'Rosa Ameliah', '11459/306.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(824, 'Sansasky Aida Mubarok', '11460/307.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(825, 'Sherley Nurul Inayah', '11461/308.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(826, 'Siti Aisah', '11462/309.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(827, 'Siti Ayu Masita', '11463/310.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(828, 'Siti Maysaroh', '11464/311.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(829, 'Siti Nur Holifa', '11465/312.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(830, 'Syifa Nur Azizah', '11467/314.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(831, 'Trilia Lestari', '11469/316.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(832, 'Urfi Rosita', '11470/317.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(833, 'Vingkan Adisti', '11471/318.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(834, 'Viosy Indi Vabia', '11472/319.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(835, 'Virly Amalia Marufi', '11473/320.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(836, 'Yeni Kristina', '11474/321.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(837, 'Yuliya Eka Cahyani', '11475/322.110', 'Banyuwangi', 'P', 24, '2023-01-01 06:00:00'),
+(838, 'Ainun Putri Renata', '11478/181.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(839, 'Ajeng Rizkiana Putri', '11479/182.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(840, 'Alfi Maisatul Kamila', '11480/183.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(841, 'Alya Mauliddana', '11481/184.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(842, 'Alyaa Salsabila', '11482/185.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(843, 'Andini Fitri Nur Aini', '11483/186.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(844, 'Andini Rosita Dewi', '11484/187.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(845, 'Andini Wulan Safitri', '11485/188.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(846, 'Astia Ananta', '11486/189.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(847, 'Ayu Nadifa Rahmawati', '11487/190.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(848, 'Bilqis Tepo Palupi', '11488/191.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(849, 'Cinta Marcellia Qur Aini', '11489/192.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(850, 'Delfi Anggraini', '11490/193.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(851, 'Deva Hadi Restanti', '11491/194.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(852, 'Dewi Sartika', '11492/195.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(853, 'Dian Anggraini', '11493/196.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(854, 'Eliyana', '11495/198.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(855, 'Enisa Novitasari', '11496/199.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(856, 'Hanum Shalsabilla', '11498/201.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(857, 'Herliyanti', '11499/202.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(858, 'Hermina Setyo Rini', '11500/203.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(859, 'Husnul Khotimah', '11502/205.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(860, 'Intan Rahmawati', '11503/206.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(861, 'Khairun Nisa', '11506/209.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(862, 'Khofifah Indar Parawansa', '11507/210.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(863, 'Kholifatul Aulia I Wulandari', '11508/211.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(864, 'Kholilah Aprilia', '11509/212.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(865, 'Laela Assah', '11510/213.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(866, 'Laura Amanda Florensia', '11511/214.111', 'Banyuwangi', 'P', 25, '2023-01-01 06:00:00'),
+(867, 'Lolyta Aulia Sari', '11512/215.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(868, 'Lutvi Selviani', '11513/216.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(869, 'Martha Rofika Sari', '11514/217.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(870, 'Maulana Yudha Firmansyah', '11515/218.111', 'Banyuwangi', 'L', 26, '2023-01-01 06:00:00'),
+(871, 'Mercy Aditia', '11516/219.111', 'Banyuwangi', 'L', 26, '2023-01-01 06:00:00'),
+(872, 'Mochammad Hisyam Fakhri', '11517/220.111', 'Banyuwangi', 'L', 26, '2023-01-01 06:00:00'),
+(873, 'Mohammad Farizal', '11518/221.111', 'Banyuwangi', 'L', 26, '2023-01-01 06:00:00'),
+(874, 'Muhammad Hariyanto', '11519/222.111', 'Banyuwangi', 'L', 26, '2023-01-01 06:00:00'),
+(875, 'Muhammad Riham Ghiffari', '11520/223.111', 'Banyuwangi', 'L', 26, '2023-01-01 06:00:00'),
+(876, 'Mutia Ika Ardiantari', '11521/224.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(877, 'Nabila Ayu Wulandari', '11522/225.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(878, 'Nabila Sensi Saskiya Nurfajri', '11523/226.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(879, 'Nimas Ayu Safitri', '11524/227.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(880, 'Putri Ayu Ilzami', '11526/229.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(881, 'Putri Handayani', '11527/230.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(882, 'Putri Rahmawati', '11528/231.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(883, 'Rani Tria Maulidia', '11529/232.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(884, 'Rica Nur Imamah', '11531/234.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(885, 'Risma Yulia Ananta', '11532/235.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(886, 'Sabrina Manda Putri', '11533/236.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(887, 'Septilia Anggraini', '11535/238.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(888, 'Shela Safitri', '11536/239.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(889, 'Shinta Audina', '11537/240.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(890, 'Shintia Ayu Winata', '11539/242.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(891, 'Shofi Rana Afifah', '11540/243.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(892, 'Silvi Lira Madani', '11541/244.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(893, 'Siska  Putri Sari', '11542/245.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(894, 'Siti Nabila Zahra', '11543/246.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(895, 'Siti Nurhalisa', '11544/247.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(896, 'Siti Nurkholisah', '11545/248.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(897, 'Siti Warni', '11546/249.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(898, 'Sofi Amilia Safitri', '11547/250.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(899, 'Suliyanti', '11548/251.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(900, 'Thalia Prasasti Irawan Putri', '11549/252.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(901, 'Wanda Oktavia Sari', '11550/253.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(902, 'Yulita Rahayu', '11551/254.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(903, 'Yuninda Dwi Dewanti Sukma', '11552/255.111', 'Banyuwangi', 'P', 26, '2023-01-01 06:00:00'),
+(904, 'Ainur Robi', '11553/141.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(905, 'Ali Saoma', '11554/142.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(906, 'Aliyah Rachmah', '11555/143.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(907, 'Arman Maulana', '11557/145.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(908, 'Ayuk Priatina', '11559/147.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(909, 'Badriyah Fayumi', '11560/148.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(910, 'Bagas Dwi Youn Chariesma', '11561/149.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(911, 'Desi Fitriyani', '11562/150.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(912, 'Dewi Masita Apriliyani', '11563/151.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(913, 'Didan Hamidan', '11564/152.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(914, 'Dimas Fauzi Apririanto', '11565/153.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(915, 'Diyas Safira Melliyana', '11566/154.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(916, 'Eka Ferbriana', '11567/155.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(917, 'Eky Kartika Dewi', '11568/156.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(918, 'Falida Kastiti Frenia', '11569/157.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(919, 'Frizal Awis Diansyah', '11570/158.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(920, 'Galang Tri Adi Nugroho', '11571/159.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(921, 'Hani Zakiya', '11572/160.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(922, 'Irma Deva Yanti ', '11573/161.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(923, 'Irma Martiana Sopya', '11574/162.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(924, 'Jihan Villa Agustin', '11575/163.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(925, 'Liya Alpiyah', '11576/164.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(926, 'Maria Paulita', '11577/165.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(927, 'Mei Diana Maulidia', '11578/166.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(928, 'Moh. Rifki Rokhmatika', '11580/168.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(929, 'Mohammad Enrico Hermadi', '11582/170.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(930, 'Muchlisin Eka Pratama', '11583/171.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(931, 'Nesharina Eka Maulita', '11584/172.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(932, 'Nico Maulana Saputra', '11585/173.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(933, 'Nicola Olivian Prakoso', '11586/174.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(934, 'Nur Halimah ', '11588/176.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(935, 'Rangga Ragil Dewantara', '11590/178.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(936, 'Reza Bima Saputra', '11591/179.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(937, 'Rima Setyowati', '11592/180.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(938, 'Rizki Hidayatullah', '11593/181.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(939, 'Rizky Putra Ramadhan', '11594/182.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(940, 'Septian Aulia Firmansyah', '11595/183.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(941, 'Sulastri', '11596/184.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(942, 'Tina Andriyani', '11597/185.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(943, 'Tri Ulan Anggreni', '11598/186.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(944, 'Tria Kusuma Wardani', '11599/187.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(945, 'Wahyu Jamianto', '11601/189.119', 'Banyuwangi', 'L', 31, '2023-01-01 06:00:00'),
+(946, 'Yosica Nenty Fresha', '11602/190.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00'),
+(947, 'Yuliatin', '11603/191.119', 'Banyuwangi', 'P', 31, '2023-01-01 06:00:00');
 
-#
-# Structure for table "tentang_kami"
-#
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `tentang_kami`;
+--
+-- Table structure for table `tentang_kami`
+--
+
 CREATE TABLE `tentang_kami` (
-  `id_tentang_kami` int(111) NOT NULL AUTO_INCREMENT,
-  `deskripsi` text NOT NULL,
-  PRIMARY KEY (`id_tentang_kami`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id_tentang_kami` int(111) NOT NULL,
+  `deskripsi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-#
-# Data for table "tentang_kami"
-#
+--
+-- Dumping data for table `tentang_kami`
+--
 
-INSERT INTO `tentang_kami` VALUES (1,'- diberikan tahun ajaran agar dapat melihat grafik per tahun ajaran ( 14-11-2019 )\r\n- semua sistem management data ( CRUD ) di combinasikan dengan ajax ( 14-11-2019 )\r\n- semua query yang menggunakan where diupgrade menjadi join agar meminimalisir kesalahan data  ( 14-11-2019 )');
+INSERT INTO `tentang_kami` (`id_tentang_kami`, `deskripsi`) VALUES
+(1, '-');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `guru`
+--
+ALTER TABLE `guru`
+  ADD PRIMARY KEY (`id_guru`);
+
+--
+-- Indexes for table `jenis_pelanggaran`
+--
+ALTER TABLE `jenis_pelanggaran`
+  ADD PRIMARY KEY (`id_jenis_pelanggaran`);
+
+--
+-- Indexes for table `kelas`
+--
+ALTER TABLE `kelas`
+  ADD PRIMARY KEY (`id_kelas`);
+
+--
+-- Indexes for table `ketentuan_point`
+--
+ALTER TABLE `ketentuan_point`
+  ADD PRIMARY KEY (`id_ketentuan_point`);
+
+--
+-- Indexes for table `pelanggaran`
+--
+ALTER TABLE `pelanggaran`
+  ADD PRIMARY KEY (`id_pelanggaran`);
+
+--
+-- Indexes for table `pelanggaran_siswa`
+--
+ALTER TABLE `pelanggaran_siswa`
+  ADD PRIMARY KEY (`id_pelanggaran_siswa`);
+
+--
+-- Indexes for table `siswa`
+--
+ALTER TABLE `siswa`
+  ADD PRIMARY KEY (`id_siswa`);
+
+--
+-- Indexes for table `tentang_kami`
+--
+ALTER TABLE `tentang_kami`
+  ADD PRIMARY KEY (`id_tentang_kami`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `guru`
+--
+ALTER TABLE `guru`
+  MODIFY `id_guru` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT for table `jenis_pelanggaran`
+--
+ALTER TABLE `jenis_pelanggaran`
+  MODIFY `id_jenis_pelanggaran` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `kelas`
+--
+ALTER TABLE `kelas`
+  MODIFY `id_kelas` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `ketentuan_point`
+--
+ALTER TABLE `ketentuan_point`
+  MODIFY `id_ketentuan_point` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `pelanggaran`
+--
+ALTER TABLE `pelanggaran`
+  MODIFY `id_pelanggaran` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+
+--
+-- AUTO_INCREMENT for table `pelanggaran_siswa`
+--
+ALTER TABLE `pelanggaran_siswa`
+  MODIFY `id_pelanggaran_siswa` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `siswa`
+--
+ALTER TABLE `siswa`
+  MODIFY `id_siswa` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=948;
+
+--
+-- AUTO_INCREMENT for table `tentang_kami`
+--
+ALTER TABLE `tentang_kami`
+  MODIFY `id_tentang_kami` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
