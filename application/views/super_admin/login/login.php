@@ -37,7 +37,7 @@
                             <img src="<?php echo base_url();?>assets/logo.png" style="width:150px;">
                         </div>
                         <h3 class="box-title" style="font-size:14px; text-align:center; margin-bottom:0px;">LOG IN </h3>
-                        <h4 style="font-size:12px; text-align:center; margin:0px; margin-bottom:20px;">APLIKASI <b>GRISAPOINT</b> (PELANGGARAN SISWA) </h4>
+                        <h4 style="font-size:12px; text-align:center; margin:0px; margin-bottom:20px;">APLIKASI <b>GRISAPOINT</b> (POINT PENGHARGAAN SISWA) </h4>
                         <div>
                             <form action="<?php echo base_url(); ?>login/verification" method="post" enctype="multipart/form-data">
                                 <?php
